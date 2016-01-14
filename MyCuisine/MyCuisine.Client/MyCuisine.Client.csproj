@@ -72,6 +72,32 @@
     <Content Include="css\app.min.css">
       <DependentUpon>app.css</DependentUpon>
     </Content>
+    <Content Include="css\img\bottom-bg.png" />
+    <Content Include="css\img\bottom-menu.png" />
+    <Content Include="css\img\bottom-shadow.png" />
+    <Content Include="css\img\button-green.png" />
+    <Content Include="css\img\button.png" />
+    <Content Include="css\img\content-bg.png" />
+    <Content Include="css\img\footer-bg.png" />
+    <Content Include="css\img\frame.png" />
+    <Content Include="css\img\menu\dropdown-bg.png" />
+    <Content Include="css\img\menu\menu-bar.png" />
+    <Content Include="css\img\menu\menu-bg.png" />
+    <Content Include="css\img\page-top.jpg" />
+    <Content Include="css\img\price.png" />
+    <Content Include="css\img\quote-bg.png" />
+    <Content Include="css\img\quote-shadow.png" />
+    <Content Include="css\img\stars.png" />
+    <Content Include="css\img\switcher\switcher-item-active.png" />
+    <Content Include="css\img\switcher\switcher-item.png" />
+    <Content Include="css\img\switcher\switcher_bg.png" />
+    <Content Include="css\img\switcher\switcher_left.png" />
+    <Content Include="css\img\switcher\switcher_right.png" />
+    <Content Include="css\img\switcher\switcher_shadow.png" />
+    <Content Include="css\img\testimonials\testimonials-bottom.png" />
+    <Content Include="css\img\testimonials\testimonials-content-bg.png" />
+    <Content Include="css\img\testimonials\testimonials-top.png" />
+    <Content Include="css\img\top-bg.png" />
     <Content Include="img\logo.png" />
     <Content Include="lib\angular\angular-route.min.js" />
     <None Include="lib\angular\angular.intellisense.js" />
