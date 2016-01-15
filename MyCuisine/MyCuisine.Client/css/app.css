@@ -11,8 +11,7 @@ body {
   font-family: Georgia, serif;
   font-size: 12px;
   color: #716851;
-  text-shadow: 1px 1px 1px #ffffff;
-  background: url(img/top-bg.png) repeat-x; }
+  background-color: #f2f1e8; }
   body a {
     text-decoration: none;
     color: #5a863c; }
@@ -40,45 +39,66 @@ body {
     content: " ";
     clear: both;
     height: 0; }
-  body #wrapper {
-    text-align: left;
-    margin: 0 auto;
-    width: 960px;
-    position: relative;
-    height: 465px;
-    padding-top: 27px; }
-    body #wrapper #header #menu-bar {
-      position: relative;
-      background: url(img/menu/menu-bar.png) no-repeat;
-      padding-left: 260px;
-      height: 87px;
-      float: left; }
-      body #wrapper #header #menu-bar #logo-bar {
-        position: absolute;
-        top: 19px;
-        left: 20px; }
-        body #wrapper #header #menu-bar #logo-bar a:hover {
-          text-decoration: none; }
-        body #wrapper #header #menu-bar #logo-bar #company-name {
-          display: inline-block;
-          color: #ffffff;
-          text-shadow: none; }
-    body #wrapper #header #top-menu {
-      background: url(img/menu/menu-bg.png) repeat-x;
-      height: 70px;
-      margin-left: 260px; }
-      body #wrapper #header #top-menu ul li {
-        float: left;
-        margin-left: 4px; }
-        body #wrapper #header #top-menu ul li a {
-          font-size: 12px;
-          color: #ffffff;
-          text-decoration: none;
-          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
-          text-transform: uppercase;
-          line-height: 67px;
-          display: block;
-          padding: 0 10px; }
-          body #wrapper #header #top-menu ul li a:hover {
-            color: #eee4ba; }
+  body #page {
+    background: url(img/top-bg.png) repeat-x; }
+    body #page #container {
+      background: url("img/page-top.jpg") no-repeat; }
+      body #page #container #header {
+        padding-left: 140px;
+        padding-top: 26px;
+        text-align: left;
+        height: 465px; }
+        body #page #container #header .navbar-header {
+          background: url(img/menu/menu-bar.png) no-repeat;
+          height: 87px; }
+          body #page #container #header .navbar-header .navbar-brand {
+            float: none;
+            margin-left: 5px; }
+          body #page #container #header .navbar-header #logo {
+            display: inline-block;
+            vertical-align: text-bottom; }
+          body #page #container #header .navbar-header #company-name {
+            color: white;
+            display: inline-block; }
+        body #page #container #header .navbar-default {
+          z-index: 1; }
+          body #page #container #header .navbar-default .navbar-nav {
+            background: url(img/menu/menu-bg.png) repeat-x;
+            float: left;
+            margin-left: 40%;
+            height: 70px;
+            text-transform: uppercase;
+            font-size: 12px; }
+            body #page #container #header .navbar-default .navbar-nav li a {
+              color: white;
+              margin-top: 10px; }
+            body #page #container #header .navbar-default .navbar-nav .active {
+              margin-top: -10px; }
+              body #page #container #header .navbar-default .navbar-nav .active a {
+                background: url(img/menu/current-bg.png) repeat-x 0 3px;
+                color: #eee4ba !important;
+                font-style: italic;
+                height: 65px;
+                padding-top: 25px; }
+        body #page #container #header #menu-right {
+          width: 2000px;
+          position: absolute;
+          left: 200px;
+          z-index: 0;
+          top: 27px;
+          height: 70px;
+          background: url(img/menu/menu-bg.png) repeat-x; }
+      body #page #container #footer {
+        background: #f2f1e8 url(img/footer-bg.png) repeat-x;
+        padding-top: 35px; }
+        body #page #container #footer #footer-boxs {
+          width: 960px;
+          margin: auto;
+          border-bottom: 1px solid #dcd7b1; }
+          body #page #container #footer #footer-boxs #logo-name {
+            display: inline-block;
+            color: black;
+            text-shadow: none; }
+        body #page #container #footer #copyright {
+          text-align: center; }
 

@@ -6,7 +6,6 @@ $basic-line-height: 18px;
 $basic-font-family: Georgia, serif;
 $basic-font-size: 12px;
 $basic-color: #716851;
-$basic-text-shadow: 1px 1px 1px #ffffff;
 $basic-link-color: #5a863c;
 $header-color: #ffffff;
 
@@ -17,9 +16,16 @@ $header-color: #ffffff;
 	font-weight: normal;
 }
 
+//PAGE
+$page-bg: url('img/page-top.jpg');
 //HEADER
 $top-shadow: url(img/top-bg.png);
 $logo-bg: url(img/menu/menu-bar.png);
+$menu-bg: url(img/menu/menu-bg.png);
+$active-bg: url(img/menu/current-bg.png);
+//FOOTER
+$footer-bg: url(img/footer-bg.png);
+$footer-line-color: #dcd7b1;
 body {
     //BASIC STYLES
     background-color: $bg-color;
@@ -27,7 +33,6 @@ body {
     font-family: $basic-font-family; 
     font-size: $basic-font-size; 
     color: $basic-color; 
-    text-shadow: $basic-text-shadow;
 
     a { 
         text-decoration: none; 
@@ -78,58 +83,95 @@ body {
     }
 
     //MAIN STYLES
-    background: $top-shadow repeat-x; 
+    background-color: $bg-color; 
+    #page { 
+        background: $top-shadow repeat-x;
+    
+        #container {
+            background: $page-bg no-repeat;
+            //HEADER
+            #header {
+                padding-left: 140px;
+                padding-top: 26px;
+                text-align: left;
+                height: 465px; 
 
-    #wrapper {
-        text-align: left; margin: 0 auto; width: 960px; position: relative;
-        height: 465px; padding-top: 27px;
-        #header {
-            #menu-bar {
-                position: relative;
-                background: $logo-bg no-repeat; 
-                padding-left: 260px; 
-                height: 87px;
-                float: left;
-                #logo-bar { 
-                    position: absolute; 
-                    top: 19px; 
-                    left: 20px;
-             
-                    a:hover { 
-                        text-decoration: none; 
+                .navbar-header {
+                    background: $logo-bg no-repeat; 
+                    height: 87px;
+                    .navbar-brand {
+                        float: none;
+                        margin-left: 5px;
                     }
 
+                    #logo {
+                        display: inline-block;
+                        vertical-align: text-bottom;
+                    }
                     #company-name {
+                        color: white;
+                        display: inline-block;
+                    }
+                }    
+            
+                .navbar-default {
+                    z-index: 1;
+                    .navbar-nav {
+                        background: $menu-bg repeat-x;
+                        float: left;
+                        margin-left: 40%;
+                        height: 70px;
+                        text-transform: uppercase;
+                        font-size: 12px;
+
+                        li {
+                            a {
+                                color: white;
+                                margin-top: 10px;
+                            }
+                        }
+                        .active {
+                            margin-top: -10px;
+                            a {
+                                background: $active-bg repeat-x 0 3px;
+                                color: #eee4ba !important;
+                                font-style: italic;
+                                height: 65px;
+                                padding-top: 25px;
+                            }
+                        }
+                    }   
+                }
+                
+                #menu-right { 
+                    width:2000px; 
+                    position: absolute; 
+                    left: 200px; 
+                    z-index: 0;
+                    top: 27px; 
+                    height: 70px; 
+                    background: $menu-bg repeat-x; 
+                }    
+            }
+            //FOOTER
+            #footer { 
+                background: $bg-color $footer-bg repeat-x; 
+                padding-top: 35px; 
+
+                #footer-boxs { 
+                    width:960px;
+                    margin:auto;
+                    border-bottom: 1px solid $footer-line-color; 
+
+                    #logo-name {
                         display:inline-block;  
-                        color: $header-color;
+                        color: black;
                         text-shadow: none;
                     }
                 }
-            }       
-
-            #top-menu {
-                background: url(img/menu/menu-bg.png) repeat-x; 
-                height: 70px;
-                margin-left:260px;
-                ul { // replace with ID
-                    li {
-                        float: left;
-                        margin-left: 4px;
-                        a { 
-                            font-size: 12px; 
-                            color: #ffffff; 
-                            text-decoration: none; 
-                            text-shadow: 1px 1px 1px rgba(0,0,0,0.6); 
-                            text-transform: uppercase; 
-                            line-height: 67px; 
-                            display: block; 
-                            padding: 0 10px; 
-
-                            &:hover { 
-                                color: #eee4ba;
-                            }
-                        }
-                    }
+        
+                #copyright {
+                    text-align: center;
                 }
             }
         }

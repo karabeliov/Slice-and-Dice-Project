@@ -8,38 +8,62 @@
     <meta name="description" content="My Cuisine">
     <meta name="author" content="Kristian Karabeliov">
 
-    <link rel="stylesheet" href="css/app.min.css" />
+    <link href="css/app.min.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
 
 <body>
-    <div id="wrapper">
-        <header id="header">
-            <div id="menu-bar">
-                <div id="logo-bar">
-                    <a href="#">
-                        <img src="img/logo.png" alt="Logo" id="logo" />
-                        <h1 id="company-name">mycuisine</h1>
-                    </a>
-                </div>
-            </div>
+    <div id="page">
+        <div id="container">
+            <header id="header">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">
+                                <img src="img/logo.png" alt="Logo" id="logo" />
+                                <h1 id="company-name">mycuisine</h1>
+                            </a>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">Home</a></li>
+                                <li><a href="#">Location</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li class="dropdown-header">Nav header</li>
+                                        <li><a href="#">Separated link</a></li>
+                                        <li><a href="#">One more separated link</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
 
-            <nav id="top-menu">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Menu</a></li>
-                    <li><a href="#">Location</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </nav>
-        </header>
+                <div id="menu-right"></div>
+            </header>
 
-        <div id="slider">
-            <h2 id="slider-title"></h2>
-            <p id="slider-description"></p>
-            <a id="slider-button"></a>
+            <!--<div id="slider" class="jumbotron">
+            <h2>Navbar example</h2>
+            <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+            <p>
+                <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs »</a>
+            </p>
             <div id="switcher">
                 <a href="#"></a>
                 <a href="#"></a>
@@ -47,36 +71,83 @@
                 <a href="#"></a>
                 <a href="#"></a>
             </div>
-        </div>
+        </div>-->
 
-        <div id="content">
-            <h2 id="content-title"></h2>
-            <p id="content-description"></p>
+            <div id="content">
+                <h2 id="content-title"></h2>
+                <p id="content-description"></p>
 
-            <div id="features">
-                <ul>
-                    <li id="left-block"></li>
-                    <li id="middle-block"></li>
-                    <li id="right-block"></li>
-                </ul>
+                <div id="features">
+                    <ul>
+                        <li id="left-block"></li>
+                        <li id="middle-block"></li>
+                        <li id="right-block"></li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <footer>
-            <a id="button"></a>
-            <nav id="footer-menu">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Menu</a></li>
-                    <li><a href="#">Location</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </nav>
-            <p id="copyright">
-                Designed by <a href="#" title="Official website">Elegant WordPress Themes</a>
-                | Powered by  <a href="#" title="Official website">WordPress</a>
-            </p>
-        </footer>
+            <footer id="footer">
+                <div id="footer-boxs" class="clearfix row">
+                    <!-- BOX 1 -->
+                    <div id="box-1" class="col-md-4">
+                        <p id="footer-logo">
+                            <div>
+                                <img alt="" src="img/logo-green.png">
+                                <h4 id="logo-name">mycuisine</h4>
+                            </div>
+                            <span>© MyCuisine Theme, 2010</span>
+                        </p>
+                        <p>
+                            Donec placerat sodales aliquet. Vivamus neque nulla, fermentum id ultrices at,
+                            vulputate et risus. Aenean non lectus ipsum.
+                            Curabitur sagittis urna vel elit euismod faucibus.
+                            Aliquam sed magna id dolor cursus ullamcorper ut commodo nunc.
+                            Mauris suscipit, dolor et tristique scelerisque, leo neque congue libero,
+                            mollis accumsan nulla
+                        </p>
+                    </div>
+                    <!-- BOX 2 -->
+                    <div id="box-2" class="col-md-4">
+                        <h4>Recent Comments</h4>
+                        <ul id="recentcomments">
+                            <li class="recentcomments"><a>Recent Comments</a></li>
+                            <li class="recentcomments"><a>Recent Comments</a></li>
+                        </ul>
+                    </div>
+                    <!-- BOX 3 -->
+                    <div id="box-3" class="col-md-4">
+                        <h4 alt="Text ">Text Widget</h4>
+                        <div>
+                            Aliquam sed magna id dolor cursus ullamcorper ut commodo nunc.
+                            Donec placerat sodales aliquet.Vivamus neque nulla, fermentum id ultrices at, vulputate et risus.
+                            Aenean non lectus ipsum. Curabitur sagittis urna vel elit euismod faucibus.
+                            Aliquam sed magna id dolor cursus ullamcorper ut commodo nunc.
+                            Mauris suscipit, dolor et tristique scelerisque, leo neque congue libero, mollis accumsan nulla
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav nav-justified">
+                                <li class="active"><a href="#">Home</a></li>
+                                <li><a href="#">Location</a></li>
+                                <li><a href="#">Menu</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <p id="copyright">
+                    Designed by <a href="#" title="Official website">Elegant WordPress Themes</a>
+                    | Powered by  <a href="#" title="Official website">WordPress</a>
+                </p>
+            </footer>
+        </div>
     </div>
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/bootstrap.min.js"></script>
 </body>
 </html>

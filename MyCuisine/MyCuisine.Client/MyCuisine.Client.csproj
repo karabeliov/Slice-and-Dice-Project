@@ -72,6 +72,10 @@
     <Content Include="css\app.min.css">
       <DependentUpon>app.css</DependentUpon>
     </Content>
+    <Content Include="css\bootstrap\bootstrap-theme.css" />
+    <Content Include="css\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap\bootstrap.css" />
+    <Content Include="css\bootstrap\bootstrap.min.css" />
     <Content Include="css\img\bottom-bg.png" />
     <Content Include="css\img\bottom-menu.png" />
     <Content Include="css\img\bottom-shadow.png" />
@@ -80,6 +84,7 @@
     <Content Include="css\img\content-bg.png" />
     <Content Include="css\img\footer-bg.png" />
     <Content Include="css\img\frame.png" />
+    <Content Include="css\img\menu\current-bg.png" />
     <Content Include="css\img\menu\dropdown-bg.png" />
     <Content Include="css\img\menu\menu-bar.png" />
     <Content Include="css\img\menu\menu-bg.png" />
@@ -98,10 +103,17 @@
     <Content Include="css\img\testimonials\testimonials-content-bg.png" />
     <Content Include="css\img\testimonials\testimonials-top.png" />
     <Content Include="css\img\top-bg.png" />
+    <Content Include="img\logo-green.png" />
     <Content Include="img\logo.png" />
     <Content Include="lib\angular\angular-route.min.js" />
+    <Content Include="css\bootstrap\bootstrap-theme.css.map" />
+    <Content Include="css\bootstrap\bootstrap-theme.min.css.map" />
+    <Content Include="css\bootstrap\bootstrap.css.map" />
+    <Content Include="css\bootstrap\bootstrap.min.css.map" />
     <None Include="lib\angular\angular.intellisense.js" />
     <Content Include="lib\angular\angular.min.js" />
+    <Content Include="lib\bootstrap\bootstrap.min.js" />
+    <Content Include="lib\bootstrap\npm.js" />
     <Content Include="lib\jquery\jquery.min.js" />
     <Content Include="packages.config" />
     <Content Include="css\app.scss" />
