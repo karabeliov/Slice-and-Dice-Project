@@ -92,6 +92,9 @@
     <Content Include="css\img\price.png" />
     <Content Include="css\img\quote-bg.png" />
     <Content Include="css\img\quote-shadow.png" />
+    <Content Include="css\img\slider\a22.png" />
+    <Content Include="css\img\slider\b05.png" />
+    <Content Include="css\img\slider\loading.gif" />
     <Content Include="css\img\stars.png" />
     <Content Include="css\img\switcher\switcher-item-active.png" />
     <Content Include="css\img\switcher\switcher-item.png" />
@@ -105,6 +108,16 @@
     <Content Include="css\img\top-bg.png" />
     <Content Include="img\logo-green.png" />
     <Content Include="img\logo.png" />
+    <Content Include="blog.html" />
+    <Content Include="img\slider\slide-1-phone.png" />
+    <Content Include="img\slider\slide-1.jpg" />
+    <Content Include="img\slider\slide-2.jpg" />
+    <Content Include="img\slider\slide-3.jpg" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\slider\jssor.slider.mini.js" />
+    <Content Include="js\slider\loader.js" />
+    <Content Include="menu.html" />
+    <Content Include="location.html" />
     <Content Include="lib\angular\angular-route.min.js" />
     <Content Include="css\bootstrap\bootstrap-theme.css.map" />
     <Content Include="css\bootstrap\bootstrap-theme.min.css.map" />
@@ -136,9 +149,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="js\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

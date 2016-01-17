@@ -9,11 +9,11 @@ $basic-color: #716851;
 $basic-link-color: #5a863c;
 $header-color: #ffffff;
 
-%basic_title_style {    //h1, h2, h3, h4, h5, h6
-	padding-bottom: 5px;
-	letter-spacing: -1px;
-	line-height: 1em;
-	font-weight: normal;
+%basic_title_style { //h1, h2, h3, h4, h5, h6
+    padding-bottom: 5px;
+    letter-spacing: -1px;
+    line-height: 1em;
+    font-weight: normal;
 }
 
 //PAGE
@@ -23,156 +23,398 @@ $top-shadow: url(img/top-bg.png);
 $logo-bg: url(img/menu/menu-bar.png);
 $menu-bg: url(img/menu/menu-bg.png);
 $active-bg: url(img/menu/current-bg.png);
+$link-color: #eee4ba;
+$dropdown: url(img/menu/dropdown-bg.png);
 //FOOTER
 $footer-bg: url(img/footer-bg.png);
 $footer-line-color: #dcd7b1;
+
 body {
     //BASIC STYLES
     background-color: $bg-color;
-    line-height: $basic-line-height; 
-    font-family: $basic-font-family; 
-    font-size: $basic-font-size; 
-    color: $basic-color; 
+    line-height: $basic-line-height;
+    font-family: $basic-font-family;
+    font-size: $basic-font-size;
+    color: $basic-color;
 
-    a { 
-        text-decoration: none; 
-        color: $basic-link-color; 
+    a {
+        text-decoration: none;
+        color: $basic-link-color;
 
-        &:hover { 
-            text-decoration: underline; 
+        &:hover {
+            text-decoration: underline;
         }
     }
 
     h1 {
-	    @extend %basic_title_style;
-	    font-size: 30px;
-    }
-    h2 {
-	    @extend %basic_title_style;
-	    font-size: 24px;
-    }
-    h3 {
-	    @extend %basic_title_style;
-	    font-size: 22px;
-    }
-    h4 {
-	    @extend %basic_title_style;
-	    font-size: 18px;
-    }
-    h5 {
-	    @extend %basic_title_style;
-	    font-size: 16px;
-    }
-    h6 {
-	    @extend %basic_title_style;
-	    font-size: 14px;
+        @extend %basic_title_style;
+        font-size: 30px;
     }
 
-    p { 
-        padding-bottom: 10px; 
-        line-height: 24px; 
+    h2 {
+        @extend %basic_title_style;
+        font-size: 24px;
+    }
+
+    h3 {
+        @extend %basic_title_style;
+        font-size: 22px;
+    }
+
+    h4 {
+        @extend %basic_title_style;
+        font-size: 18px;
+    }
+
+    h5 {
+        @extend %basic_title_style;
+        font-size: 16px;
+    }
+
+    h6 {
+        @extend %basic_title_style;
+        font-size: 14px;
+    }
+
+    p {
+        padding-bottom: 10px;
+        line-height: 24px;
     }
 
     .clearfix:after {
-	    visibility: hidden;
-	    display: block;
-	    font-size: 0;
-	    content: " ";
-	    clear: both;
-	    height: 0;
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+    //MAIN STYLES
+    .home {
+        #container {
+            background: none;
+
+        /* jssor slider bullet navigator skin 05 css */
+        /*
+        .jssorb05 div           (normal)
+        .jssorb05 div:hover     (normal mouseover)
+        .jssorb05 .av           (active)
+        .jssorb05 .av:hover     (active mouseover)
+        .jssorb05 .dn           (mousedown)
+        */
+        .jssorb05 {
+            position: absolute;
+        }
+        .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+            position: absolute;
+            /* size of bullet elment */
+            width: 16px;
+            height: 16px;
+            background: url('img/slider/b05.png') no-repeat;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .jssorb05 div { background-position: -7px -7px; }
+        .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+        .jssorb05 .av { background-position: -67px -7px; }
+        .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+
+        /* jssor slider arrow navigator skin 22 css */
+        /*
+        .jssora22l                  (normal)
+        .jssora22r                  (normal)
+        .jssora22l:hover            (normal mouseover)
+        .jssora22r:hover            (normal mouseover)
+        .jssora22l.jssora22ldn      (mousedown)
+        .jssora22r.jssora22rdn      (mousedown)
+        */
+        .jssora22l, .jssora22r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 40px;
+            height: 58px;
+            cursor: pointer;
+            background: url('img/slider/a22.png') center center no-repeat;
+            overflow: hidden;
+        }
+        .jssora22l { background-position: -10px -31px; }
+        .jssora22r { background-position: -70px -31px; }
+        .jssora22l:hover { background-position: -130px -31px; }
+        .jssora22r:hover { background-position: -190px -31px; }
+        .jssora22l.jssora22ldn { background-position: -250px -31px; }
+        .jssora22r.jssora22rdn { background-position: -310px -31px; }
+
+            #header {
+                position: absolute;
+                top: 0;
+                width: 100%;
+            }
+        }
     }
 
-    //MAIN STYLES
-    background-color: $bg-color; 
-    #page { 
-        background: $top-shadow repeat-x;
-    
-        #container {
-            background: $page-bg no-repeat;
-            //HEADER
-            #header {
-                padding-left: 140px;
-                padding-top: 26px;
-                text-align: left;
-                height: 465px; 
+    #container {
+        background: $page-bg no-repeat;
+        #slider {
+            background-image: url('../img/slide-1.jpg');
+            position: relative; 
+            width: 100%; 
+            height: 465px; 
+            display: none;
+        }
+        //HEADER
+        #header {
+            background: $top-shadow repeat-x;
+            padding-left: 11%;
+            padding-top: 26px;
+            text-align: left;
+            height: 255px;
 
-                .navbar-header {
-                    background: $logo-bg no-repeat; 
-                    height: 87px;
-                    .navbar-brand {
-                        float: none;
-                        margin-left: 5px;
-                    }
+            .navbar-header {
+                background: $logo-bg no-repeat;
+                height: 87px;
 
-                    #logo {
-                        display: inline-block;
-                        vertical-align: text-bottom;
-                    }
-                    #company-name {
-                        color: white;
-                        display: inline-block;
-                    }
-                }    
-            
-                .navbar-default {
-                    z-index: 1;
-                    .navbar-nav {
-                        background: $menu-bg repeat-x;
-                        float: left;
-                        margin-left: 40%;
-                        height: 70px;
-                        text-transform: uppercase;
-                        font-size: 12px;
-
-                        li {
-                            a {
-                                color: white;
-                                margin-top: 10px;
-                            }
-                        }
-                        .active {
-                            margin-top: -10px;
-                            a {
-                                background: $active-bg repeat-x 0 3px;
-                                color: #eee4ba !important;
-                                font-style: italic;
-                                height: 65px;
-                                padding-top: 25px;
-                            }
-                        }
-                    }   
+                .navbar-brand {
+                    float: none;
+                    margin-left: 5px;
                 }
-                
-                #menu-right { 
-                    width:2000px; 
-                    position: absolute; 
-                    left: 200px; 
-                    z-index: 0;
-                    top: 27px; 
-                    height: 70px; 
-                    background: $menu-bg repeat-x; 
-                }    
+
+                #logo {
+                    display: inline-block;
+                    vertical-align: text-bottom;
+                }
+
+                #company-name {
+                    color: white;
+                    display: inline-block;
+                }
             }
-            //FOOTER
-            #footer { 
-                background: $bg-color $footer-bg repeat-x; 
-                padding-top: 35px; 
 
-                #footer-boxs { 
-                    width:960px;
-                    margin:auto;
-                    border-bottom: 1px solid $footer-line-color; 
+            .navbar-default {
+                z-index: 1;
 
-                    #logo-name {
-                        display:inline-block;  
-                        color: black;
-                        text-shadow: none;
+                .navbar-toggle {
+                    margin-top: 15px;
+
+                    .icon-bar {
+                        background-color: #eee;
                     }
                 }
-        
-                #copyright {
-                    text-align: center;
+
+                .navbar-nav {
+                    //background: $menu-bg repeat-x;
+                    float: left;
+                    margin-left: 9%;
+                    height: 70px;
+                    text-transform: uppercase;
+                    font-size: 12px;
+
+                    li {
+                        a {
+                            color: white;
+                            margin-top: 10px;
+
+                            &:hover {
+                                color: $link-color;
+                            }
+                        }
+                    }
+
+                    .active {
+                        margin-top: -10px;
+
+                        a {
+                            background: $active-bg repeat-x 0 3px;
+                            color: $link-color !important;
+                            font-style: italic;
+                            height: 65px;
+                            padding-top: 25px;
+                        }
+                    }
+
+                    .dropdown-menu {
+                        background: #e7e7e7 $dropdown repeat-y;
+                        margin-top: 5px;
+                        border: none;
+                    }
                 }
+            }
+
+            #menu-bg {
+                width: 2000px;
+                position: absolute;
+                left: 28.8%;
+                z-index: 0;
+                top: 27px;
+                height: 70px;
+                background: $menu-bg repeat-x;
+            }
+
+            .category-name {
+                padding-top: 15px;
+                padding-left: 15px;
+
+                .category-title {
+                    color: #ffffff;
+                    font-size: 30px;
+                    font-style: normal;
+                    text-transform: uppercase;
+                    text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+                }
+
+                .meta-info {
+                    font-style: normal;
+                    font-weight: bold;
+                    font-family: Helvetica, Arial, sans-serif;
+                    font-size: 14px;
+                    color: #dacba7;
+                    text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+                    margin-top: -12px;
+
+                    a {
+                        color: #dacba7;
+
+                        a:hover {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+        //CONTENT
+        #content {
+            position: relative;
+            background: url(img/content-bg.png);
+            border-bottom: 1px solid #dddbbf;
+
+            .breadcrumb {
+                height: 72px;
+                color: $basic-color;
+                font-size: 14px;
+                text-shadow: $top-shadow;
+                text-transform: uppercase;
+                font-style: normal;
+                position: relative;
+
+                #breadcrumbs-text {
+                    display: inline-block;
+                    margin-top: 15px;
+                    padding-left: 7.5%;
+                }
+
+                #search-form {
+                    float: right;
+                    height: 37px;
+                    margin-top: 11px;
+
+                    #searchinput {
+                        background-color: #dddddd;
+                        border-radius: 20px;
+                        height: 35px;
+                        float: left;
+                        font-family: Georgia, serif;
+                        font-style: italic;
+                        margin: 0 20px 0 0;
+                        padding-left: 18px;
+                        font-size: 12px;
+                        color: #a1a0a0;
+                    }
+                }
+
+                #breadcrumbs-shadow {
+                    background: url(img/quote-shadow.png) no-repeat;
+                    width: 960px;
+                    height: 8px;
+                    left: 11%;
+                    bottom: -7px;
+                    position: absolute;
+                }
+            }
+
+            #left-area {
+                margin-left: 12%;
+                float: left;
+                width: 332px;
+                font-size: 14px;
+
+                .info-block {
+                    margin-bottom: 35px;
+                    color: #442917;
+
+                    p {
+                        text-transform: uppercase;
+                    }
+
+                    span {
+                        text-transform: lowercase;
+                        color: #716851;
+                    }
+                }
+            }
+
+            #gmaps-border {
+                padding: 5px;
+                border: 1px solid #e5e2c6;
+                background: #fff;
+                box-shadow: 1px 1px 1px #fff;
+                margin-bottom: 12px;
+            }
+
+            .location-page {
+                float: right;
+                margin-right: 5%;
+
+                #gmaps-container {
+                    width: 591px;
+                    height: 403px;
+
+                    #embed-map-display {
+                        img {
+                            max-width: none !important;
+                            background: none !important;
+                            font-size: inherit;
+                        }
+                    }
+                }
+            }
+
+            #bottom-shadow {
+                background: url(img/bottom-shadow.png) no-repeat;
+                width: 960px;
+                height: 9px;
+                position: absolute;
+                left: 11%;
+                bottom: -1px;
+            }
+        }
+        //FOOTER
+        #footer {
+            background: $bg-color $footer-bg repeat-x;
+            padding-top: 35px;
+
+            #footer-boxs {
+                width: 960px;
+                margin: auto;
+                border-bottom: 1px solid $footer-line-color;
+
+                #logo-name {
+                    display: inline-block;
+                    color: black;
+                    text-shadow: none;
+                    font-size: xx-large;
+                }
+            }
+
+            #bottom-menu {
+                text-align: center;
+
+                li {
+                    display: inline-block;
+                }
+            }
+
+            #copyright {
+                text-align: center;
             }
         }
     }
