@@ -2,10 +2,11 @@
 
 <html lang="en">
 <head>
+    <link rel="icon" href="fav.ico">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <title>My Cuisine</title>
-    <meta name="description" content="My Cuisine">
+    <title>Bulgarian Food</title>
+    <meta name="description" content="Bulgarian Food">
     <meta name="author" content="Kristian Karabeliov">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,23 +20,27 @@
 <body>
     <div class="home">
         <div id="container">
-            <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0; left: 0; width: 1300px; height: 465px; overflow: hidden; visibility: hidden;">
+            <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0; left: 0; width: 1300px; height: 475px; overflow: hidden; visibility: hidden;">
                 <!-- Loading Screen -->
-                <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
-                    <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-                    <div style="position:absolute;display:block;background:url('css/img/slider/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+                <div data-u="loading" style="position: absolute; top: 0; left: 0;">
+                    <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0; left: 0; width: 100%; height: 100%;"></div>
+                    <div style="position:absolute;display:block;background:url('css/img/slider/loading.gif') no-repeat center center;top:0;left:0;width:100%;height:100%;"></div>
                 </div>
-                <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
+                <div data-u="slides" style="cursor: default; position: relative; top: 0; left: 0; width: 1300px; height: 500px; overflow: hidden;">
                     <div data-p="225.00" style="display: none;">
                         <img data-u="image" src="img/slider/slide-1.jpg" />
-                        <div style="position: absolute; top: 30px; left: 30px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 60px;">TOUCH SWIPE SLIDER</div>
-                        <div style="position: absolute; top: 300px; left: 30px; width: 480px; height: 120px; font-size: 30px; color: #ffffff; line-height: 38px;">Build your slider with anything, includes image, content, text, html, photo, picture</div>
-                        <div data-u="caption" data-t="0" style="position: absolute; top: 100px; left: 600px; width: 445px; height: 300px;">
-                            <img src="img/slider/slide-1-phone.png" style="position: absolute; top: 0px; left: 0px; width: 445px; height: 300px;" />
+                        <div class="slider-title">Bulgarian Food</div>
+                        <div class="slider-description">
+                            Recipes are formed for centuries,
+                            with traditions in flavoring and established methods and techniques for preparing,
+                            presenting a fusion of European and Asian cuisine.
                         </div>
                     </div>
                     <div data-p="225.00" style="display: none;">
                         <img data-u="image" src="img/slider/slide-2.jpg" />
+                        <div class="slider-title">Drinks</div>
+                        <div class="slider-description">Build your slider with anything, includes image, content, text, html, photo, picture</div>
+
                     </div>
                     <div data-p="225.00" style="display: none;">
                         <img data-u="image" src="img/slider/slide-3.jpg" />
@@ -47,8 +52,8 @@
                     <div data-u="prototype" style="width:16px;height:16px;"></div>
                 </div>
                 <!-- Arrow Navigator -->
-                <span data-u="arrowleft" class="jssora22l" style="top:0px;left:12px;width:40px;height:58px;" data-autocenter="2"></span>
-                <span data-u="arrowright" class="jssora22r" style="top:0px;right:12px;width:40px;height:58px;" data-autocenter="2"></span>
+                <span data-u="arrowleft" class="jssora22l" style="top:0;left:12px;width:40px;height:58px;" data-autocenter="2"></span>
+                <span data-u="arrowright" class="jssora22r" style="top:0;right:12px;width:40px;height:58px;" data-autocenter="2"></span>
             </div>
 
             <header id="header">
@@ -63,7 +68,7 @@
                             </button>
                             <a class="navbar-brand" href="#">
                                 <img src="img/logo.png" alt="Logo" id="logo" />
-                                <h1 id="company-name">mycuisine</h1>
+                                <h1 id="company-name">Bulgarian Food</h1>
                             </a>
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
@@ -86,33 +91,89 @@
                 </nav>
                 <div id="menu-bg"></div>
             </header>
+
             <div id="content" class="clearfix">
-                <div class="breadcrumb">
-                    <div class="container clearfix">
-                        <div id="breadcrumbs-shadow"></div>
-                        <span id="breadcrumbs-text">
-                            <a href="#">Home</a>
-                            <span class="raquo">»</span> Location
-                        </span>
-                        <div id="search-form">
-                            <input type="search" class="input-sm" placeholder="Search this website..." id="searchinput">
-                            <input type="submit" class="btn btn-success" value="Search">
-                        </div>
+                <div id="quote">
+                    <div class="container">
+                        <div id="top-shadow"></div>
+                        <p id="quote-line-1">Are you hungry?</p>
+                        <p id="quote-line-2">Try the best traditional foods in Bulgaria</p>
                     </div>
                 </div>
-                <div id="breadcrumbs-shadow"></div>
-                <h2 id="content-title"></h2>
-                <p id="content-description"></p>
 
                 <div id="features">
                     <ul>
-                        <li id="left-block"></li>
-                        <li id="middle-block"></li>
-                        <li id="right-block"></li>
+                        <li id="left-block" class="box">
+                            <h3 class="title">Chef's Recommendations</h3>
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="img/foods/bob_chorba.png" class="item-image" alt="Pesto Risotto" width="56" height="56">
+                                    <span class="overlay"></span>
+                                </a>
+                            </div>
+                            <h4 class="title"><a href="#">Bean Soup</a></h4>
+                            <p>Bean soup is a traditional dish of Bulgarian cuisine...</p>
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="img/foods/banica.png" class="item-image" alt="Tomato Basil Pasta" width="56" height="56">
+                                    <span class="overlay"></span>
+                                </a>
+                            </div>
+                            <h4 class="title"><a href="#">Banica</a></h4>
+                            <p>Banica is baked product of rolled or stacked...</p>
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="img/foods/patatnik.png" class="item-image" alt="Delicious Pasta" width="56" height="56">
+                                    <span class="overlay"></span>
+                                </a>
+                            </div>
+                            <h4 class="title"><a href="#">Patatnik</a></h4>
+                            <p>For its preparation used potatoes and cheese. Can be...</p>
+                        </li>
+                        <li id="middle-block" class="box">
+                            <div class="home-block">
+                                <h3 class="title">Location and hours of operation</h3>
+                                <div id="gmaps-border">
+                                    <div id="gmaps-container">
+                                        <div style="width:270px;overflow:hidden;height:170px;max-width:100%;">
+                                            <div id="embed-map-display" style="height:100%; width:100%;max-width:100%;">
+                                                <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Sofia,+Bulgaria+&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="hours_of_work">Mon-Fri</span><span class="work_hours_text">8am-6pm</span><span class="hours_of_work">Sat-Sun</span><span class="work_hours_text">8am-10pm</span>
+                            </div>
+                        </li>
+                        <li id="right-block" class="box">
+                            <div class="home-block last">
+                                <h3 class="title">Customer Testimonials</h3>
+                                <div class="testimonials-item">
+                                    <div class="testimonials-item-bottom">
+                                        <div class="testimonials-item-content">
+                                            <div class="thumb">
+                                                <img src="img/my-photo.jpg" class="item-image" alt="avatar" width="56" height="56">
+                                                <span class="overlay"></span>
+                                            </div>
+                                            <p class="author">Kristian Karabeliov</p>
+                                            <p>
+                                                The restaurant is in the typical Bulgarian style.
+                                                The food is good-nothing to complain about.
+                                                Really delicious and you will enjoy the Bulgarian way of preparing meals.
+                                                The place also offers a programme with folklore dancers.
+                                                The music is too loud when they have this singer/ programme. The service is also good.
+                                                The prices are just average.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
 
                 <div id="bottom-shadow"></div>
+                <a id="browse-menu" class="btn btn-warning">Click Here To Browse The Menu</a>
             </div>
 
             <footer id="footer">
@@ -130,8 +191,8 @@
                 </nav>
 
                 <p id="copyright">
-                    Designed by <a href="#" title="Official website">Elegant WordPress Themes</a>
-                    | Powered by  <a href="#" title="Official website">WordPress</a>
+                    Designed by <a href="http://karabeliov.com/" title="Official website">Kristian Karabeliov</a>
+                    | Powered by  <a href="http://telerikacademy.com/" title="Official website">Telerik Academy</a>
                 </p>
             </footer>
         </div>

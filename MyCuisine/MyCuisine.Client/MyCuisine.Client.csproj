@@ -79,8 +79,6 @@
     <Content Include="css\img\bottom-bg.png" />
     <Content Include="css\img\bottom-menu.png" />
     <Content Include="css\img\bottom-shadow.png" />
-    <Content Include="css\img\button-green.png" />
-    <Content Include="css\img\button.png" />
     <Content Include="css\img\content-bg.png" />
     <Content Include="css\img\footer-bg.png" />
     <Content Include="css\img\frame.png" />
@@ -106,13 +104,30 @@
     <Content Include="css\img\testimonials\testimonials-content-bg.png" />
     <Content Include="css\img\testimonials\testimonials-top.png" />
     <Content Include="css\img\top-bg.png" />
+    <Content Include="fav.ico" />
+    <Content Include="img\foods\banica.png" />
+    <Content Include="img\foods\bob_chorba.png" />
+    <Content Include="img\foods\bulgarian-shopska-salad-2.jpg" />
+    <Content Include="img\foods\Bulgarian_Food_1.JPG" />
+    <Content Include="img\foods\bulgarinafood.jpg" />
+    <Content Include="img\foods\meat-1.jpg" />
+    <Content Include="img\foods\meat.jpg" />
+    <Content Include="img\foods\mekici.jpg" />
+    <Content Include="img\foods\patatnik.png" />
     <Content Include="img\logo-green.png" />
     <Content Include="img\logo.png" />
     <Content Include="blog.html" />
+    <Content Include="img\my-photo.jpg" />
     <Content Include="img\slider\slide-1-phone.png" />
     <Content Include="img\slider\slide-1.jpg" />
     <Content Include="img\slider\slide-2.jpg" />
     <Content Include="img\slider\slide-3.jpg" />
+    <Content Include="js\custom.es5.js">
+      <DependentUpon>custom.js</DependentUpon>
+    </Content>
+    <Content Include="js\custom.es5.min.js">
+      <DependentUpon>custom.es5.js</DependentUpon>
+    </Content>
     <Content Include="js\custom.js" />
     <Content Include="js\slider\jssor.slider.mini.js" />
     <Content Include="js\slider\loader.js" />
