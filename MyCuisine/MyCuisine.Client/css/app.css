@@ -38,69 +38,188 @@ body {
     content: " ";
     clear: both;
     height: 0; }
-  body .home #container {
-    background: none;
-    /* jssor slider arrow navigator skin 22 css */ }
-    body .home #container .slider-title {
-      position: absolute;
-      top: 170px;
-      left: 165px;
-      width: 360px;
-      height: 60px;
-      font-size: 48px;
-      color: #ffffff;
-      line-height: 60px;
-      text-transform: uppercase; }
-    body .home #container .slider-description {
-      position: absolute;
-      top: 300px;
-      left: 165px;
-      width: 360px;
-      height: 100px;
-      font-size: 16px;
-      color: #ffffff;
-      line-height: 21px;
+  body #features {
+    text-align: left;
+    margin: 0 auto;
+    width: 960px;
+    position: relative; }
+    body #features #middle-block {
+      width: 280px; }
+      body #features #middle-block #gmaps-container {
+        width: 270px;
+        height: 170px; }
+      body #features #middle-block span.hours_of_work {
+        color: #cac6a1;
+        font-style: normal;
+        font-size: 14px;
+        text-transform: uppercase; }
+      body #features #middle-block span.work_hours_text {
+        font-size: 14px;
+        font-style: normal;
+        color: #442917;
+        margin: 0 8px 0 6px; }
+    body #features #right-block {
+      margin-right: 0; }
+    body #features .box {
+      float: left;
+      width: 260px;
+      margin-right: 80px;
+      margin-bottom: 60px;
       font-family: Georgia, serif;
-      font-weight: bold; }
-    body .home #container .jssorb05 {
-      position: absolute; }
-    body .home #container .jssorb05 div, body .home #container .jssorb05 div:hover, body .home #container .jssorb05 .av {
-      position: absolute;
-      /* size of bullet elment */
-      width: 16px;
-      height: 16px;
-      background: url("img/slider/b05.png") no-repeat;
-      overflow: hidden;
-      cursor: pointer; }
-    body .home #container .jssorb05 div {
-      background-position: -7px -7px; }
-    body .home #container .jssorb05 div:hover, body .home #container .jssorb05 .av:hover {
-      background-position: -37px -7px; }
-    body .home #container .jssorb05 .av {
-      background-position: -67px -7px; }
-    body .home #container .jssorb05 .dn, body .home #container .jssorb05 .dn:hover {
-      background-position: -97px -7px; }
-    body .home #container .jssora22l, body .home #container .jssora22r {
+      color: #92907c; }
+      body #features .box p {
+        line-height: 21px;
+        font-style: italic; }
+      body #features .box h3.title {
+        color: #cac6a1;
+        font-size: 16px;
+        text-transform: uppercase;
+        padding-bottom: 13px;
+        text-shadow: 1px 1px 1px #ffffff; }
+      body #features .box h4.title {
+        font-size: 22px;
+        text-shadow: 1px 1px 1px #ffffff; }
+        body #features .box h4.title a {
+          text-decoration: none;
+          color: #442917; }
+      body #features .box .thumb {
+        display: block;
+        float: left;
+        position: relative;
+        margin-right: 22px; }
+      body #features .box .item-image {
+        margin-top: 6px;
+        margin-left: 6px; }
+      body #features .box span.overlay {
+        background: url("img/frame.png") no-repeat;
+        display: block;
+        width: 69px;
+        height: 69px;
+        position: absolute;
+        top: 0;
+        left: 0; }
+    body #features .testimonials-item {
+      background: url(img/testimonials/testimonials-top.png) no-repeat;
+      padding-top: 9px;
+      width: 259px; }
+      body #features .testimonials-item .thumb {
+        display: block;
+        float: left;
+        position: relative;
+        margin: 5px 21px 0 14px; }
+      body #features .testimonials-item .item-image {
+        margin-top: 6px;
+        margin-left: 6px; }
+      body #features .testimonials-item p.author {
+        color: #442917;
+        font-size: 22px;
+        font-style: normal;
+        padding-top: 12px;
+        padding-bottom: 0;
+        text-shadow: 1px 1px 1px #ffffff; }
+      body #features .testimonials-item p {
+        padding-right: 20px;
+        padding-left: 20px; }
+    body #features .testimonials-item-bottom {
+      background: url(img/testimonials/testimonials-bottom.png) no-repeat left bottom;
+      padding-bottom: 20px;
+      width: 259px; }
+    body #features .testimonials-item-content {
+      background: url(img/testimonials/testimonials-content-bg.png) repeat-y;
+      width: 259px; }
+    body #features span.price-tag {
       display: block;
       position: absolute;
-      /* size of arrow element */
-      width: 40px;
-      height: 58px;
-      cursor: pointer;
-      background: url("img/slider/a22.png") center center no-repeat;
-      overflow: hidden; }
-    body .home #container .jssora22l {
-      background-position: -10px -31px; }
-    body .home #container .jssora22r {
-      background-position: -70px -31px; }
-    body .home #container .jssora22l:hover {
-      background-position: -130px -31px; }
-    body .home #container .jssora22r:hover {
-      background-position: -190px -31px; }
-    body .home #container .jssora22l.jssora22ldn {
-      background-position: -250px -31px; }
-    body .home #container .jssora22r.jssora22rdn {
-      background-position: -310px -31px; }
+      top: 12px;
+      left: -15px;
+      font-size: 18px;
+      height: 31px; }
+      body #features span.price-tag span {
+        display: block;
+        background: url(img/price.png) no-repeat top right;
+        padding: 1px 5px 10px 10px;
+        color: #fff;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        font-style: normal; }
+  body .home #container {
+    background: none; }
+    body .home #container #slider {
+      position: relative;
+      /* jssor slider arrow navigator skin 22 css */ }
+      body .home #container #slider .slider-title {
+        position: absolute;
+        top: 170px;
+        left: 165px;
+        width: 360px;
+        height: 60px;
+        font-size: 48px;
+        color: #ffffff;
+        line-height: 60px;
+        text-transform: uppercase; }
+      body .home #container #slider .slider-description {
+        position: absolute;
+        top: 300px;
+        left: 165px;
+        width: 360px;
+        height: 100px;
+        font-size: 16px;
+        color: #ffffff;
+        line-height: 21px;
+        font-family: Georgia, serif;
+        font-weight: bold; }
+      body .home #container #slider .jssorb05 {
+        position: absolute; }
+      body .home #container #slider .jssorb05 div, body .home #container #slider .jssorb05 div:hover, body .home #container #slider .jssorb05 .av {
+        position: absolute;
+        /* size of bullet elment */
+        width: 16px;
+        height: 16px;
+        background: url("img/slider/b05.png") no-repeat;
+        overflow: hidden;
+        cursor: pointer; }
+      body .home #container #slider .jssorb05 div {
+        background-position: -7px -7px; }
+      body .home #container #slider .jssorb05 div:hover, body .home #container #slider .jssorb05 .av:hover {
+        background-position: -37px -7px; }
+      body .home #container #slider .jssorb05 .av {
+        background-position: -67px -7px; }
+      body .home #container #slider .jssorb05 .dn, body .home #container #slider .jssorb05 .dn:hover {
+        background-position: -97px -7px; }
+      body .home #container #slider .jssora22l, body .home #container #slider .jssora22r {
+        display: block;
+        position: absolute;
+        /* size of arrow element */
+        width: 40px;
+        height: 58px;
+        cursor: pointer;
+        background: url("img/slider/a22.png") center center no-repeat;
+        overflow: hidden; }
+      body .home #container #slider .jssora22l {
+        background-position: -10px -31px; }
+      body .home #container #slider .jssora22r {
+        background-position: -70px -31px; }
+      body .home #container #slider .jssora22l:hover {
+        background-position: -130px -31px; }
+      body .home #container #slider .jssora22r:hover {
+        background-position: -190px -31px; }
+      body .home #container #slider .jssora22l.jssora22ldn {
+        background-position: -250px -31px; }
+      body .home #container #slider .jssora22r.jssora22rdn {
+        background-position: -310px -31px; }
+      body .home #container #slider .slide-top-shadow {
+        background: url(img/top-bg.png) repeat-x;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 11px; }
+      body .home #container #slider .slide-bottom-shadow {
+        background: url(img/bottom-bg.png) repeat-x;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 9px; }
     body .home #container #header {
       position: absolute;
       top: 0;
@@ -128,102 +247,13 @@ body {
           text-shadow: 1px 1px 1px #ffffff;
           text-transform: uppercase;
           font-style: normal; }
-    body .home #container #features {
-      text-align: left;
-      margin: 0 auto;
-      width: 960px;
-      position: relative; }
-      body .home #container #features #middle-block {
-        width: 280px; }
-        body .home #container #features #middle-block #gmaps-container {
-          width: 270px;
-          height: 170px; }
-        body .home #container #features #middle-block span.hours_of_work {
-          color: #cac6a1;
-          font-style: normal;
-          font-size: 14px;
-          text-transform: uppercase; }
-        body .home #container #features #middle-block span.work_hours_text {
-          font-size: 14px;
-          font-style: normal;
-          color: #442917;
-          margin: 0 8px 0 6px; }
-      body .home #container #features #right-block {
-        margin-right: 0; }
-      body .home #container #features .box {
-        float: left;
-        width: 260px;
-        margin-right: 80px;
-        margin-bottom: 60px;
-        font-family: Georgia, serif;
-        color: #92907c; }
-        body .home #container #features .box p {
-          line-height: 21px;
-          font-style: italic; }
-        body .home #container #features .box h3.title {
-          color: #cac6a1;
-          font-size: 16px;
-          text-transform: uppercase;
-          padding-bottom: 13px;
-          text-shadow: 1px 1px 1px #ffffff; }
-        body .home #container #features .box h4.title {
-          font-size: 22px;
-          text-shadow: 1px 1px 1px #ffffff; }
-          body .home #container #features .box h4.title a {
-            text-decoration: none;
-            color: #442917; }
-        body .home #container #features .box .thumb {
-          display: block;
-          float: left;
-          position: relative;
-          margin-right: 22px; }
-        body .home #container #features .box .item-image {
-          margin-top: 6px;
-          margin-left: 6px; }
-        body .home #container #features .box span.overlay {
-          background: url("img/frame.png") no-repeat;
-          display: block;
-          width: 69px;
-          height: 69px;
-          position: absolute;
-          top: 0;
-          left: 0; }
-      body .home #container #features .testimonials-item {
-        background: url(img/testimonials/testimonials-top.png) no-repeat;
-        padding-top: 9px;
-        width: 259px; }
-        body .home #container #features .testimonials-item .thumb {
-          display: block;
-          float: left;
-          position: relative;
-          margin: 5px 21px 0 14px; }
-        body .home #container #features .testimonials-item .item-image {
-          margin-top: 6px;
-          margin-left: 6px; }
-        body .home #container #features .testimonials-item p.author {
-          color: #442917;
-          font-size: 22px;
-          font-style: normal;
-          padding-top: 12px;
-          padding-bottom: 0;
-          text-shadow: 1px 1px 1px #ffffff; }
-        body .home #container #features .testimonials-item p {
-          padding-right: 20px;
-          padding-left: 20px; }
-      body .home #container #features .testimonials-item-bottom {
-        background: url("img/testimonials/testimonials-bottom.png") no-repeat left bottom;
-        padding-bottom: 20px;
-        width: 259px; }
-      body .home #container #features .testimonials-item-content {
-        background: url("img/testimonials/testimonials-content-bg.png") repeat-y;
-        width: 259px; }
     body .home #container #bottom-menu {
       padding-top: 30px;
       padding-bottom: 15px; }
   body #container {
     background: url("img/page-top.jpg") no-repeat; }
     body #container #header {
-      background: url(img/top-bg.png) repeat-x;
+      background: url(img/quote-shadow.png) repeat-x;
       padding-left: 11%;
       padding-top: 26px;
       text-align: left;
@@ -238,7 +268,7 @@ body {
           display: inline-block;
           vertical-align: text-bottom; }
         body #container #header .navbar-header #company-name {
-          color: white;
+          color: #ffffff;
           display: inline-block; }
       body #container #header .navbar-default {
         z-index: 1; }
@@ -253,7 +283,7 @@ body {
           text-transform: uppercase;
           font-size: 12px; }
           body #container #header .navbar-default .navbar-nav li a {
-            color: white;
+            color: #ffffff;
             margin-top: 10px; }
             body #container #header .navbar-default .navbar-nav li a:hover {
               color: #eee4ba; }
@@ -272,7 +302,7 @@ body {
       body #container #header #menu-bg {
         width: 2000px;
         position: absolute;
-        left: 28.9%;
+        left: 32.7%;
         z-index: 0;
         top: 27px;
         height: 70px;
@@ -297,16 +327,16 @@ body {
           body #container #header .category-name .meta-info a {
             color: #dacba7; }
             body #container #header .category-name .meta-info a a:hover {
-              color: #fff; }
+              color: #ffffff; }
     body #container #content {
       position: relative;
       background: url(img/content-bg.png);
       border-bottom: 1px solid #dddbbf; }
       body #container #content .breadcrumb {
-        height: 72px;
+        height: 70px;
         color: #716851;
         font-size: 14px;
-        text-shadow: url(img/top-bg.png);
+        text-shadow: url(img/quote-shadow.png);
         text-transform: uppercase;
         font-style: normal;
         position: relative; }
@@ -317,6 +347,7 @@ body {
         body #container #content .breadcrumb #search-form {
           float: right;
           height: 37px;
+          margin-right: 9%;
           margin-top: 11px; }
           body #container #content .breadcrumb #search-form #searchinput {
             background-color: #dddddd;
@@ -352,8 +383,8 @@ body {
       body #container #content #gmaps-border {
         padding: 5px;
         border: 1px solid #e5e2c6;
-        background: #fff;
-        box-shadow: 1px 1px 1px #fff;
+        background: #ffffff;
+        box-shadow: 1px 1px 1px #ffffff;
         margin-bottom: 12px; }
       body #container #content .location-page {
         float: right;

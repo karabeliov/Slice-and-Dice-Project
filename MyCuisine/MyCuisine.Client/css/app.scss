@@ -7,7 +7,8 @@ $basic-font-family: Georgia, serif;
 $basic-font-size: 12px;
 $basic-color: #716851;
 $basic-link-color: #5a863c;
-$header-color: #ffffff;
+$white: #ffffff;
+$text-shadow: 1px 1px 1px $white;
 
 %basic_title_style { //h1, h2, h3, h4, h5, h6
     padding-bottom: 5px;
@@ -18,6 +19,9 @@ $header-color: #ffffff;
 
 //PAGE
 $page-bg: url('img/page-top.jpg');
+    //SLIDER
+$slider-bullet: url('img/slider/b05.png'); 
+$slider-arrow: url('img/slider/a22.png');
 //HEADER
 $top-shadow: url(img/top-bg.png);
 $logo-bg: url(img/menu/menu-bar.png);
@@ -25,10 +29,20 @@ $menu-bg: url(img/menu/menu-bg.png);
 $active-bg: url(img/menu/current-bg.png);
 $link-color: #eee4ba;
 $dropdown: url(img/menu/dropdown-bg.png);
+$quote-bg: url(img/quote-bg.png);
+$stars: url(img/stars.png);
+// CONTENT
+$content-bg: url(img/content-bg.png); 
+$top-shadow: url(img/quote-shadow.png); 
+$bottom-shadow: url(img/bottom-shadow.png);
 //FOOTER
 $footer-bg: url(img/footer-bg.png);
 $footer-line-color: #dcd7b1;
-
+$bottom-menu: url(img/bottom-menu.png); 
+$frame: url('img/frame.png'); 
+$testimonials-top: url(img/testimonials/testimonials-top.png);
+$testimonials-content: url(img/testimonials/testimonials-content-bg.png);
+$testimonials-bottom: url(img/testimonials/testimonials-bottom.png);
 body {
     //BASIC STYLES
     background-color: $bg-color;
@@ -90,90 +104,244 @@ body {
         height: 0;
     }
 
-    //MAIN STYLES
+    //All
+     #features {
+        text-align: left;
+        margin: 0 auto;
+        width: 960px;
+        position: relative;
+
+        #middle-block {
+            width: 280px; 
+            #gmaps-container { 
+                width: 270px; 
+                height: 170px; 
+            }
+
+            span.hours_of_work { 
+                color: #cac6a1; 
+                font-style: normal; 
+                font-size: 14px; 
+                text-transform: uppercase; 
+            }
+			span.work_hours_text { 
+                font-size: 14px; 
+                font-style: normal; 
+                color: #442917; 
+                margin: 0 8px 0 6px; 
+			}
+        }
+        #right-block {
+            margin-right: 0;
+        }
+
+        .box {
+            float: left;
+            width: 260px;
+            margin-right: 80px;
+            margin-bottom: 60px;
+            font-family: $basic-font-family;
+            color: #92907c;
+            p { 
+                line-height: 21px; 
+                font-style: italic;
+            }
+            h3.title { 
+                color:#cac6a1; 
+                font-size:16px; 
+                text-transform: uppercase; 
+                padding-bottom: 13px; 
+                text-shadow: $text-shadow; 
+            }
+            h4.title { 
+                font-size: 22px; 
+                text-shadow: $text-shadow; 
+                a { 
+                    text-decoration: none; 
+                    color: #442917; 
+                }
+            }
+            .thumb { 
+                display:block; 
+                float:left; 
+                position:relative; 
+                margin-right: 22px;
+            }
+            .item-image { 
+                margin-top:6px; 
+                margin-left:6px; 
+            }
+            span.overlay { 
+                background: $frame no-repeat; 
+                display:block; 
+                width:69px;
+                height:69px; 
+                position:absolute; 
+                top:0; 
+                left:0; 
+            }
+        }
+
+        .testimonials-item  { 
+            background: $testimonials-top no-repeat; 
+            padding-top: 9px; 
+            width: 259px; 
+            .thumb { 
+                display:block; 
+                float:left; 
+                position:relative; 
+                margin: 5px 21px 0 14px;
+			}
+            .item-image { 
+                margin-top:6px;
+                margin-left:6px; 
+
+            }
+            p.author { 
+                color: #442917; 
+                font-size: 22px; 
+                font-style: normal;
+                padding-top: 12px; 
+                padding-bottom:0;
+                text-shadow: $text-shadow; 
+            }
+			p { 
+                padding-right: 20px; 
+                padding-left: 20px; 
+			}
+        }
+		.testimonials-item-bottom { 
+            background: $testimonials-bottom no-repeat left bottom; 
+            padding-bottom: 20px; 
+            width: 259px; 
+		}
+		.testimonials-item-content { 
+            background: $testimonials-content repeat-y; 
+            width: 259px; 
+		}
+
+        span.price-tag { 
+            display: block; 
+            position: absolute;
+            top: 12px; 
+            left: -15px;
+            font-size: 18px; 
+            height: 31px;
+            span { 
+                display: block; 
+                background: url(img/price.png) no-repeat top right; 
+                padding: 1px 5px 10px 10px; 
+                color: #fff; 
+                text-shadow: 1px 1px 1px rgba(0,0,0,0.5); 
+                font-style: normal; 
+            }
+        }
+    }
+
+    //HOME
     .home {
         #container {
             background: none;
             //SLIDER
-            .slider-title {
-                position: absolute; 
-                top: 170px; 
-                left: 165px; 
-                width: 360px; 
-                height: 60px; 
-                font-size: 48px; 
-                color: #ffffff; 
-                line-height: 60px;
-                text-transform: uppercase;
-            }
+            #slider {
+                position: relative;
+                .slider-title {
+                    position: absolute; 
+                    top: 170px; 
+                    left: 165px; 
+                    width: 360px; 
+                    height: 60px; 
+                    font-size: 48px; 
+                    color: $white; 
+                    line-height: 60px;
+                    text-transform: uppercase;
+                }
 
-            .slider-description {
-                position: absolute; 
-                top: 300px; 
-                left: 165px; 
-                width: 360px; 
-                height: 100px; 
-                font-size: 16px; 
-                color: #ffffff; 
-                line-height: 21px;
-                font-family: Georgia, serif;
-                font-weight: bold;
-            }
+                .slider-description {
+                    position: absolute; 
+                    top: 300px; 
+                    left: 165px; 
+                    width: 360px; 
+                    height: 100px; 
+                    font-size: 16px; 
+                    color: $white; 
+                    line-height: 21px;
+                    font-family: Georgia, serif;
+                    font-weight: bold;
+                }
 
-            .jssorb05 {
-                position: absolute;
-            }
-            .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
-                position: absolute;
-                /* size of bullet elment */
-                width: 16px;
-                height: 16px;
-                background: url('img/slider/b05.png') no-repeat;
-                overflow: hidden;
-                cursor: pointer;
-            }
-            .jssorb05 div { background-position: -7px -7px; }
-            .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
-            .jssorb05 .av { background-position: -67px -7px; }
-            .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
-                /* jssor slider arrow navigator skin 22 css */
-            .jssora22l, .jssora22r {
-                display: block;
-                position: absolute;
-                /* size of arrow element */
-                width: 40px;
-                height: 58px;
-                cursor: pointer;
-                background: url('img/slider/a22.png') center center no-repeat;
-                overflow: hidden;
-            }
-            .jssora22l { background-position: -10px -31px; }
-            .jssora22r { background-position: -70px -31px; }
-            .jssora22l:hover { background-position: -130px -31px; }
-            .jssora22r:hover { background-position: -190px -31px; }
-            .jssora22l.jssora22ldn { background-position: -250px -31px; }
-            .jssora22r.jssora22rdn { background-position: -310px -31px; }
+                .jssorb05 {
+                    position: absolute;
+                }
+                .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+                    position: absolute;
+                    /* size of bullet elment */
+                    width: 16px;
+                    height: 16px;
+                    background: $slider-bullet no-repeat;
+                    overflow: hidden;
+                    cursor: pointer;
+                }
+                .jssorb05 div { background-position: -7px -7px; }
+                .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+                .jssorb05 .av { background-position: -67px -7px; }
+                .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+                    /* jssor slider arrow navigator skin 22 css */
+                .jssora22l, .jssora22r {
+                    display: block;
+                    position: absolute;
+                    /* size of arrow element */
+                    width: 40px;
+                    height: 58px;
+                    cursor: pointer;
+                    background: $slider-arrow center center no-repeat;
+                    overflow: hidden;
+                }
+                .jssora22l { background-position: -10px -31px; }
+                .jssora22r { background-position: -70px -31px; }
+                .jssora22l:hover { background-position: -130px -31px; }
+                .jssora22r:hover { background-position: -190px -31px; }
+                .jssora22l.jssora22ldn { background-position: -250px -31px; }
+                .jssora22r.jssora22rdn { background-position: -310px -31px; }
 
+                .slide-top-shadow { 
+                    background: url(img/top-bg.png) repeat-x; 
+                    position: absolute; 
+                    top: 0; 
+                    left: 0; 
+                    width: 100%; 
+                    height: 11px; 
+                }
+	            .slide-bottom-shadow { 
+                    background: url(img/bottom-bg.png) repeat-x; 
+                    position: absolute; 
+                    bottom: 0; 
+                    left: 0; 
+                    width: 100%; 
+                    height: 9px; 
+	            }
+            }         
+            //HEADER
             #header {
                 position: absolute;
                 top: 0;
                 width: 100%;
             }
-
+            //CONTENT
             #quote {
-                background: url(img/quote-bg.png) repeat-x;
+                background: $quote-bg repeat-x;
                 height: 132px;
                 margin-bottom: 57px;
                 .container {
                     text-align: center;
-                    background: url(img/stars.png) no-repeat center 95%;
+                    background: $stars no-repeat center 95%;
                     padding-top: 20px;
                     padding-bottom: 10px;
                     #quote-line-1 {
                         font-family: 'Goudy Bookletter 1911', Georgia, serif;
                         font-size: 30px;
                         color: #654e2d;
-                        text-shadow: 1px 1px 1px #ffffff;
+                        text-shadow: $text-shadow;
                         font-style: normal;
                         padding-bottom: 0;
                     }
@@ -181,129 +349,12 @@ body {
                         color: #b4a48d;
                         font-family: 'Goudy Bookletter 1911', Georgia, serif;
                         font-size: 14px;
-                        text-shadow: 1px 1px 1px #ffffff;
+                        text-shadow: $text-shadow;
                         text-transform: uppercase;
                         font-style: normal;
                     }
                 }
             }
-            //CONTENT
-            #features {
-                text-align: left;
-                margin: 0 auto;
-                width: 960px;
-                position: relative;
-
-                #middle-block {
-                    width: 280px; 
-                    #gmaps-container { 
-                        width: 270px; 
-                        height: 170px; 
-                    }
-
-                    span.hours_of_work { 
-                        color: #cac6a1; 
-                        font-style: normal; 
-                        font-size: 14px; 
-                        text-transform: uppercase; 
-                    }
-				    span.work_hours_text { 
-                        font-size: 14px; 
-                        font-style: normal; 
-                        color: #442917; 
-                        margin: 0 8px 0 6px; 
-				    }
-                }
-                #right-block {
-                    margin-right: 0;
-                }
-
-                .box {
-                    float: left;
-                    width: 260px;
-                    margin-right: 80px;
-                    margin-bottom: 60px;
-                    font-family: Georgia, serif;
-                    color: #92907c;
-                    p { 
-                        line-height: 21px; 
-                        font-style: italic;
-                    }
-                    h3.title { 
-                        color:#cac6a1; 
-                        font-size:16px; 
-                        text-transform: uppercase; 
-                        padding-bottom: 13px; 
-                        text-shadow: 1px 1px 1px #ffffff; 
-                    }
-                    h4.title { 
-                        font-size: 22px; 
-                        text-shadow: 1px 1px 1px #ffffff; 
-                        a { 
-                            text-decoration: none; 
-                            color: #442917; 
-                        }
-                    }
-                    .thumb { 
-                        display:block; 
-                        float:left; 
-                        position:relative; 
-                        margin-right: 22px;
-                    }
-                    .item-image { 
-                        margin-top:6px; 
-                        margin-left:6px; 
-                    }
-                    span.overlay { 
-                        background:url('img/frame.png') no-repeat; 
-                        display:block; 
-                        width:69px;
-                        height:69px; 
-                        position:absolute; 
-                        top:0; 
-                        left:0; 
-                    }
-                }
-
-                .testimonials-item  { 
-                    background: url(img/testimonials/testimonials-top.png) no-repeat; 
-                    padding-top: 9px; 
-                    width: 259px; 
-                    .thumb { 
-                        display:block; 
-                        float:left; 
-                        position:relative; 
-                        margin: 5px 21px 0 14px;
-				    }
-                    .item-image { 
-                        margin-top:6px;
-                        margin-left:6px; 
-
-                    }
-                    p.author { 
-                        color: #442917; 
-                        font-size: 22px; 
-                        font-style: normal;
-                        padding-top: 12px; 
-                        padding-bottom:0;
-                        text-shadow: 1px 1px 1px #ffffff; 
-                    }
-				    p { 
-                        padding-right: 20px; 
-                        padding-left: 20px; 
-				    }
-                }
-				.testimonials-item-bottom { 
-                    background: url('img/testimonials/testimonials-bottom.png') no-repeat left bottom; 
-                    padding-bottom: 20px; 
-                    width: 259px; 
-				}
-				.testimonials-item-content { 
-                    background: url('img/testimonials/testimonials-content-bg.png') repeat-y; 
-                    width: 259px; 
-				}
-            }
-            
             //FOOTER
             #bottom-menu {
                 padding-top: 30px; 
@@ -312,6 +363,7 @@ body {
         }
     }
 
+    //PAGE
     #container {
         background: $page-bg no-repeat;
         //HEADER
@@ -337,7 +389,7 @@ body {
                 }
 
                 #company-name {
-                    color: white;
+                    color: $white;
                     display: inline-block;
                 }
             }
@@ -362,7 +414,7 @@ body {
 
                     li {
                         a {
-                            color: white;
+                            color: $white;
                             margin-top: 10px;
 
                             &:hover {
@@ -394,7 +446,7 @@ body {
             #menu-bg {
                 width: 2000px;
                 position: absolute;
-                left: 28.9%;
+                left: 32.7%;
                 z-index: 0;
                 top: 27px;
                 height: 70px;
@@ -406,7 +458,7 @@ body {
                 padding-left: 15px;
 
                 .category-title {
-                    color: #ffffff;
+                    color: $white;
                     font-size: 30px;
                     font-style: normal;
                     text-transform: uppercase;
@@ -426,7 +478,7 @@ body {
                         color: #dacba7;
 
                         a:hover {
-                            color: #fff;
+                            color: $white;
                         }
                     }
                 }
@@ -435,11 +487,11 @@ body {
         //CONTENT
         #content {
             position: relative;
-            background: url(img/content-bg.png);
+            background: $content-bg;
             border-bottom: 1px solid #dddbbf;
 
             .breadcrumb {
-                height: 72px;
+                height: 70px;
                 color: $basic-color;
                 font-size: 14px;
                 text-shadow: $top-shadow;
@@ -456,6 +508,7 @@ body {
                 #search-form {
                     float: right;
                     height: 37px;
+                    margin-right: 9%;
                     margin-top: 11px;
 
                     #searchinput {
@@ -463,7 +516,7 @@ body {
                         border-radius: 20px;
                         height: 35px;
                         float: left;
-                        font-family: Georgia, serif;
+                        font-family: $basic-font-family;
                         font-style: italic;
                         margin: 0 20px 0 0;
                         padding-left: 18px;
@@ -473,7 +526,7 @@ body {
                 }
 
                 #top-shadow {
-                    background: url(img/quote-shadow.png) no-repeat;
+                    background: $top-shadow no-repeat;
                     width: 960px;
                     height: 8px;
                     left: 11%;
@@ -481,7 +534,7 @@ body {
                     position: absolute;
                 }
             }
-
+            
             #left-area {
                 margin-left: 12%;
                 float: left;
@@ -506,8 +559,8 @@ body {
             #gmaps-border {
                 padding: 5px;
                 border: 1px solid #e5e2c6;
-                background: #fff;
-                box-shadow: 1px 1px 1px #fff;
+                background: $white;
+                box-shadow: $text-shadow;
                 margin-bottom: 12px;
             }
 
@@ -530,7 +583,7 @@ body {
             }
 
             #bottom-shadow {
-                background: url(img/bottom-shadow.png) no-repeat;
+                background: $bottom-shadow no-repeat;
                 width: 960px;
                 height: 9px;
                 position: absolute;
@@ -539,7 +592,7 @@ body {
             }
 
             #browse-menu {
-                color:#ffffff; 
+                color: $white; 
                 text-shadow: 1px 1px 1px rgba(0,0,0,0.6); 
                 font-style: normal; 
                 font-size:16px; 
@@ -559,6 +612,7 @@ body {
                 margin: auto;
                 border-bottom: 1px solid $footer-line-color;
                 margin-bottom: 20px;
+
                 #logo-name {
                     display: inline-block;
                     color: black;
@@ -569,7 +623,7 @@ body {
 
             #bottom-menu {
                 text-align: center;
-                background: url(img/bottom-menu.png) no-repeat top center; 
+                background: $bottom-menu no-repeat top center; 
                 padding-top: 30px; 
                 padding-bottom: 15px;
 
