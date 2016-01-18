@@ -38,6 +38,15 @@ body {
     content: " ";
     clear: both;
     height: 0; }
+  body #slider {
+    display: none; }
+  body #bottom-shadow {
+    background: url(img/bottom-shadow.png) no-repeat;
+    width: 960px;
+    height: 9px;
+    position: absolute;
+    left: 11%;
+    top: -5%; }
   body #features {
     text-align: left;
     margin: 0 auto;
@@ -145,6 +154,7 @@ body {
     background: none; }
     body .home #container #slider {
       position: relative;
+      display: block;
       /* jssor slider arrow navigator skin 22 css */ }
       body .home #container #slider .slider-title {
         position: absolute;
@@ -224,10 +234,25 @@ body {
       position: absolute;
       top: 0;
       width: 100%; }
+      body .home #container #header .category-name {
+        display: none; }
+    body .home #container #top-shadow {
+      display: none; }
+    body .home #container .breadcrumb {
+      display: none; }
+    body .home #container .top-shadow {
+      background: url(img/quote-shadow.png) no-repeat;
+      width: 960px;
+      height: 8px;
+      left: 11%;
+      top: 19.2%;
+      position: absolute;
+      z-index: 10; }
     body .home #container #quote {
       background: url(img/quote-bg.png) repeat-x;
       height: 132px;
-      margin-bottom: 57px; }
+      margin-bottom: 57px;
+      position: relative; }
       body .home #container #quote .container {
         text-align: center;
         background: url(img/stars.png) no-repeat center 95%;
@@ -300,9 +325,9 @@ body {
             margin-top: 5px;
             border: none; }
       body #container #header #menu-bg {
-        width: 2000px;
+        width: 68%;
         position: absolute;
-        left: 32.7%;
+        left: 32%;
         z-index: 0;
         top: 27px;
         height: 70px;
@@ -328,45 +353,47 @@ body {
             color: #dacba7; }
             body #container #header .category-name .meta-info a a:hover {
               color: #ffffff; }
+    body #container .breadcrumb {
+      height: 70px;
+      color: #716851;
+      font-size: 14px;
+      text-shadow: url(img/quote-shadow.png);
+      text-transform: uppercase;
+      font-style: normal;
+      position: relative;
+      margin-bottom: 0; }
+      body #container .breadcrumb #breadcrumbs-text {
+        display: inline-block;
+        margin-top: 15px;
+        padding-left: 7.5%; }
+      body #container .breadcrumb #search-form {
+        float: right;
+        height: 37px;
+        margin-right: 9%;
+        margin-top: 11px; }
+        body #container .breadcrumb #search-form #searchinput {
+          background-color: #dddddd;
+          border-radius: 20px;
+          height: 35px;
+          float: left;
+          font-family: Georgia, serif;
+          font-style: italic;
+          margin: 0 20px 0 0;
+          padding-left: 18px;
+          font-size: 12px;
+          color: #a1a0a0; }
+    body #container #top-shadow {
+      background: url(img/quote-shadow.png) no-repeat;
+      width: 960px;
+      height: 8px;
+      left: 11%;
+      top: 46%;
+      position: absolute;
+      z-index: 2; }
     body #container #content {
       position: relative;
       background: url(img/content-bg.png);
       border-bottom: 1px solid #dddbbf; }
-      body #container #content .breadcrumb {
-        height: 70px;
-        color: #716851;
-        font-size: 14px;
-        text-shadow: url(img/quote-shadow.png);
-        text-transform: uppercase;
-        font-style: normal;
-        position: relative; }
-        body #container #content .breadcrumb #breadcrumbs-text {
-          display: inline-block;
-          margin-top: 15px;
-          padding-left: 7.5%; }
-        body #container #content .breadcrumb #search-form {
-          float: right;
-          height: 37px;
-          margin-right: 9%;
-          margin-top: 11px; }
-          body #container #content .breadcrumb #search-form #searchinput {
-            background-color: #dddddd;
-            border-radius: 20px;
-            height: 35px;
-            float: left;
-            font-family: Georgia, serif;
-            font-style: italic;
-            margin: 0 20px 0 0;
-            padding-left: 18px;
-            font-size: 12px;
-            color: #a1a0a0; }
-        body #container #content .breadcrumb #top-shadow {
-          background: url(img/quote-shadow.png) no-repeat;
-          width: 960px;
-          height: 8px;
-          left: 11%;
-          bottom: -7px;
-          position: absolute; }
       body #container #content #left-area {
         margin-left: 12%;
         float: left;
@@ -396,13 +423,6 @@ body {
             max-width: none !important;
             background: none !important;
             font-size: inherit; }
-      body #container #content #bottom-shadow {
-        background: url(img/bottom-shadow.png) no-repeat;
-        width: 960px;
-        height: 9px;
-        position: absolute;
-        left: 11%;
-        bottom: -1px; }
       body #container #content #browse-menu {
         color: #ffffff;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
@@ -414,6 +434,7 @@ body {
         z-index: 2; }
     body #container #footer {
       background: #f2f1e8 url(img/footer-bg.png) repeat-x;
+      position: relative;
       padding-top: 35px; }
       body #container #footer #footer-boxs {
         width: 960px;

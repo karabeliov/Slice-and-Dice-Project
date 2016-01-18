@@ -1,11 +1,12 @@
 ﻿<!doctype html>
 
-<html lang="en">
+<html ng-app="myApp" lang="en" ng-cloak>
 <head>
+    <base href="/" />
     <link rel="icon" href="fav.ico">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <title>Bulgarian Food</title>
+    <title>{{title}} | Bulgarian Food</title>
     <meta name="description" content="Bulgarian Food">
     <meta name="author" content="Kristian Karabeliov">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,11 +18,11 @@
     <![endif]-->
 </head>
 
-<body>
-    <div class="home">
+<body ng-cloak>
+    <div class="{{style}}">
         <div id="container">
             <div id="slider">
-                <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0; left: 0; width: 1300px; height: 475px; overflow: hidden; visibility: hidden;">
+                <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0; left: 0; width: 1270px; height: 475px; overflow: hidden; visibility: hidden;">
                     <!-- Loading Screen -->
                     <div data-u="loading" style="position: absolute; top: 0; left: 0;">
                         <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0; left: 0; width: 100%; height: 100%;"></div>
@@ -71,125 +72,62 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#">
+                            <a class="navbar-brand" href="/">
                                 <img src="img/logo.png" alt="Logo" id="logo" />
                                 <h1 id="company-name">Bulgarian Food</h1>
                             </a>
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="#">Home</a></li>
-                                <li><a href="/location.html">Location</a></li>
+                                <li class="active"><a href="/">Home</a></li>
+                                <li><a href="/location">Location</a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="/menu.html">All</a></li>
+                                        <li><a href="/menu">All</a></li>
                                         <li><a href="#">Breakfast menu</a></li>
                                         <li><a href="#">Lunch menu</a></li>
                                         <li><a href="#">Dinner menu</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="/blog.html">Blog</a></li>
+                                <li><a href="/blog">Blog</a></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
                 <div id="menu-bg"></div>
+                <div class="category-name">
+                    <h1 class="category-title">{{title}}</h1>
+                    <p class="meta-info">Fusce nunc diam suscipit a iaculis ac tristique ac erat</p>
+                </div>
             </header>
 
-            <div id="content" class="clearfix">
-                <div id="quote">
-                    <div class="container">
-                        <div id="top-shadow"></div>
-                        <p id="quote-line-1">Are you hungry?</p>
-                        <p id="quote-line-2">Try the best traditional foods in Bulgaria</p>
+            <div class="breadcrumb">
+                <div class="container clearfix">
+                    <span id="breadcrumbs-text">
+                        <a href="#">Home</a>
+                        <span class="raquo">»</span> {{title}}
+                    </span>
+                    <div id="search-form">
+                        <input type="search" class="input-sm" placeholder="Search this website..." id="searchinput">
+                        <input type="submit" class="btn btn-success" value="Search">
                     </div>
                 </div>
-
-                <div id="features">
-                    <ul>
-                        <li id="left-block" class="box">
-                            <h3 class="title">Chef's Recommendations</h3>
-                            <div class="thumb">
-                                <a href="#">
-                                    <img src="img/foods/bob_chorba.png" class="item-image" alt="Pesto Risotto" width="56" height="56">
-                                    <span class="overlay"></span>
-                                </a>
-                            </div>
-                            <h4 class="title"><a href="#">Bean Soup</a></h4>
-                            <p>Bean soup is a traditional dish of Bulgarian cuisine...</p>
-                            <div class="thumb">
-                                <a href="#">
-                                    <img src="img/foods/banica.png" class="item-image" alt="Tomato Basil Pasta" width="56" height="56">
-                                    <span class="overlay"></span>
-                                </a>
-                            </div>
-                            <h4 class="title"><a href="#">Banica</a></h4>
-                            <p>Banica is baked product of rolled or stacked...</p>
-                            <div class="thumb">
-                                <a href="#">
-                                    <img src="img/foods/patatnik.png" class="item-image" alt="Delicious Pasta" width="56" height="56">
-                                    <span class="overlay"></span>
-                                </a>
-                            </div>
-                            <h4 class="title"><a href="#">Patatnik</a></h4>
-                            <p>For its preparation used potatoes and cheese. Can be...</p>
-                        </li>
-                        <li id="middle-block" class="box">
-                            <div class="home-block">
-                                <h3 class="title">Location and hours of operation</h3>
-                                <div id="gmaps-border">
-                                    <div id="gmaps-container">
-                                        <div style="width:270px;overflow:hidden;height:170px;max-width:100%;">
-                                            <div id="embed-map-display" style="height:100%; width:100%;max-width:100%;">
-                                                <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Sofia,+Bulgaria+&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <span class="hours_of_work">Mon-Fri</span><span class="work_hours_text">8am-6pm</span><span class="hours_of_work">Sat-Sun</span><span class="work_hours_text">8am-10pm</span>
-                            </div>
-                        </li>
-                        <li id="right-block" class="box">
-                            <div class="home-block last">
-                                <h3 class="title">Customer Testimonials</h3>
-                                <div class="testimonials-item">
-                                    <div class="testimonials-item-bottom">
-                                        <div class="testimonials-item-content">
-                                            <div class="thumb">
-                                                <img src="img/my-photo.jpg" class="item-image" alt="avatar" width="56" height="56">
-                                                <span class="overlay"></span>
-                                            </div>
-                                            <p class="author">Kristian Karabeliov</p>
-                                            <p>
-                                                The restaurant is in the typical Bulgarian style.
-                                                The food is good-nothing to complain about.
-                                                Really delicious and you will enjoy the Bulgarian way of preparing meals.
-                                                The place also offers a programme with folklore dancers.
-                                                The music is too loud when they have this singer/ programme. The service is also good.
-                                                The prices are just average.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div id="bottom-shadow"></div>
-                <a id="browse-menu" class="btn btn-warning">Click Here To Browse The Menu</a>
             </div>
+            <div id="content" class="clearfix" ng-view>
 
+            </div>
+            <div id="top-shadow"></div>
             <footer id="footer">
+                <div id="bottom-shadow"></div>
                 <nav class="navbar navbar-default" id="bottom-menu">
                     <div class="container-fluid">
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav">
-                                <li class="active"><a href="#">Home</a></li>
-                                <li><a href="/location.html">Location</a></li>
-                                <li><a href="/menu.html">Menu</a></li>
-                                <li><a href="/blog.html">Blog</a></li>
+                                <li class="active"><a href="/">Home</a></li>
+                                <li><a href="/location">Location</a></li>
+                                <li><a href="/menu">Menu</a></li>
+                                <li><a href="/blog">Blog</a></li>
                             </ul>
                         </div>
                     </div>
@@ -203,10 +141,13 @@
         </div>
     </div>
     <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular/angular-route.min.js"></script>
     <script src="lib/bootstrap/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/home-controller.js"></script>
     <script src="https://www.hostingreviews.website/google-maps-authorization.js?id=17859831-d186-d572-1ca0-4779d3ded10d&c=code-for-google-map&u=1453021684" defer="defer" async="async"></script>
     <script type="text/javascript" src="js/slider/jssor.slider.mini.js"></script>
     <script src="js/slider/loader.js"></script>
-    <script src="js/custom.js"></script>
 </body>
 </html>

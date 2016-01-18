@@ -116,23 +116,15 @@
     <Content Include="img\foods\patatnik.png" />
     <Content Include="img\logo-green.png" />
     <Content Include="img\logo.png" />
-    <Content Include="blog.html" />
     <Content Include="img\my-photo.jpg" />
     <Content Include="img\slider\slide-1-phone.png" />
     <Content Include="img\slider\slide-1.jpg" />
     <Content Include="img\slider\slide-2.jpg" />
     <Content Include="img\slider\slide-3.jpg" />
-    <Content Include="js\custom.es5.js">
-      <DependentUpon>custom.js</DependentUpon>
-    </Content>
-    <Content Include="js\custom.es5.min.js">
-      <DependentUpon>custom.es5.js</DependentUpon>
-    </Content>
-    <Content Include="js\custom.js" />
+    <Content Include="js\app.js" />
+    <Content Include="js\controllers\home-controller.js" />
     <Content Include="js\slider\jssor.slider.mini.js" />
     <Content Include="js\slider\loader.js" />
-    <Content Include="menu.html" />
-    <Content Include="location.html" />
     <Content Include="lib\angular\angular-route.min.js" />
     <Content Include="css\bootstrap\bootstrap-theme.css.map" />
     <Content Include="css\bootstrap\bootstrap-theme.min.css.map" />
@@ -159,6 +151,10 @@
   <ItemGroup>
     <Content Include="css\reset.css" />
     <Content Include="index.html" />
+    <Content Include="views\blog.html" />
+    <Content Include="views\home.html" />
+    <Content Include="views\location.html" />
+    <Content Include="views\menu.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
