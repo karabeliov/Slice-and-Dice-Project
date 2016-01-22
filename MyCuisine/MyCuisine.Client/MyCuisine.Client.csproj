@@ -113,6 +113,12 @@
     <Content Include="css\img\testimonials\testimonials-content-bg.png" />
     <Content Include="css\img\testimonials\testimonials-top.png" />
     <Content Include="css\img\top-bg.png" />
+    <Content Include="css\media-queries.css">
+      <DependentUpon>media-queries.scss</DependentUpon>
+    </Content>
+    <Content Include="css\media-queries.min.css">
+      <DependentUpon>media-queries.css</DependentUpon>
+    </Content>
     <Content Include="fav.ico" />
     <Content Include="img\foods\banica.png" />
     <Content Include="img\foods\bob_chorba.png" />
@@ -130,15 +136,35 @@
     <Content Include="img\slider\slide-1.jpg" />
     <Content Include="img\slider\slide-2.jpg" />
     <Content Include="img\slider\slide-3.jpg" />
+    <Content Include="js\app.es5.js">
+      <DependentUpon>app.js</DependentUpon>
+    </Content>
+    <Content Include="js\app.es5.min.js">
+      <DependentUpon>app.es5.js</DependentUpon>
+    </Content>
     <Content Include="js\app.js" />
     <Content Include="js\controllers\home-controller.js" />
+    <Content Include="js\custom.es5.js">
+      <DependentUpon>custom.js</DependentUpon>
+    </Content>
+    <Content Include="js\custom.es5.min.js">
+      <DependentUpon>custom.es5.js</DependentUpon>
+    </Content>
+    <Content Include="js\custom.js" />
     <Content Include="js\slider\jssor.slider.mini.js" />
+    <Content Include="js\slider\loader.es5.js">
+      <DependentUpon>loader.js</DependentUpon>
+    </Content>
+    <Content Include="js\slider\loader.es5.min.js">
+      <DependentUpon>loader.es5.js</DependentUpon>
+    </Content>
     <Content Include="js\slider\loader.js" />
     <Content Include="lib\angular\angular-route.min.js" />
     <Content Include="css\bootstrap\bootstrap-theme.css.map" />
     <Content Include="css\bootstrap\bootstrap-theme.min.css.map" />
     <Content Include="css\bootstrap\bootstrap.css.map" />
     <Content Include="css\bootstrap\bootstrap.min.css.map" />
+    <Content Include="css\media-queries.scss" />
     <None Include="lib\angular\angular.intellisense.js" />
     <Content Include="lib\angular\angular.min.js" />
     <Content Include="lib\bootstrap\bootstrap.min.js" />

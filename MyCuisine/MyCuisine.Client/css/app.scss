@@ -1,4 +1,5 @@
 ﻿@import "reset.css";
+@import "media-queries.min.css";
 
 //BASIC STYLE
 $bg-color: #f2f1e8;
@@ -104,21 +105,6 @@ body {
         height: 0;
     }
 
-
-    //INDEX
-    #slider {
-        display: none;
-    }
-
-    #bottom-shadow {
-        background: $bottom-shadow no-repeat;
-        width: 960px;
-        height: 9px;
-        position: absolute;
-        left: 11%;
-        top: -5%;
-    }
-
     //HOME
     .home {
         #container {
@@ -213,6 +199,9 @@ body {
                 }
             }
             //CONTENT
+            #content {
+                padding-top: 0;
+            }
             #top-shadow {
                 display: none;
             }
@@ -272,7 +261,10 @@ body {
 
     //PAGE
     #container {
-        background: $page-bg no-repeat;
+        background: $page-bg repeat-x;
+        #slider {
+            display: none;
+        }
         //HEADER
         #header {
             background: $top-shadow repeat-x;
@@ -282,8 +274,8 @@ body {
             height: 255px;
 
             .navbar-header {
-                background: $logo-bg no-repeat;
-                height: 87px;
+                background: $logo-bg no-repeat bottom left;
+                height: 85px;
 
                 .navbar-brand {
                     float: none;
@@ -351,9 +343,9 @@ body {
             }
 
             #menu-bg {
-                width: 68%;
+                width: 88%;
                 position: absolute;
-                left: 32%;
+                left: 12%;
                 z-index: 0;
                 top: 27px;
                 height: 70px;
@@ -448,7 +440,6 @@ body {
 
             #left-area {
                 margin-left: 12%;
-                float: left;
                 font-size: 14px;
 
                 .info-block {
@@ -655,6 +646,14 @@ body {
                 top:0; 
                 width:226px; 
             }
+        }
+        #bottom-shadow {
+            background: $bottom-shadow no-repeat;
+            width: 960px;
+            height: 9px;
+            position: absolute;
+            left: 11%;
+            top: -5%;
         }
         #sidebar { 
             float:left; 

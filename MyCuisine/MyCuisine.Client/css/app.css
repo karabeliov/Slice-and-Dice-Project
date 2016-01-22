@@ -1,4 +1,5 @@
 ﻿@import url(reset.css);
+@import url(media-queries.min.css);
 body h1, body h2, body h3, body h4, body h5, body h6 {
   padding-bottom: 5px;
   letter-spacing: -1px;
@@ -38,15 +39,6 @@ body {
     content: " ";
     clear: both;
     height: 0; }
-  body #slider {
-    display: none; }
-  body #bottom-shadow {
-    background: url(img/bottom-shadow.png) no-repeat;
-    width: 960px;
-    height: 9px;
-    position: absolute;
-    left: 11%;
-    top: -5%; }
   body .home #container {
     background: none; }
     body .home #container #slider {
@@ -133,6 +125,8 @@ body {
       width: 100%; }
       body .home #container #header .category-name {
         display: none; }
+    body .home #container #content {
+      padding-top: 0; }
     body .home #container #top-shadow {
       display: none; }
     body .home #container .breadcrumb {
@@ -179,7 +173,9 @@ body {
       bottom: -18px;
       z-index: 2; }
   body #container {
-    background: url("img/page-top.jpg") no-repeat; }
+    background: url("img/page-top.jpg") repeat-x; }
+    body #container #slider {
+      display: none; }
     body #container #header {
       background: url(img/quote-shadow.png) repeat-x;
       padding-left: 11%;
@@ -187,8 +183,8 @@ body {
       text-align: left;
       height: 255px; }
       body #container #header .navbar-header {
-        background: url(img/menu/menu-bar.png) no-repeat;
-        height: 87px; }
+        background: url(img/menu/menu-bar.png) no-repeat bottom left;
+        height: 85px; }
         body #container #header .navbar-header .navbar-brand {
           float: none;
           margin-left: 5px; }
@@ -228,9 +224,9 @@ body {
             margin-top: 5px;
             border: none; }
       body #container #header #menu-bg {
-        width: 68%;
+        width: 88%;
         position: absolute;
-        left: 32%;
+        left: 12%;
         z-index: 0;
         top: 27px;
         height: 70px;
@@ -302,7 +298,6 @@ body {
       padding-top: 2%; }
       body #container #content #left-area {
         margin-left: 12%;
-        float: left;
         font-size: 14px; }
         body #container #content #left-area .info-block {
           margin-bottom: 35px;
@@ -452,6 +447,13 @@ body {
         position: absolute;
         top: 0;
         width: 226px; }
+    body #container #bottom-shadow {
+      background: url(img/bottom-shadow.png) no-repeat;
+      width: 960px;
+      height: 9px;
+      position: absolute;
+      left: 11%;
+      top: -5%; }
     body #container #sidebar {
       float: left; }
       body #container #sidebar h4 {
