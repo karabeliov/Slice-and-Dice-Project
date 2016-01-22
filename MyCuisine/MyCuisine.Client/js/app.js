@@ -29,6 +29,11 @@
                 templateUrl: PARTIALS_PREFIX + 'blog.html',
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
+            .when('/post', {
+                title: 'Post',
+                templateUrl: PARTIALS_PREFIX + 'post.html',
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
+            })
             .otherwise({ redirectTo: '/' });
     }
 

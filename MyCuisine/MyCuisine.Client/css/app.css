@@ -47,109 +47,6 @@ body {
     position: absolute;
     left: 11%;
     top: -5%; }
-  body #features {
-    text-align: left;
-    margin: 0 auto;
-    width: 960px;
-    position: relative; }
-    body #features #middle-block {
-      width: 280px; }
-      body #features #middle-block #gmaps-container {
-        width: 270px;
-        height: 170px; }
-      body #features #middle-block span.hours_of_work {
-        color: #cac6a1;
-        font-style: normal;
-        font-size: 14px;
-        text-transform: uppercase; }
-      body #features #middle-block span.work_hours_text {
-        font-size: 14px;
-        font-style: normal;
-        color: #442917;
-        margin: 0 8px 0 6px; }
-    body #features #right-block {
-      margin-right: 0; }
-    body #features .box {
-      float: left;
-      width: 260px;
-      margin-right: 80px;
-      margin-bottom: 60px;
-      font-family: Georgia, serif;
-      color: #92907c; }
-      body #features .box p {
-        line-height: 21px;
-        font-style: italic; }
-      body #features .box h3.title {
-        color: #cac6a1;
-        font-size: 16px;
-        text-transform: uppercase;
-        padding-bottom: 13px;
-        text-shadow: 1px 1px 1px #ffffff; }
-      body #features .box h4.title {
-        font-size: 22px;
-        text-shadow: 1px 1px 1px #ffffff; }
-        body #features .box h4.title a {
-          text-decoration: none;
-          color: #442917; }
-      body #features .box .thumb {
-        display: block;
-        float: left;
-        position: relative;
-        margin-right: 22px; }
-      body #features .box .item-image {
-        margin-top: 6px;
-        margin-left: 6px; }
-      body #features .box span.overlay {
-        background: url("img/frame.png") no-repeat;
-        display: block;
-        width: 69px;
-        height: 69px;
-        position: absolute;
-        top: 0;
-        left: 0; }
-    body #features .testimonials-item {
-      background: url(img/testimonials/testimonials-top.png) no-repeat;
-      padding-top: 9px;
-      width: 259px; }
-      body #features .testimonials-item .thumb {
-        display: block;
-        float: left;
-        position: relative;
-        margin: 5px 21px 0 14px; }
-      body #features .testimonials-item .item-image {
-        margin-top: 6px;
-        margin-left: 6px; }
-      body #features .testimonials-item p.author {
-        color: #442917;
-        font-size: 22px;
-        font-style: normal;
-        padding-top: 12px;
-        padding-bottom: 0;
-        text-shadow: 1px 1px 1px #ffffff; }
-      body #features .testimonials-item p {
-        padding-right: 20px;
-        padding-left: 20px; }
-    body #features .testimonials-item-bottom {
-      background: url(img/testimonials/testimonials-bottom.png) no-repeat left bottom;
-      padding-bottom: 20px;
-      width: 259px; }
-    body #features .testimonials-item-content {
-      background: url(img/testimonials/testimonials-content-bg.png) repeat-y;
-      width: 259px; }
-    body #features span.price-tag {
-      display: block;
-      position: absolute;
-      top: 12px;
-      left: -15px;
-      font-size: 18px;
-      height: 31px; }
-      body #features span.price-tag span {
-        display: block;
-        background: url(img/price.png) no-repeat top right;
-        padding: 1px 5px 10px 10px;
-        color: #fff;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-        font-style: normal; }
   body .home #container {
     background: none; }
     body .home #container #slider {
@@ -272,9 +169,15 @@ body {
           text-shadow: 1px 1px 1px #ffffff;
           text-transform: uppercase;
           font-style: normal; }
-    body .home #container #bottom-menu {
-      padding-top: 30px;
-      padding-bottom: 15px; }
+    body .home #container #browse-menu {
+      color: #ffffff;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+      font-style: normal;
+      font-size: 16px;
+      position: absolute;
+      left: 39.8%;
+      bottom: -18px;
+      z-index: 2; }
   body #container {
     background: url("img/page-top.jpg") no-repeat; }
     body #container #header {
@@ -390,14 +293,16 @@ body {
       top: 46%;
       position: absolute;
       z-index: 2; }
+    body #container .row {
+      margin-right: 0; }
     body #container #content {
       position: relative;
       background: url(img/content-bg.png);
-      border-bottom: 1px solid #dddbbf; }
+      border-bottom: 1px solid #dddbbf;
+      padding-top: 2%; }
       body #container #content #left-area {
         margin-left: 12%;
         float: left;
-        width: 332px;
         font-size: 14px; }
         body #container #content #left-area .info-block {
           margin-bottom: 35px;
@@ -407,31 +312,176 @@ body {
           body #container #content #left-area .info-block span {
             text-transform: lowercase;
             color: #716851; }
-      body #container #content #gmaps-border {
-        padding: 5px;
-        border: 1px solid #e5e2c6;
-        background: #ffffff;
-        box-shadow: 1px 1px 1px #ffffff;
-        margin-bottom: 12px; }
-      body #container #content .location-page {
-        float: right;
-        margin-right: 5%; }
-        body #container #content .location-page #gmaps-container {
-          width: 591px;
-          height: 403px; }
-          body #container #content .location-page #gmaps-container #embed-map-display img {
+      body #container #content #right-area {
+        margin-left: 7%; }
+        body #container #content #right-area #gmaps-border {
+          padding: 5px;
+          border: 1px solid #e5e2c6;
+          background: #ffffff;
+          box-shadow: 1px 1px 1px #ffffff;
+          margin-bottom: 12px; }
+        body #container #content #right-area .location-page {
+          width: 90%; }
+          body #container #content #right-area .location-page #gmaps-container #embed-map-display img {
             max-width: none !important;
             background: none !important;
             font-size: inherit; }
-      body #container #content #browse-menu {
-        color: #ffffff;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
-        font-style: normal;
-        font-size: 16px;
+      body #container #content #features {
+        text-align: left;
+        margin: 0 auto;
+        width: 960px;
+        position: relative; }
+        body #container #content #features #middle-block {
+          width: 280px; }
+          body #container #content #features #middle-block #gmaps-container {
+            width: 270px;
+            height: 170px; }
+          body #container #content #features #middle-block span.hours_of_work {
+            color: #cac6a1;
+            font-style: normal;
+            font-size: 14px;
+            text-transform: uppercase; }
+          body #container #content #features #middle-block span.work_hours_text {
+            font-size: 14px;
+            font-style: normal;
+            color: #442917;
+            margin: 0 8px 0 6px; }
+        body #container #content #features #right-block {
+          margin-right: 0; }
+        body #container #content #features .box {
+          float: left;
+          width: 260px;
+          margin-right: 80px;
+          margin-bottom: 60px;
+          font-family: Georgia, serif;
+          color: #92907c; }
+          body #container #content #features .box p {
+            line-height: 21px;
+            font-style: italic; }
+          body #container #content #features .box h3.title {
+            color: #cac6a1;
+            font-size: 16px;
+            text-transform: uppercase;
+            padding-bottom: 13px;
+            text-shadow: 1px 1px 1px #ffffff; }
+          body #container #content #features .box h4.title {
+            font-size: 22px;
+            text-shadow: 1px 1px 1px #ffffff; }
+            body #container #content #features .box h4.title a {
+              text-decoration: none;
+              color: #442917; }
+          body #container #content #features .box .thumb {
+            display: block;
+            float: left;
+            position: relative;
+            margin-right: 22px; }
+          body #container #content #features .box .item-image {
+            margin-top: 6px;
+            margin-left: 6px; }
+          body #container #content #features .box span.overlay {
+            background: url("img/frame.png") no-repeat;
+            display: block;
+            width: 69px;
+            height: 69px;
+            position: absolute;
+            top: 0;
+            left: 0; }
+        body #container #content #features .testimonials-item {
+          background: url(img/testimonials/testimonials-top.png) no-repeat;
+          padding-top: 9px;
+          width: 259px; }
+          body #container #content #features .testimonials-item .thumb {
+            display: block;
+            float: left;
+            position: relative;
+            margin: 5px 21px 0 14px; }
+          body #container #content #features .testimonials-item .item-image {
+            margin-top: 6px;
+            margin-left: 6px; }
+          body #container #content #features .testimonials-item p.author {
+            color: #442917;
+            font-size: 22px;
+            font-style: normal;
+            padding-top: 12px;
+            padding-bottom: 0;
+            text-shadow: 1px 1px 1px #ffffff; }
+          body #container #content #features .testimonials-item p {
+            padding-right: 20px;
+            padding-left: 20px; }
+        body #container #content #features .testimonials-item-bottom {
+          background: url(img/testimonials/testimonials-bottom.png) no-repeat left bottom;
+          padding-bottom: 20px;
+          width: 259px; }
+        body #container #content #features .testimonials-item-content {
+          background: url(img/testimonials/testimonials-content-bg.png) repeat-y;
+          width: 259px; }
+        body #container #content #features span.price-tag {
+          display: block;
+          position: absolute;
+          top: 12px;
+          left: -15px;
+          font-size: 18px;
+          height: 31px; }
+          body #container #content #features span.price-tag span {
+            display: block;
+            background: url(img/price.png) no-repeat top right;
+            padding: 1px 5px 10px 10px;
+            color: #fff;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+            font-style: normal; }
+      body #container #content #posts li {
+        display: block;
+        height: 320px;
+        margin-bottom: 5%; }
+      body #container #content .post {
+        padding: 0 3% 3% 12%; }
+        body #container #content .post p {
+          line-height: 21px; }
+        body #container #content .post .well {
+          background-color: #ffffff; }
+      body #container #content .post-thumbnail {
+        display: block;
+        float: left;
+        position: relative;
+        margin-right: 30px; }
+      body #container #content span.post-overlay {
+        background: url(img/post-overlay.png) no-repeat;
+        display: block;
+        height: 226px;
+        left: 0;
         position: absolute;
-        left: 39.8%;
-        bottom: -18px;
-        z-index: 2; }
+        top: 0;
+        width: 226px; }
+    body #container #sidebar {
+      float: left; }
+      body #container #sidebar h4 {
+        font-size: 22px;
+        color: #cac6a1;
+        text-transform: uppercase;
+        padding: 0 10px 13px;
+        text-shadow: 1px 1px 1px #ffffff; }
+      body #container #sidebar .widget {
+        width: 259px;
+        background: url(img/testimonials/testimonials-top.png) no-repeat;
+        padding-top: 9px;
+        margin-bottom: 25px; }
+        body #container #sidebar .widget .widget-bottom {
+          background: url(img/bottom-widget-bg.png) no-repeat left bottom;
+          padding-bottom: 27px; }
+        body #container #sidebar .widget .widget-content {
+          background: url(img/testimonials/testimonials-content-bg.png) repeat-y;
+          padding: 7px 8px 9px 27px;
+          color: #442917;
+          line-height: 21px; }
+        body #container #sidebar .widget ul li {
+          padding: 6px 0 6px 11px; }
+          body #container #sidebar .widget ul li a {
+            color: #442917;
+            text-decoration: none; }
+            body #container #sidebar .widget ul li a:hover {
+              color: #000000; }
+        body #container #sidebar .widget ul ul {
+          padding-left: 10px; }
     body #container #footer {
       background: #f2f1e8 url(img/footer-bg.png) repeat-x;
       position: relative;

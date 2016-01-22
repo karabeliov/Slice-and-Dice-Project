@@ -79,6 +79,14 @@
     <Content Include="css\img\bottom-bg.png" />
     <Content Include="css\img\bottom-menu.png" />
     <Content Include="css\img\bottom-shadow.png" />
+    <Content Include="css\img\bottom-widget-bg.png" />
+    <Content Include="css\img\comments\comment-arrow.png" />
+    <Content Include="css\img\comments\comment-bg-d2.png" />
+    <Content Include="css\img\comments\comment-bg.png" />
+    <Content Include="css\img\comments\comment-bottom-d2.png" />
+    <Content Include="css\img\comments\comment-bottom.png" />
+    <Content Include="css\img\comments\comment-top-d2.png" />
+    <Content Include="css\img\comments\comment-top.png" />
     <Content Include="css\img\content-bg.png" />
     <Content Include="css\img\footer-bg.png" />
     <Content Include="css\img\frame.png" />
@@ -87,6 +95,7 @@
     <Content Include="css\img\menu\menu-bar.png" />
     <Content Include="css\img\menu\menu-bg.png" />
     <Content Include="css\img\page-top.jpg" />
+    <Content Include="css\img\post-overlay.png" />
     <Content Include="css\img\price.png" />
     <Content Include="css\img\quote-bg.png" />
     <Content Include="css\img\quote-shadow.png" />
@@ -151,6 +160,7 @@
   <ItemGroup>
     <Content Include="css\reset.css" />
     <Content Include="index.html" />
+    <Content Include="views\post.html" />
     <Content Include="views\blog.html" />
     <Content Include="views\home.html" />
     <Content Include="views\location.html" />
