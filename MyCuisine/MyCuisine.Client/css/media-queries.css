@@ -1,18 +1,143 @@
 ﻿@charset "UTF-8";
 /* Smartphones (portrait) ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
   .home #slider {
-    display: none !important; } }
+    display: none !important; }
+  .home #logo {
+    position: absolute;
+    top: 8% !important;
+    left: 7% !important;
+    z-index: 2; }
+  .home #quote {
+    margin-top: 40%;
+    margin-top: 60px !important;
+    margin-bottom: 0 !important;
+    z-index: 1 !important; }
+  #header {
+    padding-left: 0 !important;
+    z-index: 2 !important; }
+    #header #menu-bg {
+      width: 100% !important;
+      position: absolute;
+      left: 0 !important;
+      z-index: 0 !important;
+      top: 0 !important; }
+  .nav li {
+    text-align: center !important;
+    display: inline-block; }
+  .navbar {
+    position: static !important;
+    min-height: 30px !important; }
+  .navbar-default {
+    position: relative;
+    background: url(img/menu/dropdown-bg.png) repeat !important;
+    z-index: 3 !important; }
+  .navbar-header {
+    background: none !important;
+    height: 35px !important; }
+    .navbar-header #logo {
+      position: absolute;
+      top: 4.4%;
+      left: 7%;
+      z-index: 2; }
+    .navbar-header #company-name {
+      position: absolute;
+      top: 0 !important;
+      left: 25% !important;
+      font-size: 25px;
+      z-index: 2 !important; }
+  .navbar-toggle {
+    margin-top: -4% !important;
+    z-index: 2; }
+  .navbar-collapse {
+    padding-left: 0 !important; }
+  .navbar-nav {
+    height: auto !important;
+    font-size: 16px !important;
+    float: none !important;
+    margin-left: 0 !important; }
+    .navbar-nav li a {
+      margin-top: 0 !important; }
+    .navbar-nav .dropdown-menu {
+      margin-top: -18px !important; }
+  .breadcrumb {
+    height: 100px !important;
+    padding: 0 !important; }
+  #browse-menu {
+    left: 15% !important; }
+  #bottom-menu {
+    display: none; } }
 
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width: 480px) and (max-device-width: 767px) {
   .home #slider {
     display: none !important; }
-  #navbar li {
-    display: block;
-    width: 100%;
-    margin-top: 0;
-    background: url(img/menu/menu-bg.png) repeat-x; } }
+  .home #logo {
+    position: absolute;
+    top: 8% !important;
+    left: 7% !important;
+    z-index: 2; }
+  .home #quote {
+    margin-top: 40%;
+    margin-top: 60px !important;
+    margin-bottom: 0 !important;
+    z-index: 1 !important; }
+  #header {
+    padding-left: 0 !important;
+    z-index: 2 !important; }
+    #header #menu-bg {
+      width: 100% !important;
+      position: absolute;
+      left: 0 !important;
+      z-index: 0 !important;
+      top: 0 !important; }
+  .nav li {
+    text-align: center !important;
+    display: inline-block; }
+  .navbar {
+    position: static !important;
+    min-height: 30px !important; }
+  .navbar-default {
+    position: relative;
+    background: url(img/menu/dropdown-bg.png) repeat !important;
+    z-index: 3 !important; }
+  .navbar-header {
+    background: none !important;
+    height: 35px !important; }
+    .navbar-header #logo {
+      position: absolute;
+      top: 4.4%;
+      left: 7%;
+      z-index: 2; }
+    .navbar-header #company-name {
+      position: absolute;
+      top: 0 !important;
+      left: 18% !important;
+      font-size: 25px;
+      z-index: 2 !important; }
+  .navbar-toggle {
+    margin-top: -1% !important;
+    z-index: 2; }
+  .navbar-collapse {
+    padding-left: 0 !important; }
+  .navbar-nav {
+    height: auto !important;
+    font-size: 16px !important;
+    float: none !important;
+    margin-left: 0 !important; }
+    .navbar-nav li a {
+      margin-top: 0 !important; }
+    .navbar-nav .dropdown-menu {
+      margin-top: -18px !important; }
+  .breadcrumb {
+    height: 100px !important;
+    padding: 0 !important; }
+    .breadcrumb .container {
+      padding-top: 20px !important; }
+  #browse-menu {
+    left: 15% !important; }
+  #bottom-menu {
+    display: none; } }
 
 /* Тablets ----------- */
 /* Desktops and laptops ----------- */

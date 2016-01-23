@@ -335,7 +335,7 @@ body {
                     }
 
                     .dropdown-menu {
-                        background: #e7e7e7 $dropdown repeat-y;
+                        background: #e7e7e7 $dropdown repeat;
                         margin-top: 5px;
                         border: none;
                     }
@@ -483,8 +483,7 @@ body {
 
             #features {
                 text-align: left;
-                margin: 0 auto;
-                width: 960px;
+                margin-left: 15%;
                 position: relative;
 
                 #middle-block {

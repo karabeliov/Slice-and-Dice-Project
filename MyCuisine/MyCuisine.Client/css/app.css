@@ -220,7 +220,7 @@ body {
               height: 65px;
               padding-top: 25px; }
           body #container #header .navbar-default .navbar-nav .dropdown-menu {
-            background: #e7e7e7 url(img/menu/dropdown-bg.png) repeat-y;
+            background: #e7e7e7 url(img/menu/dropdown-bg.png) repeat;
             margin-top: 5px;
             border: none; }
       body #container #header #menu-bg {
@@ -323,8 +323,7 @@ body {
             font-size: inherit; }
       body #container #content #features {
         text-align: left;
-        margin: 0 auto;
-        width: 960px;
+        margin-left: 15%;
         position: relative; }
         body #container #content #features #middle-block {
           width: 280px; }
