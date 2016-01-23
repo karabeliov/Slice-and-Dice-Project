@@ -76,6 +76,7 @@
     <Content Include="css\bootstrap\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap\bootstrap.css" />
     <Content Include="css\bootstrap\bootstrap.min.css" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="css\img\bottom-bg.png" />
     <Content Include="css\img\bottom-menu.png" />
     <Content Include="css\img\bottom-shadow.png" />
@@ -102,6 +103,15 @@
     <Content Include="css\img\slider\a22.png" />
     <Content Include="css\img\slider\b05.png" />
     <Content Include="css\img\slider\loading.gif" />
+    <Content Include="css\img\spriteCSS\for-comments\page.html" />
+    <Content Include="css\img\spriteCSS\for-comments\spritesheet.png" />
+    <Content Include="css\img\spriteCSS\for-comments\style.css" />
+    <Content Include="css\img\spriteCSS\for-img\page.html" />
+    <Content Include="css\img\spriteCSS\for-img\spritesheet.png" />
+    <Content Include="css\img\spriteCSS\for-img\style.css" />
+    <Content Include="css\img\spriteCSS\for-testimonials\page.html" />
+    <Content Include="css\img\spriteCSS\for-testimonials\spritesheet.png" />
+    <Content Include="css\img\spriteCSS\for-testimonials\style.css" />
     <Content Include="css\img\stars.png" />
     <Content Include="css\img\switcher\switcher-item-active.png" />
     <Content Include="css\img\switcher\switcher-item.png" />
@@ -165,6 +175,10 @@
     <Content Include="css\bootstrap\bootstrap.css.map" />
     <Content Include="css\bootstrap\bootstrap.min.css.map" />
     <Content Include="css\media-queries.scss" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="lib\angular\angular.intellisense.js" />
     <Content Include="lib\angular\angular.min.js" />
     <Content Include="lib\bootstrap\bootstrap.min.js" />

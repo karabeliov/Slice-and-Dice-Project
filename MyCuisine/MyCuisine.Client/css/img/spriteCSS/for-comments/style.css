@@ -1,0 +1,47 @@
+.sprite {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-comment-arrow {
+    width: 9px;
+    height: 19px;
+    background-position: -5px -5px;
+}
+
+.sprite-comment-bg {
+    width: 530px;
+    height: 2px;
+    background-position: -5px -34px;
+}
+
+.sprite-comment-bg-d2 {
+    width: 450px;
+    height: 2px;
+    background-position: -24px -5px;
+}
+
+.sprite-comment-bottom {
+    width: 530px;
+    height: 26px;
+    background-position: -5px -46px;
+}
+
+.sprite-comment-bottom-d2 {
+    width: 450px;
+    height: 26px;
+    background-position: -5px -82px;
+}
+
+.sprite-comment-top {
+    width: 530px;
+    height: 9px;
+    background-position: -5px -118px;
+}
+
+.sprite-comment-top-d2 {
+    width: 450px;
+    height: 9px;
+    background-position: -5px -137px;
+}

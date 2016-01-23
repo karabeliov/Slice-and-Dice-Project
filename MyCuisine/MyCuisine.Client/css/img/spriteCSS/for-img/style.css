@@ -1,0 +1,59 @@
+.sprite {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-bottom-bg {
+    width: 1px;
+    height: 9px;
+    background-position: -5px -5px;
+}
+
+.sprite-bottom-menu {
+    width: 44px;
+    height: 13px;
+    background-position: -16px -5px;
+}
+
+.sprite-bottom-widget-bg {
+    width: 259px;
+    height: 27px;
+    background-position: -5px -28px;
+}
+
+.sprite-content-bg {
+    width: 37px;
+    height: 37px;
+    background-position: -5px -65px;
+}
+
+.sprite-footer-bg {
+    width: 1px;
+    height: 142px;
+    background-position: -274px -5px;
+}
+
+.sprite-frame {
+    width: 69px;
+    height: 69px;
+    background-position: -52px -65px;
+}
+
+.sprite-price {
+    width: 36px;
+    height: 37px;
+    background-position: -131px -65px;
+}
+
+.sprite-stars {
+    width: 70px;
+    height: 15px;
+    background-position: -177px -65px;
+}
+
+.sprite-top-bg {
+    width: 1px;
+    height: 11px;
+    background-position: -70px -5px;
+}
