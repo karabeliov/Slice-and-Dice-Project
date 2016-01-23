@@ -1,24 +1,26 @@
-﻿<main class="col-md-9">
+﻿<main id="posts" class="col-md-9" ng-controller="BlogController">
+    <!--Search: <input type="search" ng-model="vm.query">
+    Sort by:
+    <select ng-model="vm.orderProp">
+        <option value="title">Alphabetical</option>
+        <option value="date">Newest</option>
+    </select>-->
+
     <!-- Blog Post -->
-    <ol id="posts">
-        <li>
+    <ul>
+        <li ng-repeat="post in vm.posts | filter:vm.query | orderBy:vm.orderProp">
             <article class="post">
                 <header>
-                    <!-- Title -->
-                    <h1>Blog Post Title</h1>
-                    <!-- Author -->
+                    <h1>{{post.title}}</h1>
                     <p>
-                        by <a href="#">Kristian</a>
-                        <!-- Date/Time -->
-                        <span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM
+                        by <a href="#">{{post.author}}</a>
+                        <span class="glyphicon glyphicon-time"></span> Posted on {{post.date}} at {{post.time}}
                     </p>
-                    <!-- Preview Image -->
                     <div class="post-thumbnail">
-                        <img src="../img/foods/mekici.jpg" class="post-thumb" alt="Post image" width="320">
+                        <img src="{{post.img}}" class="post-thumb" alt="Post image" width="320">
                     </div>
                 </header>
-                <!-- Post Content -->
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
+                <p>{{post.desc}}</p>
                 <footer>
                     <div>
                         <a href="/post" class="btn btn-success">Read more</a>
@@ -26,53 +28,7 @@
                 </footer>
             </article>
         </li>
-        <li>
-            <article class="post">
-                <header>
-                    <!-- Title -->
-                    <h1>Blog Post Title</h1>
-                    <!-- Author -->
-                    <p>
-                        by <a href="#">Kristian</a>
-                        <!-- Date/Time -->
-                        <span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM
-                    </p>
-                    <!-- Preview Image -->
-                    <div class="post-thumbnail">
-                        <img src="../img/foods/mekici.jpg" class="post-thumb" alt="Post image" width="320">
-                    </div>
-                </header>
-                <!-- Post Content -->
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
-                <footer>
-                    <a href="/post" class="btn btn-success">Read more</a>
-                </footer>
-            </article>
-        </li>
-        <li>
-            <article class="post">
-                <header>
-                    <!-- Title -->
-                    <h1>Blog Post Title</h1>
-                    <!-- Author -->
-                    <p>
-                        by <a href="#">Kristian</a>
-                        <!-- Date/Time -->
-                        <span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM
-                    </p>
-                    <!-- Preview Image -->
-                    <div class="post-thumbnail">
-                        <img src="../img/foods/mekici.jpg" class="post-thumb" alt="Post image" width="320">
-                    </div>
-                </header>
-                <!-- Post Content -->
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
-                <footer>
-                    <a href="/post" class="btn btn-success">Read more</a>
-                </footer>
-            </article>
-        </li>
-    </ol>
+    </ul>
 </main>
 <div id="sidebar" class="col-md-3">
     <h4>Recent Post</h4>

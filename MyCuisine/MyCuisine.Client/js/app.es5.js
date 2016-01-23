@@ -25,6 +25,7 @@
         }).when('/blog', {
             title: 'Blog',
             templateUrl: PARTIALS_PREFIX + 'blog.html',
+            controller: 'BlogController',
             controllerAs: CONTROLLER_AS_VIEW_MODEL
         }).when('/post', {
             title: 'Post',

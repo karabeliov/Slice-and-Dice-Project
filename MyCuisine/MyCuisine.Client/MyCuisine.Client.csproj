@@ -154,6 +154,7 @@
     </Content>
     <Content Include="js\app.js" />
     <Content Include="js\controllers\home-controller.js" />
+    <Content Include="js\controllers\blog-controller.js" />
     <Content Include="js\custom.es5.js">
       <DependentUpon>custom.js</DependentUpon>
     </Content>
