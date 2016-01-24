@@ -30,9 +30,14 @@
                 controller: 'BlogController',
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
-            .when('/post', {
+            .when('/post/:objectId', {
                 title: 'Post',
                 templateUrl: PARTIALS_PREFIX + 'post.html',
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
+            })
+            .when('/post/add', {
+                title: 'Create Post',
+                templateUrl: PARTIALS_PREFIX + 'createPost.html',
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
             .otherwise({ redirectTo: '/' });

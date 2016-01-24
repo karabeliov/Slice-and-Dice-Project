@@ -1,35 +1,43 @@
-﻿<main id="posts" class="col-md-9">
+﻿<main id="posts" class="col-md-9" ng-controller="BlogController as blog">
     <!-- Blog Post -->
     <article class="post">
         <header>
             <!-- Title -->
-            <h1>Blog Post Title</h1>
+            <h1>{{blog.currentPost.title}}</h1>
             <!-- Author -->
             <p class="lead">
-                by <a href="#">Kristian</a>
+                by <a href="#">{{blog.currentPost.author}}</a>
             </p>
             <!-- Date/Time -->
-            <p><span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM</p>
+            <p><span class="glyphicon glyphicon-time"></span> Posted on {{blog.currentPost.createdAt | date:"dd MMMM yyyy 'at' H:mm"}}</p>
             <!-- Preview Image -->
             <div class="post-thumbnail">
-                <img src="../img/foods/mekici.jpg" class="post-thumb" alt="Post image" width="220" height="225">
+                <img src="{{blog.currentPost.img}}" class="post-thumb" alt="Post image" width="220" height="225">
                 <span class="post-overlay"></span>
             </div>
         </header>
         <!-- Post Content -->
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
-        <footer>
+        <p>{{blog.currentPost.desc}}</p>
+        <footer id="comment-form">
             <!-- Blog Comments -->
             <!-- Comments Form -->
             <div class="well">
                 <h4>Leave a Comment:</h4>
                 <form role="form">
                     <div class="form-group">
-                        <textarea class="form-control" rows="3"></textarea>
+                        <div class="form-group">
+                            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                            <div class="col-lg-10" id="email-com">
+                                <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="textArea" class="col-lg-2 control-label">Comment</label>
+                            <div class="col-lg-10">
+                                <textarea class="form-control" rows="3" id="textArea"></textarea>
+                            </div>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-success">Submit</button>
                 </form>
@@ -38,7 +46,7 @@
             <!-- Comment -->
             <div class="media">
                 <a class="pull-left" href="#">
-                    <img class="media-object" src="../img/my-photo.jpg" alt=""  width="56">
+                    <img class="media-object" src="../img/my-photo.jpg" alt="" width="56">
                 </a>
                 <div class="media-body">
                     <h4 class="media-heading">
@@ -62,7 +70,7 @@
                     <!-- Nested Comment -->
                     <div class="media">
                         <a class="pull-left" href="#">
-                            <img class="media-object" src="../img/my-photo.jpg" alt=""  width="56">
+                            <img class="media-object" src="../img/my-photo.jpg" alt="" width="56">
                         </a>
                         <div class="media-body">
                             <h4 class="media-heading">
@@ -78,73 +86,5 @@
         </footer>
     </article>
 </main>
-<div id="sidebar" class="col-md-3">
-    <h4>Recent Post</h4>
-    <div class="widget">
-        <div class="widget-bottom">
-            <div class="widget-content">
-                <ul>
-                    <li>
-                        <a href="#">Rhoncus quis varius sed velit</a>
-                    </li>
-                    <li>
-                        <a href="#">Rhoncus quis varius sed velit</a>
-                    </li>
-                    <li>
-                        <a href="#">Rhoncus quis varius sed velit</a>
-                    </li>
-                    <li>
-                        <a href="#">Rhoncus quis varius sed velit</a>
-                    </li>
-                    <li>
-                        <a href="#">Rhoncus quis varius sed velit</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <h4>Recent Comments</h4>
-    <div class="widget">
-        <div class="widget-bottom">
-            <div class="widget-content">
-                <ul>
-                    <li>
-                        <span>
-                            <a href="#">Mariq</a>
-                        </span> on
-                        <a href="#">Rhoncus quis varius sed velit</a>
-                    </li>
-                    <li>
-                        <span>
-                            <a href="#">Pesho</a>
-                        </span> on <a href="#">Rhoncus quis varius sed velit</a>
-                    </li>
-                    <li>
-                        <span>
-                            <a href="#">Gosho</a>
-                        </span> on <a href="#">Rhoncus quis varius sed velit</a>
-                    </li>
-                    <li>
-                        <span>
-                            <a href="#">Ivan</a>
-                        </span> on <a href="#">Rhoncus quis varius sed velit</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <h4>Meta</h4>
-    <div class="widget">
-        <div class="widget-bottom">
-            <div class="widget-content">
-                <ul>
-                    <li><a href="#">Log in</a></li>
-                    <li><a href="#">Entries RSS</a></li>
-                    <li><a href="#">Comments RSS</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<div id="sidebar" class="col-md-3" sidebar>  
 </div>

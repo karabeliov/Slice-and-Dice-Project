@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    function BlogController($resource) {
+    function BlogController($resource, $routeParams) {
         var vm = this;
         vm.orderProp = 'date';
         var limit = 3;
@@ -22,8 +22,11 @@
         });
         parseQueryPost.getPost().$promise
         .then(function (data) {
-            console.log(data.results);
+            var currentId = $routeParams.objectId;
             vm.posts = data.results;
+
+            vm.currentPost = $.grep(data.results, function (e) { return e.objectId == currentId; })[0];
+            console.log(vm.currentPost);
         })
         .catch(function (error) {
             console.log(error)
@@ -31,5 +34,5 @@
     }
 
     angular.module('myApp.controllers')
-        .controller('BlogController', ['$resource', BlogController])
+        .controller('BlogController', ['$resource', '$routeParams', BlogController])
 }());

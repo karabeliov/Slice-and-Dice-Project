@@ -1,5 +1,19 @@
 ﻿// NOT LOAD IN INDEX PAGE
 
+(function () {
+    'use strict';
+
+    function PostController($http) {
+        var vm = this;
+
+    }
+
+    angular.module('myApp.controllers')
+        .controller('PostController', ['$http', PostController])
+}());
+
+
+
 // Declare the types.
 var Post = Parse.Object.extend("Post");
 var Comment = Parse.Object.extend("Comment");
@@ -20,11 +34,3 @@ myComment.set("parent", myPost);
 
 // This will save both myPost and myComment
 myComment.save();
-
-
-
-Post.query().find({
-    success: function(list) {
-        // list contains the posts that the current user likes.
-    }
-});

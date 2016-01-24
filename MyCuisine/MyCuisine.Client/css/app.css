@@ -438,7 +438,7 @@ body {
         float: left;
         position: relative;
         margin-right: 30px; }
-      body #container #content span.post-overlay {
+      body #container #content .post-overlay {
         background: url(img/post-overlay.png) no-repeat;
         display: block;
         height: 226px;
@@ -446,6 +446,10 @@ body {
         position: absolute;
         top: 0;
         width: 226px; }
+      body #container #content #email-com {
+        margin-bottom: 20px; }
+      body #container #content #comment-form {
+        margin-top: 30%; }
     body #container #bottom-shadow {
       background: url(img/bottom-shadow.png) no-repeat;
       width: 960px;

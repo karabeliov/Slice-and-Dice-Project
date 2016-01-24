@@ -636,7 +636,7 @@ body {
                 position:relative; 
                 margin-right: 30px;
             }
-            span.post-overlay { 
+            .post-overlay { 
                 background:url(img/post-overlay.png) no-repeat;
                 display:block; 
                 height:226px; 
@@ -644,6 +644,12 @@ body {
                 position:absolute; 
                 top:0; 
                 width:226px; 
+            }
+            #email-com{
+                margin-bottom: 20px;
+            }
+            #comment-form {
+                margin-top: 30%;
             }
         }
         #bottom-shadow {

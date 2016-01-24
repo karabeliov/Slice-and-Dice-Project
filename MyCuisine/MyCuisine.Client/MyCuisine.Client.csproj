@@ -153,6 +153,8 @@
       <DependentUpon>app.es5.js</DependentUpon>
     </Content>
     <Content Include="js\app.js" />
+    <Content Include="js\controllers\sidebar-directive.js" />
+    <Content Include="js\controllers\comment-controller.js" />
     <Content Include="js\controllers\home-controller.js" />
     <Content Include="js\controllers\blog-controller.js" />
     <Content Include="js\create-post.js" />
@@ -203,6 +205,8 @@
   <ItemGroup>
     <Content Include="css\reset.css" />
     <Content Include="index.html" />
+    <Content Include="views\createPost.html" />
+    <Content Include="views\directives\sidebar.html" />
     <Content Include="views\post.html" />
     <Content Include="views\blog.html" />
     <Content Include="views\home.html" />
