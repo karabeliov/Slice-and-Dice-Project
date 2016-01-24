@@ -1,39 +1,35 @@
 ﻿(function () {
     'use strict';
 
-    function BlogController() {
+    function BlogController($resource) {
         var vm = this;
+        vm.orderProp = 'date';
+        var limit = 3;
 
-        vm.posts = [
-            {
-                'title': 'Blog Post Title 1 ',
-                'img': '../img/foods/mekici.jpg',
-                'desc': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis.',
-                'author': 'Kristian',
-                'date': 'August 24, 2013',
-                'time': '9:00 PM'
-            },
-            {
-                'title': 'Blog Post Title 2',
-                'img': '../img/foods/bulgarian-shopska-salad-2.jpg',
-                'desc': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis.',
-                'author': 'Kristian',
-                'date': 'August 24, 2013',
-                'time': '9:00 PM'
-            },
-            {
-                'title': 'Blog Post Title 3',
-                'img': '../img/foods/meat.jpg',
-                'desc': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis.',
-                'author': 'Kristian',
-                'date': 'August 24, 2013',
-                'time': '9:00 PM'
+        var parseQueryPost = $resource('https://api.parse.com/1/classes/Post', {}, {
+            getPost: {
+                method: 'GET',
+                headers: {
+                    'X-Parse-Application-Id': 'BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS',
+                    'X-Parse-REST-API-Key': '8DbU4OmT5kuqPP6S8UlOdVur2m5KcgXcJ8sMK2Zz',
+                },
+                params:  { 
+                    //where: vm.query,
+                    limit: limit,
+                    order: vm.orderProp
+                }
             }
-        ];
-
-        vm.orderProp = 'title';
+        });
+        parseQueryPost.getPost().$promise
+        .then(function (data) {
+            console.log(data.results);
+            vm.posts = data.results;
+        })
+        .catch(function (error) {
+            console.log(error)
+        });
     }
 
     angular.module('myApp.controllers')
-        .controller('BlogController', [BlogController])
+        .controller('BlogController', ['$resource', BlogController])
 }());

@@ -155,6 +155,7 @@
     <Content Include="js\app.js" />
     <Content Include="js\controllers\home-controller.js" />
     <Content Include="js\controllers\blog-controller.js" />
+    <Content Include="js\create-post.js" />
     <Content Include="js\custom.es5.js">
       <DependentUpon>custom.js</DependentUpon>
     </Content>
@@ -180,6 +181,7 @@
     <Content Include="css\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="css\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="css\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="lib\angular\angular-resource.min.js" />
     <None Include="lib\angular\angular.intellisense.js" />
     <Content Include="lib\angular\angular.min.js" />
     <Content Include="lib\bootstrap\bootstrap.min.js" />

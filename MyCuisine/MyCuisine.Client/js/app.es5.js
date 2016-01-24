@@ -37,7 +37,7 @@
     angular.module('myApp.services', []);
     angular.module('myApp.directives', []);
     angular.module('myApp.controllers', ['myApp.services']);
-    var myApp = angular.module('myApp', ['ngRoute', 'myApp.controllers', 'myApp.directives']).config(['$routeProvider', '$locationProvider', config]).constant('baseServiceUrl', 'http://localhost:64352/');
+    var myApp = angular.module('myApp', ['ngRoute', 'ngResource', 'myApp.controllers', 'myApp.directives']).config(['$routeProvider', '$locationProvider', config]).constant('baseServiceUrl', 'http://localhost:64352/');
 
     myApp.run(['$location', '$rootScope', function ($location, $rootScope) {
         $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
