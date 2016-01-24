@@ -27,18 +27,19 @@
             templateUrl: PARTIALS_PREFIX + 'blog.html',
             controller: 'BlogController',
             controllerAs: CONTROLLER_AS_VIEW_MODEL
-        }).when('/post/:objectId', {
-            title: 'Post',
-            templateUrl: PARTIALS_PREFIX + 'post.html',
-            controllerAs: CONTROLLER_AS_VIEW_MODEL
-        }).when('/post/add', {
-            title: 'Create Post',
-            templateUrl: PARTIALS_PREFIX + 'createPost.html',
-            controllerAs: CONTROLLER_AS_VIEW_MODEL
         }).when('/login', {
             title: 'Login',
             templateUrl: PARTIALS_PREFIX + 'login.html',
             controller: 'LoginController',
+            controllerAs: CONTROLLER_AS_VIEW_MODEL
+        }).when('/post/add', {
+            title: 'Add Post',
+            templateUrl: PARTIALS_PREFIX + 'addPost.html',
+            controller: 'AddPostController',
+            controllerAs: CONTROLLER_AS_VIEW_MODEL
+        }).when('/post/:objectId', {
+            title: 'Post',
+            templateUrl: PARTIALS_PREFIX + 'post.html',
             controllerAs: CONTROLLER_AS_VIEW_MODEL
         }).otherwise({ redirectTo: '/' });
     }

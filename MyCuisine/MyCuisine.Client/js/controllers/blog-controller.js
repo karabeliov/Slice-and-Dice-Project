@@ -3,7 +3,7 @@
 
     function BlogController($resource, $routeParams) {
         var vm = this;
-        vm.orderProp = 'date';
+        vm.orderProp = '-createdAt';
         var limit = 3;
 
         var parseQueryPost = $resource('https://api.parse.com/1/classes/Post', {}, {
@@ -24,7 +24,7 @@
         .then(function (data) {
             var currentId = $routeParams.objectId;
             vm.posts = data.results;
-
+            console.log(vm.posts);
             vm.currentPost = $.grep(data.results, function (e) { return e.objectId == currentId; })[0];
             console.log(vm.currentPost);
         })

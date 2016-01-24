@@ -161,7 +161,7 @@
     <Content Include="js\controllers\comment-controller.js" />
     <Content Include="js\controllers\home-controller.js" />
     <Content Include="js\controllers\blog-controller.js" />
-    <Content Include="js\create-post.js" />
+    <Content Include="js\controllers\add-post-controller.js" />
     <Content Include="js\custom.es5.js">
       <DependentUpon>custom.js</DependentUpon>
     </Content>
@@ -212,7 +212,7 @@
   <ItemGroup>
     <Content Include="css\reset.css" />
     <Content Include="index.html" />
-    <Content Include="views\createPost.html" />
+    <Content Include="views\addPost.html" />
     <Content Include="views\directives\sidebar.html" />
     <Content Include="views\post.html" />
     <Content Include="views\blog.html" />
