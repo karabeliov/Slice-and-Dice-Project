@@ -16,9 +16,9 @@
     <div class="widget-bottom">
         <div class="widget-content">
             <ul>
-                <li ng-repeat="post in vm.posts | orderBy:vm.orderProp">
+                <li ng-repeat="comment in vm.comments | orderBy:vm.orderProp">
                     <span>
-                        <a href="#">Mariq</a>
+                        <a href="/post/{{post.objectId}}">{{comment.email}}</a>
                     </span> on
                     <a href="/post/{{post.objectId}}">{{post.title}}</a>
                 </li>
