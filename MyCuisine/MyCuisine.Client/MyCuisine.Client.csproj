@@ -156,7 +156,6 @@
     </Content>
     <Content Include="js\app.js" />
     <Content Include="js\common\notifier.js" />
-    <Content Include="js\controllers\login-controller.js" />
     <Content Include="js\controllers\sidebar-directive.js" />
     <Content Include="js\controllers\comment-controller.js" />
     <Content Include="js\controllers\home-controller.js" />

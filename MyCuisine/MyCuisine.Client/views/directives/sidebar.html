@@ -3,20 +3,8 @@
     <div class="widget-bottom">
         <div class="widget-content">
             <ul>
-                <li>
-                    <a href="#">Rhoncus quis varius sed velit</a>
-                </li>
-                <li>
-                    <a href="#">Rhoncus quis varius sed velit</a>
-                </li>
-                <li>
-                    <a href="#">Rhoncus quis varius sed velit</a>
-                </li>
-                <li>
-                    <a href="#">Rhoncus quis varius sed velit</a>
-                </li>
-                <li>
-                    <a href="#">Rhoncus quis varius sed velit</a>
+                <li ng-repeat="post in vm.posts | filter:vm.query | orderBy:vm.orderProp">
+                    <a href="/post/{{post.objectId}}">{{post.title}}</a>
                 </li>
             </ul>
         </div>
@@ -28,26 +16,11 @@
     <div class="widget-bottom">
         <div class="widget-content">
             <ul>
-                <li>
+                <li ng-repeat="post in vm.posts | orderBy:vm.orderProp">
                     <span>
                         <a href="#">Mariq</a>
                     </span> on
-                    <a href="#">Rhoncus quis varius sed velit</a>
-                </li>
-                <li>
-                    <span>
-                        <a href="#">Pesho</a>
-                    </span> on <a href="#">Rhoncus quis varius sed velit</a>
-                </li>
-                <li>
-                    <span>
-                        <a href="#">Gosho</a>
-                    </span> on <a href="#">Rhoncus quis varius sed velit</a>
-                </li>
-                <li>
-                    <span>
-                        <a href="#">Ivan</a>
-                    </span> on <a href="#">Rhoncus quis varius sed velit</a>
+                    <a href="/post/{{post.objectId}}">{{post.title}}</a>
                 </li>
             </ul>
         </div>

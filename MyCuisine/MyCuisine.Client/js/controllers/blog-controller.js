@@ -1,9 +1,10 @@
 ﻿(function () {
     'use strict';
 
-    function BlogController($resource, $routeParams) {
+    function BlogController($resource, $routeParams, $rootScope) {
         var vm = this;
         vm.orderProp = '-createdAt';
+        $rootScope.query = '';
         var limit = 3;
 
         var parseQueryPost = $resource('https://api.parse.com/1/classes/Post', {}, {
@@ -14,7 +15,7 @@
                     'X-Parse-REST-API-Key': '8DbU4OmT5kuqPP6S8UlOdVur2m5KcgXcJ8sMK2Zz',
                 },
                 params:  { 
-                    //where: vm.query,
+                    where: $rootScope.query,
                     limit: limit,
                     order: vm.orderProp
                 }
@@ -34,5 +35,5 @@
     }
 
     angular.module('myApp.controllers')
-        .controller('BlogController', ['$resource', '$routeParams', BlogController])
+        .controller('BlogController', ['$resource', '$routeParams', '$rootScope', BlogController])
 }());

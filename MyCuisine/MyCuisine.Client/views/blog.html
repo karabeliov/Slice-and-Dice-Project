@@ -3,7 +3,7 @@
 
     <!-- Blog Post -->
     <ul>
-        <li ng-repeat="post in vm.posts | filter:vm.query | orderBy:vm.orderProp">
+        <li ng-repeat="post in vm.posts | filter:query | orderBy:vm.orderProp">
             <article class="post">
                 <header>
                     <h1>{{post.title}}</h1>

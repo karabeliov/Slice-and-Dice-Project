@@ -267,6 +267,7 @@ body {
         }
         //HEADER
         #header {
+            position: relative;
             background: $top-shadow repeat-x;
             padding-left: 11%;
             padding-top: 26px;
@@ -381,6 +382,17 @@ body {
                         }
                     }
                 }
+            }
+
+            #login-bar {
+                h2 {
+                    color: white;
+                    display: inline-block;
+                }
+                position: absolute;
+                right: 2%;
+                top: 17%;
+                z-index: 5;
             }
         }
         //CONTENT

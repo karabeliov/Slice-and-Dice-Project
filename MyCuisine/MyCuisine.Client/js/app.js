@@ -33,7 +33,6 @@
             .when('/login', {
                 title: 'Login',
                 templateUrl: PARTIALS_PREFIX + 'login.html',
-                controller: 'LoginController',
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
             .when('/post/add', {
@@ -58,12 +57,56 @@
         .value('toastr', toastr)
         .constant('baseServiceUrl', 'http://localhost:64352/');
 
-    myApp.run(['$location', '$rootScope', function ($location, $rootScope) {
+    myApp.run(['$location', '$rootScope', '$timeout', 'notifier', function ($location, $rootScope, $timeout, notifier) {
         $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
             $rootScope.title = current.$$route.title;
-        });
-        $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
             $rootScope.style = current.$$route.style || 'page';
         });
+
+        $rootScope.currentUser = Parse.User.current();
+
+        $rootScope.login = function (user) {
+            Parse.User.logIn(user.username, user.password, {
+                success: function (user) {
+                    $rootScope.currentUser = user;
+                    notifier.success('Successful login!');
+                },
+                error: function (user, error) {
+                    notifier.error('Username/Password combination is not valid!');
+                }
+            });
+
+            $timeout({}, 0);
+            $location.path('/post/add');
+        };
+
+        $rootScope.signup = function (user) {
+            var newUser = new Parse.User();
+            newUser.set("username", user.username);
+            newUser.set("password", user.password);
+            newUser.set("email", user.email);
+            newUser.set("fname", user.fname);
+            newUser.set("lname", user.lname);
+
+            newUser.signUp(null, {
+                success: function (user) {
+                    notifier.success('Registration successful!');
+                    $rootScope.currentUser = user;
+                    $timeout({}, 0);
+                    $location.path('/post/add');
+                },
+                error: function (user, error) {
+                    notifier.error("Error: " + error.code + " " + error.message);
+                }
+            });
+        };
+
+        $rootScope.logOut = function (form) {
+            Parse.User.logOut();
+            notifier.success('Successful logout!');
+            $rootScope.currentUser = null;
+            $timeout({}, 0);
+            $location.path('/');
+        };
     }]);
 }());

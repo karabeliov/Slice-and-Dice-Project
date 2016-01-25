@@ -177,6 +177,7 @@ body {
     body #container #slider {
       display: none; }
     body #container #header {
+      position: relative;
       background: url(img/quote-shadow.png) repeat-x;
       padding-left: 11%;
       padding-top: 26px;
@@ -252,6 +253,14 @@ body {
             color: #dacba7; }
             body #container #header .category-name .meta-info a a:hover {
               color: #ffffff; }
+      body #container #header #login-bar {
+        position: absolute;
+        right: 2%;
+        top: 17%;
+        z-index: 5; }
+        body #container #header #login-bar h2 {
+          color: white;
+          display: inline-block; }
     body #container .breadcrumb {
       height: 70px;
       color: #716851;
