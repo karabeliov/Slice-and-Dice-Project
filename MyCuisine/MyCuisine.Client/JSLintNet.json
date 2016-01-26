@@ -1,0 +1,14 @@
+﻿{
+  "version": "2.1.0",
+  "ignore": [
+    "\\lib\\"
+  ],
+  "options": {
+    "bitwise": true,
+    "eval": true,
+    "for": true,
+    "this": true,
+    "white": true
+  },
+  "globalVariables": []
+}

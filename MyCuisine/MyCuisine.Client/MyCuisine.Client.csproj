@@ -188,10 +188,10 @@
     <Content Include="css\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="css\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="lib\angular\angular-resource.min.js" />
+    <Content Include="JSLintNet.json" />
     <None Include="lib\angular\angular.intellisense.js" />
     <Content Include="lib\angular\angular.min.js" />
     <Content Include="lib\bootstrap\bootstrap.min.js" />
-    <Content Include="lib\bootstrap\npm.js" />
     <Content Include="lib\jquery\jquery.min.js" />
     <Content Include="lib\toastr\toastr.js" />
     <Content Include="lib\toastr\toastr.min.js" />

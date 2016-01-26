@@ -21,11 +21,11 @@
             myPost.set('img', post.image);
             myPost.set('desc', post.description);
             myPost.save(null, {
-                success: function (post) {
+                success: function () {
                     notifier.success('Post is public now!');
                     $window.location.assign('/blog');
                 },
-                error: function (post, error) {
+                error: function (error) {
                     notifier.error("Error: " + error.code + " " + error.message);
                 }
             });
@@ -39,5 +39,5 @@
     }
 
     angular.module('myApp.controllers')
-        .controller('AddPostController', ['$window', 'notifier', AddPostController])
+        .controller('AddPostController', ['$window', 'notifier', AddPostController]);
 }());

@@ -11,7 +11,7 @@
                 method: 'GET',
                 headers: {
                     'X-Parse-Application-Id': 'BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS',
-                    'X-Parse-REST-API-Key': '8DbU4OmT5kuqPP6S8UlOdVur2m5KcgXcJ8sMK2Zz',
+                    'X-Parse-REST-API-Key': '8DbU4OmT5kuqPP6S8UlOdVur2m5KcgXcJ8sMK2Zz'
                 },
                 params: {
                     limit: limit,
@@ -44,7 +44,7 @@
                 //}
             })
             .catch(function (error) {
-                console.log(error)
+                console.log(error);
             });
 
         // ADD Comment to Current POST
@@ -57,7 +57,7 @@
             takePost.first({
                 success: function (post) {
                     comment.date = post.updatedAt;
-                    post.add('Comments', comment)
+                    post.add('Comments', comment);
                     post.save();
                     notifier.success('Comment is add!');
                 },
@@ -69,5 +69,5 @@
     }
 
     angular.module('myApp.controllers')
-        .controller('CommentController', ['$resource', 'notifier', CommentController])
+        .controller('CommentController', ['$resource', 'notifier', CommentController]);
 }());

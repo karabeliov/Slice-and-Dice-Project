@@ -52,8 +52,8 @@
     angular.module('myApp.services', []);
     angular.module('myApp.directives', []);
     angular.module('myApp.controllers', ['myApp.services']);
-    var myApp = angular.module('myApp', ['ngRoute', 'ngResource', 'myApp.controllers', 'myApp.directives']).
-        config(['$routeProvider', '$locationProvider', config])
+    var myApp = angular.module('myApp', ['ngRoute', 'ngResource', 'myApp.controllers', 'myApp.directives'])
+        .config(['$routeProvider', '$locationProvider', config])
         .value('toastr', toastr)
         .constant('baseServiceUrl', 'http://localhost:64352/');
 
