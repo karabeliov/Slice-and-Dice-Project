@@ -1,8 +1,15 @@
 ﻿(function () {
     'use strict';
 
-    function AddPostController($window, $timeout, notifier) {
+    function AddPostController($window, notifier) {
         var vm = this;
+
+        //var post = ...;
+
+        //var user = Parse.User.current();
+        //var relation = user.relation("posts");
+        //relation.add(post);
+        //user.save();
 
         vm.master = {};
 
@@ -16,10 +23,7 @@
             myPost.save(null, {
                 success: function (post) {
                     notifier.success('Post is public now!');
-
-                    $timeout(function () {
-                        $window.location.assign('/blog');
-                    }, 2000);
+                    $window.location.assign('/blog');
                 },
                 error: function (post, error) {
                     notifier.error("Error: " + error.code + " " + error.message);
@@ -32,30 +36,8 @@
         };
 
         vm.reset();
-
-        //// Declare the types.
-        //var Post = Parse.Object.extend("Post");
-        //var Comment = Parse.Object.extend("Comment");
-
-        //// Create the post
-        //var myPost = new Post();
-        //myPost.set('title', 'My Third Post');
-        //myPost.set('img', '../img/foods/meat.jpg');
-        //myPost.set('desc', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis.');
-        //myPost.set('author', 'Kristian');
-
-        //// Create the comment
-        //var myComment = new Comment();
-        //myComment.set("email", "Kris@email.bg");
-        //myComment.set("content", "Let's do Sushirrito.");
-        //myComment.set("avatar", "../img/my-photo.jpg");
-        //// Add the post as a value in the comment
-        //myComment.set("parent", myPost);
-
-        //// This will save both myPost and myComment
-        //myComment.save();
     }
 
     angular.module('myApp.controllers')
-        .controller('AddPostController', ['$window', '$timeout', 'notifier', AddPostController])
+        .controller('AddPostController', ['$window', 'notifier', AddPostController])
 }());

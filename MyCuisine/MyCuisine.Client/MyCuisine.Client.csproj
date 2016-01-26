@@ -81,6 +81,7 @@
     <Content Include="css\img\bottom-menu.png" />
     <Content Include="css\img\bottom-shadow.png" />
     <Content Include="css\img\bottom-widget-bg.png" />
+    <Content Include="css\img\comments\avatar.jpg" />
     <Content Include="css\img\comments\comment-arrow.png" />
     <Content Include="css\img\comments\comment-bg-d2.png" />
     <Content Include="css\img\comments\comment-bg.png" />

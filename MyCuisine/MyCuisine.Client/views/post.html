@@ -1,86 +1,59 @@
-﻿<main id="posts" class="col-md-9" ng-controller="BlogController as blog">
+﻿<main id="posts" class="col-md-9" ng-controller="BlogController as post">
     <!-- Blog Post -->
     <article class="post">
         <header>
             <!-- Title -->
-            <h1>{{blog.currentPost.title}}</h1>
+            <h1>{{post.currentPost.title}}</h1>
             <!-- Author -->
             <p class="lead">
-                by <a href="#">{{blog.currentPost.author}}</a>
+                by <a href="#">{{post.currentPost.author}}</a>
             </p>
             <!-- Date/Time -->
-            <p><span class="glyphicon glyphicon-time"></span> Posted on {{blog.currentPost.createdAt | date:"dd MMMM yyyy 'at' H:mm"}}</p>
+            <p><span class="glyphicon glyphicon-time"></span> Posted on {{post.currentPost.createdAt | date:"dd MMMM yyyy 'at' H:mm"}}</p>
             <!-- Preview Image -->
             <div class="post-thumbnail">
-                <img src="{{blog.currentPost.img}}" class="post-thumb" alt="Post image" width="220" height="225">
+                <img src="{{post.currentPost.img}}" class="post-thumb" alt="Post image" width="220" height="225">
                 <span class="post-overlay"></span>
             </div>
         </header>
         <!-- Post Content -->
-        <p>{{blog.currentPost.desc}}</p>
+        <p>{{post.currentPost.desc}}</p>
         <footer id="comment-form">
             <!-- Blog Comments -->
             <!-- Comments Form -->
             <div class="well">
                 <h4>Leave a Comment:</h4>
-                <form role="form">
+                <form ng-controller="CommentController as commentCtr">
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                            <label for="inputEmail" class="col-lg-2 control-label">Name</label>
                             <div class="col-lg-10" id="email-com">
-                                <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                                <input type="text" class="form-control" id="inputEmail" placeholder="Name" ng-model="comment.sender">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="textArea" class="col-lg-2 control-label">Comment</label>
                             <div class="col-lg-10">
-                                <textarea class="form-control" rows="3" id="textArea"></textarea>
+                                <textarea class="form-control" rows="3" id="textArea" ng-model="comment.content"></textarea>
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button class="btn btn-success" ng-click="commentCtr.sendComment(comment, post.currentPost.objectId)">Submit</button>
                 </form>
             </div>
             <!-- Posted Comments -->
             <!-- Comment -->
-            <div class="media">
+            <div class="media" ng-repeat="comment in post.currentPost.Comments">
                 <a class="pull-left" href="#">
-                    <img class="media-object" src="../img/my-photo.jpg" alt="" width="56">
+                    <img class="media-object" src="{{comment.sender.img || '../css/img/comments/avatar.jpg'}}" alt="" width="56">
                 </a>
                 <div class="media-body">
                     <h4 class="media-heading">
-                        Start Bootstrap
-                        <small>August 25, 2014 at 9:30 PM</small>
+                        {{comment.sender}}
+                        <small>{{comment.date.iso | date:"dd MMMM yyyy 'at' H:mm"}}</small>
                     </h4>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </div>
-            </div>
-            <!-- Comment -->
-            <div class="media">
-                <a class="pull-left" href="#">
-                    <img class="media-object" src="../img/my-photo.jpg" alt="" width="56">
-                </a>
-                <div class="media-body">
-                    <h4 class="media-heading">
-                        Start Bootstrap
-                        <small>August 25, 2014 at 9:30 PM</small>
-                    </h4>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    <!-- Nested Comment -->
-                    <div class="media">
-                        <a class="pull-left" href="#">
-                            <img class="media-object" src="../img/my-photo.jpg" alt="" width="56">
-                        </a>
-                        <div class="media-body">
-                            <h4 class="media-heading">
-                                Nested Start Bootstrap
-                                <small>August 25, 2014 at 9:30 PM</small>
-                            </h4>
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                        </div>
-                    </div>
-                    <!-- End Nested Comment -->
+                    {{comment.content}}
                 </div>
             </div>
         </footer>

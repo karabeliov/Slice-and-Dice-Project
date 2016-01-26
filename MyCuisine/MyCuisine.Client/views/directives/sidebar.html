@@ -1,9 +1,9 @@
 ﻿<h4>Recent Post</h4>
-<div class="widget">
+<div class="widget" ng-controller="BlogController as blogCtr">
     <div class="widget-bottom">
         <div class="widget-content">
             <ul>
-                <li ng-repeat="post in vm.posts | filter:vm.query | orderBy:vm.orderProp">
+                <li ng-repeat="post in blogCtr.posts | filter:vm.query | orderBy:vm.orderProp">
                     <a href="/post/{{post.objectId}}">{{post.title}}</a>
                 </li>
             </ul>
@@ -12,15 +12,16 @@
 </div>
 
 <h4>Recent Comments</h4>
-<div class="widget">
+<div class="widget" ng-controller="CommentController as commentCtr">
     <div class="widget-bottom">
         <div class="widget-content">
             <ul>
-                <li ng-repeat="comment in vm.comments | orderBy:vm.orderProp">
+                <li ng-repeat="comment in commentCtr.comments | orderBy:commentCtr.orderProp">
+                    <!--{{commentCtr.getPost(comment.parent.objectId)}}-->
                     <span>
                         <a href="/post/{{post.objectId}}">{{comment.email}}</a>
-                    </span> on
-                    <a href="/post/{{post.objectId}}">{{post.title}}</a>
+                    </span> 
+                    <!--on <a href="/post/{{post.objectId}}">{{blogCtr.post.title}}</a>-->
                 </li>
             </ul>
         </div>
