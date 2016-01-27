@@ -4,43 +4,33 @@
             <div class="panel-heading">
                 <div class="panel-title">Add Post</div>
             </div>
-
             <div style="padding-top:30px" class="panel-body">
-
-                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-
-                <form id="addpostform" class="form-horizontal" role="form">
-
+                <form id="addpostform" name="postForm" class="form-horizontal" role="form" ng-submit="vm.public(vm.post)" novalidate>
                     <div style="margin-bottom: 25px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-header"></i></span>
-                        <input id="post-title" type="text" class="form-control" name="title" placeholder="title" required ng-model="vm.post.title">
-                    </div>
-
-                    <div style="margin-bottom: 25px" class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="post-author" type="text" class="form-control" name="author" placeholder="author" required ng-model="vm.post.author">
+                        <input id="post-title" type="text" class="form-control" name="title" placeholder="title" ng-model="vm.post.title" required>
                     </div>
 
                     <div style="margin-bottom: 25px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
-                        <input id="post-image" type="text" class="form-control" name="image" placeholder="image" required ng-model="vm.post.image">
+                        <input id="post-image" type="text" class="form-control" name="image" placeholder="image" ng-model="vm.post.image" required>
                     </div>
 
                     <div style="margin-bottom: 25px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                        <textarea id="post-description" rows="8" class="form-control" name="description" placeholder="description" required ng-model="vm.post.description">
+                        <textarea id="post-description" rows="8" class="form-control" name="description" placeholder="description" ng-model="vm.post.description" required>
                         </textarea>
                     </div>
 
-                    <div style="float: right; margin-top:10px" class="form-group">
-                        <!-- Button -->
-
+                    <div style="float: right; margin-top:10px; margin-right: 60px;">
                         <div class="col-sm-12 controls">
-                            <button id="btn-login" href="#" class="btn btn-success" ng-click="vm.update(vm.post)">Public post</button>
-                            <button id="btn-fblogin" href="#" class="btn btn-danger" ng-click="vm.reset()">Reset</button>
+                            <button type="submit" id="btn-login" href="#" class="btn btn-success" ng-disabled="postForm.$invalid">Public post</button>
                         </div>
                     </div>
                 </form>
+                <div style="margin-top: 10px; position: absolute; right: 30px;">
+                    <button id="btn-fblogin" href="#" class="btn btn-danger" ng-click="vm.reset()">Reset</button>
+                </div>
             </div>
         </div>
     </div>

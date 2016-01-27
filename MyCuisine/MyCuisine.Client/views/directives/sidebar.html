@@ -1,10 +1,10 @@
-﻿<div ng-controller="BlogController as blogCtr">
+﻿<div ng-controller="BlogController as blog">
     <h4>Recent Post</h4>
     <div class="widget">
         <div class="widget-bottom">
             <div class="widget-content">
                 <ul>
-                    <li ng-repeat="post in blogCtr.posts | filter:vm.query | orderBy:vm.orderProp">
+                    <li ng-repeat="post in blog.posts | orderBy: blog.orderPost | limitTo:blog.sidebarPostLimit">
                         <a href="/post/{{post.objectId}}">{{post.title}}</a>
                     </li>
                 </ul>
@@ -17,9 +17,9 @@
         <div class="widget-bottom">
             <div class="widget-content">
                 <ul>
-                    <li ng-repeat="post in blogCtr.posts" ng-show="post.Comments[0]">
+                    <li ng-repeat="post in blog.posts | orderBy:blog.orderComment | limitTo:blog.sidebarCommentLimit" ng-show="post.Comments[0]">
                         <span>
-                            <a href="/post/{{post.objectId}}">{{post.Comments[post.Comments.length-1].sender || 'no comment'}}</a>
+                            <a href="/post/{{post.objectId}}">{{post.Comments[post.Comments.length-1].sender}}</a>
                         </span>
                         on <a href="/post/{{post.objectId}}">{{post.title}}</a>
                     </li>
