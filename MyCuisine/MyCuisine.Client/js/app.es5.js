@@ -48,7 +48,7 @@
     angular.module('myApp.controllers', ['myApp.services']);
     var myApp = angular.module('myApp', ['ngRoute', 'ngResource', 'myApp.controllers', 'myApp.directives']).config(['$routeProvider', '$locationProvider', config]).value('toastr', toastr).constant('baseServiceUrl', 'http://localhost:64352/');
 
-    myApp.run(['$location', '$window', '$rootScope', '$timeout', 'notifier', function ($location, $window, $rootScope, $timeout, notifier) {
+    myApp.run(['$location', '$rootScope', '$timeout', 'notifier', function ($location, $rootScope, $timeout, notifier) {
         $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
             $rootScope.title = current.$$route.title;
             $rootScope.style = current.$$route.style || 'page';
@@ -83,7 +83,8 @@
                 success: function success(user) {
                     notifier.success('Registration successful!');
                     $rootScope.currentUser = user;
-                    $window.location.assign('/blog');
+                    $timeout({}, 0);
+                    $location.path('/post/add');
                 },
                 error: function error(user, _error2) {
                     notifier.error("Error: " + _error2.code + " " + _error2.message);
@@ -97,17 +98,6 @@
             $rootScope.currentUser = null;
             $timeout({}, 0);
             $location.path('/');
-        };
-
-        $rootScope.forgot = function (userEmail) {
-            Parse.User.requestPasswordReset(userEmail, {
-                success: function success() {
-                    notifier.success('Password reset request was sent successfully!');
-                },
-                error: function error(_error3) {
-                    notifier.error("Error: " + _error3.code + " " + _error3.message);
-                }
-            });
         };
     }]);
 })();

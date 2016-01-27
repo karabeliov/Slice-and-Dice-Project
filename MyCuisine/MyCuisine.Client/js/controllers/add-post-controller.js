@@ -3,13 +3,21 @@
 
     function AddPostController($window, notifier) {
         var vm = this;
-        var currentUser = Parse.User.current();
 
-        vm.public = function (post) {
+        //var post = ...;
+
+        //var user = Parse.User.current();
+        //var relation = user.relation("posts");
+        //relation.add(post);
+        //user.save();
+
+        vm.master = {};
+
+        vm.update = function (post) {
             var Post = Parse.Object.extend('Post');
             var myPost = new Post();
             myPost.set('title', post.title);
-            myPost.set('author', currentUser.get('fname') || currentUser.get('username'));
+            myPost.set('author', post.author);
             myPost.set('img', post.image);
             myPost.set('desc', post.description);
             myPost.save(null, {
@@ -18,7 +26,7 @@
                     $window.location.assign('/blog');
                 },
                 error: function (error) {
-                    notifier.error("Error: Need high level access!");
+                    notifier.error("Error: " + error.code + " " + error.message);
                 }
             });
         };

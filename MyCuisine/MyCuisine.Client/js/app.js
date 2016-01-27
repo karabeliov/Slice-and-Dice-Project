@@ -57,7 +57,7 @@
         .value('toastr', toastr)
         .constant('baseServiceUrl', 'http://localhost:64352/');
 
-    myApp.run(['$location', '$window', '$rootScope', '$timeout', 'notifier', function ($location, $window, $rootScope, $timeout, notifier) {
+    myApp.run(['$location', '$rootScope', '$timeout', 'notifier', function ($location, $rootScope, $timeout, notifier) {
         $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
             $rootScope.title = current.$$route.title;
             $rootScope.style = current.$$route.style || 'page';
@@ -92,7 +92,8 @@
                 success: function (user) {
                     notifier.success('Registration successful!');
                     $rootScope.currentUser = user;
-                    $window.location.assign('/blog');
+                    $timeout({}, 0);
+                    $location.path('/post/add');
                 },
                 error: function (user, error) {
                     notifier.error("Error: " + error.code + " " + error.message);
@@ -107,16 +108,5 @@
             $timeout({}, 0);
             $location.path('/');
         };
-
-        $rootScope.forgot = function (userEmail) {
-            Parse.User.requestPasswordReset(userEmail, {
-                success: function () {
-                    notifier.success('Password reset request was sent successfully!');
-                },
-                error: function (error) {
-                    notifier.error("Error: " + error.code + " " + error.message);
-                }
-            });
-        }
     }]);
 }());

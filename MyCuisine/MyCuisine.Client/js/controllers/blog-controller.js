@@ -3,14 +3,10 @@
 
     function BlogController($resource, $routeParams, $rootScope) {
         var vm = this;
-        vm.orderPost = '-createdAt';
-        vm.orderComment = '-updatedAt';
+        vm.orderProp = '-createdAt';
         vm.loading = true;
         $rootScope.query = '';
-        vm.postLimit = 3;
-        vm.sidebarPostLimit = 5;
-        vm.sidebarCommentLimit = 5;
-        var limitForRequest = 10;
+        var limit = 3;
 
         var parseQueryPost = $resource('https://api.parse.com/1/classes/Post', {}, {
             getPost: {
@@ -21,8 +17,8 @@
                 },
                 params:  { 
                     where: $rootScope.query,
-                    limit: limitForRequest,
-                    order: vm.orderPost
+                    limit: limit,
+                    order: vm.orderProp
                 }
             }
         });
