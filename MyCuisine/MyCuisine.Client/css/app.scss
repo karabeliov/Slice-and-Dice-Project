@@ -18,6 +18,13 @@ $text-shadow: 1px 1px 1px $white;
     font-weight: normal;
 }
 
+%thumbnail_style { //.post-thumbnail, .blog-thumbnail,
+    display:block; 
+    float:left; 
+    position:relative; 
+    margin-right: 30px;
+}
+
 //PAGE
 $page-bg: url('img/page-top.jpg');
     //SLIDER
@@ -631,6 +638,11 @@ body {
                     height: 400px;
                     margin-bottom: 5%;
                 }
+
+                #mySpinner {
+                    margin-left: 60%;
+                    margin-top: 10%;
+                }
             }
 
             .post { 
@@ -642,11 +654,18 @@ body {
                     background-color: $white;
                 }
             }
+            .blog-thumbnail { 
+                @extend %thumbnail_style;
+                border: solid $link-color 1px;
+                background-color: $white;
+                width: 332px;
+                height: 100%;
+                padding-left: 5px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
             .post-thumbnail { 
-                display:block; 
-                float:left; 
-                position:relative; 
-                margin-right: 30px;
+                @extend %thumbnail_style;
             }
             .post-overlay { 
                 background:url(img/post-overlay.png) no-repeat;

@@ -1,6 +1,7 @@
 ﻿<main id="posts" class="col-md-9" ng-controller="BlogController as post">
     <!-- Blog Post -->
-    <article class="post">
+    <img id="mySpinner" src="../css/img/slider/loading.gif" ng-show="post.loading" />
+    <article class="post" ng-hide="post.loading">
         <header>
             <!-- Title -->
             <h1>{{post.currentPost.title}}</h1>

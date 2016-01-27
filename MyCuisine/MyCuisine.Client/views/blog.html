@@ -1,7 +1,6 @@
 ﻿<main id="posts" class="col-md-9">
-    <!--Search: <input type="search" ng-model="vm.query">-->
-
-    <!-- Blog Post -->
+    <!-- Blog Posts -->
+    <img id="mySpinner" src="../css/img/slider/loading.gif" ng-show="vm.loading" />
     <ul>
         <li ng-repeat="post in vm.posts | filter:query | orderBy:vm.orderProp">
             <article class="post">
@@ -11,7 +10,7 @@
                         by <a href="#">{{post.author}}</a>
                         <span class="glyphicon glyphicon-time"></span> Posted on {{post.createdAt | date:"dd MMMM yyyy 'at' H:mm"}}
                     </p>
-                    <div class="post-thumbnail">
+                    <div class="blog-thumbnail">
                         <img src="{{post.img}}" class="post-thumb" alt="Post image" width="320">
                     </div>
                 </header>

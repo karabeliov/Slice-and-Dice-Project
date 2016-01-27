@@ -6,6 +6,12 @@ body h1, body h2, body h3, body h4, body h5, body h6 {
   line-height: 1em;
   font-weight: normal; }
 
+body #container #content .blog-thumbnail, body #container #content .post-thumbnail {
+  display: block;
+  float: left;
+  position: relative;
+  margin-right: 30px; }
+
 body {
   background-color: #f2f1e8;
   line-height: 18px;
@@ -436,17 +442,23 @@ body {
         display: block;
         height: 400px;
         margin-bottom: 5%; }
+      body #container #content #posts #mySpinner {
+        margin-left: 60%;
+        margin-top: 10%; }
       body #container #content .post {
         padding: 0 3% 3% 12%; }
         body #container #content .post p {
           line-height: 21px; }
         body #container #content .post .well {
           background-color: #ffffff; }
-      body #container #content .post-thumbnail {
-        display: block;
-        float: left;
-        position: relative;
-        margin-right: 30px; }
+      body #container #content .blog-thumbnail {
+        border: solid #eee4ba 1px;
+        background-color: #ffffff;
+        width: 332px;
+        height: 100%;
+        padding-left: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px; }
       body #container #content .post-overlay {
         background: url(img/post-overlay.png) no-repeat;
         display: block;

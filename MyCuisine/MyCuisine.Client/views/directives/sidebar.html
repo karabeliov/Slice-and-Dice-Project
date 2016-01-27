@@ -1,42 +1,43 @@
-﻿<h4>Recent Post</h4>
-<div class="widget" ng-controller="BlogController as blogCtr">
-    <div class="widget-bottom">
-        <div class="widget-content">
-            <ul>
-                <li ng-repeat="post in blogCtr.posts | filter:vm.query | orderBy:vm.orderProp">
-                    <a href="/post/{{post.objectId}}">{{post.title}}</a>
-                </li>
-            </ul>
+﻿<div ng-controller="BlogController as blogCtr">
+    <h4>Recent Post</h4>
+    <div class="widget">
+        <div class="widget-bottom">
+            <div class="widget-content">
+                <ul>
+                    <li ng-repeat="post in blogCtr.posts | filter:vm.query | orderBy:vm.orderProp">
+                        <a href="/post/{{post.objectId}}">{{post.title}}</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 
-<h4>Recent Comments</h4>
-<div class="widget" ng-controller="CommentController as commentCtr">
-    <div class="widget-bottom">
-        <div class="widget-content">
-            <ul>
-                <li ng-repeat="comment in commentCtr.comments | orderBy:commentCtr.orderProp">
-                    <!--{{commentCtr.getPost(comment.parent.objectId)}}-->
-                    <span>
-                        <a href="/post/{{post.objectId}}">{{comment.email}}</a>
-                    </span> 
-                    <!--on <a href="/post/{{post.objectId}}">{{blogCtr.post.title}}</a>-->
-                </li>
-            </ul>
+    <h4>Recent Comments</h4>
+    <div class="widget">
+        <div class="widget-bottom">
+            <div class="widget-content">
+                <ul>
+                    <li ng-repeat="post in blogCtr.posts" ng-show="post.Comments[0]">
+                        <span>
+                            <a href="/post/{{post.objectId}}">{{post.Comments[post.Comments.length-1].sender || 'no comment'}}</a>
+                        </span>
+                        on <a href="/post/{{post.objectId}}">{{post.title}}</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 
-<h4>Meta</h4>
-<div class="widget">
-    <div class="widget-bottom">
-        <div class="widget-content">
-            <ul>
-                <li><a href="/login">Log in</a></li>
-                <li><a href="#">Entries RSS</a></li>
-                <li><a href="#">Comments RSS</a></li>
-            </ul>
+    <h4>Meta</h4>
+    <div class="widget">
+        <div class="widget-bottom">
+            <div class="widget-content">
+                <ul>
+                    <li><a href="/login">Log in</a></li>
+                    <li><a href="#">Entries RSS</a></li>
+                    <li><a href="#">Comments RSS</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
