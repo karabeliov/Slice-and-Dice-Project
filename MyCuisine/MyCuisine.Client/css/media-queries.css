@@ -1,6 +1,6 @@
 ﻿@charset "UTF-8";
 /* Smartphones (portrait) ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+@media only screen and (min-width: 320px) and (max-width: 479px) {
   .home #slider {
     display: none !important; }
   .home #logo {
@@ -13,6 +13,8 @@
     margin-top: 60px !important;
     margin-bottom: 0 !important;
     z-index: 1 !important; }
+  .home #top-shadow {
+    display: none; }
   #header {
     padding-left: 0 !important;
     z-index: 2 !important; }
@@ -22,6 +24,8 @@
       left: 0 !important;
       z-index: 0 !important;
       top: 0 !important; }
+    #header #login-bar {
+      display: none; }
   .nav li {
     text-align: center !important;
     display: inline-block; }
@@ -60,16 +64,22 @@
       margin-top: 0 !important; }
     .navbar-nav .dropdown-menu {
       margin-top: -18px !important; }
+  #top-shadow {
+    margin-top: 28px !important; }
   .breadcrumb {
     height: 100px !important;
     padding: 0 !important; }
+    .breadcrumb #search-form {
+      margin-right: 1% !important; }
+  #bottom-shadow {
+    top: -12% !important; }
   #browse-menu {
-    left: 15% !important; }
+    left: 10% !important; }
   #bottom-menu {
     display: none; } }
 
 /* Smartphones (landscape) ----------- */
-@media only screen and (min-width: 480px) and (max-device-width: 767px) {
+@media only screen and (min-width: 480px) and (max-width: 767px) {
   .home #slider {
     display: none !important; }
   .home #logo {
@@ -91,6 +101,8 @@
       left: 0 !important;
       z-index: 0 !important;
       top: 0 !important; }
+    #header #login-bar {
+      display: none; }
   .nav li {
     text-align: center !important;
     display: inline-block; }
@@ -129,17 +141,37 @@
       margin-top: 0 !important; }
     .navbar-nav .dropdown-menu {
       margin-top: -18px !important; }
+  #top-shadow {
+    margin-top: 28px !important; }
   .breadcrumb {
     height: 100px !important;
     padding: 0 !important; }
     .breadcrumb .container {
       padding-top: 20px !important; }
-  #browse-menu {
-    left: 15% !important; }
+  #bottom-shadow {
+    top: -12% !important; }
   #bottom-menu {
-    display: none; } }
+    display: none; }
+  #widgets {
+    width: 100% !important;
+    margin-left: 5%; }
+    #widgets li {
+      display: inline-block;
+      vertical-align: top; } }
 
 /* Тablets ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  #login-bar {
+    display: none; }
+  #bottom-shadow {
+    top: -5% !important; }
+  #widgets {
+    width: 100% !important;
+    margin-left: 5%; }
+    #widgets li {
+      display: inline-block;
+      vertical-align: top; } }
+
 /* Desktops and laptops ----------- */
 /* Large screens ----------- */
 

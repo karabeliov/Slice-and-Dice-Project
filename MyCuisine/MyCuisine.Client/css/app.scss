@@ -209,20 +209,16 @@ body {
             #content {
                 padding-top: 0;
             }
-            #top-shadow {
-                display: none;
-            }
+            
             .breadcrumb {
                 display: none;
             }
-            .top-shadow {
+            #top-shadow {
                 background: $top-shadow no-repeat;
-                width: 960px;
                 height: 8px;
-                left: 11%;
-                top: 19.2%;
-                position: absolute;
-                z-index: 10;
+                margin-top: 18px;
+                margin-left: 150px;
+                z-index: 2;
             }
             #quote {
                 background: $quote-bg repeat-x;
@@ -407,7 +403,6 @@ body {
                 height: 70px;
                 color: $basic-color;
                 font-size: 14px;
-                text-shadow: $top-shadow;
                 text-transform: uppercase;
                 font-style: normal;
                 position: relative;
@@ -438,16 +433,15 @@ body {
                         color: #a1a0a0;
                     }
                 }
+
+                #top-shadow {
+                    background: $top-shadow no-repeat;
+                    height: 8px;
+                    margin-top: 10px;
+                    margin-left: 150px;
+                    z-index: 2;
+                }
             }
-        #top-shadow {
-            background: $top-shadow no-repeat;
-            width: 960px;
-            height: 8px;
-            left: 11%;
-            top: 46%;
-            position: absolute;
-            z-index: 2;
-        }
         .row {
             margin-right: 0;
         }
@@ -685,11 +679,10 @@ body {
         }
         #bottom-shadow {
             background: $bottom-shadow no-repeat;
-            width: 960px;
             height: 9px;
-            position: absolute;
-            left: 11%;
-            top: -5%;
+            margin-left: 120px;
+            margin-top: -44px;
+            margin-bottom: 20px;
         }
         #sidebar { 
             float:left; 

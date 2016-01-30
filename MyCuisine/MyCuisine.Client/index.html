@@ -104,7 +104,7 @@
                         <button class="btn btn-warning" ng-click="logOut()">Log out</button>
                     </div>
                 </div>
-                
+
                 <div id="menu-bg"></div>
                 <div class="category-name">
                     <h1 class="category-title">{{title}}</h1>
@@ -123,13 +123,16 @@
                         <input type="submit" class="btn btn-success" value="Search">
                     </div>
                 </div>
+
+                <div id="top-shadow"></div>
             </div>
+
             <div id="content" class="clearfix row" ng-view>
 
             </div>
-            <!--<div id="top-shadow"></div>-->
+
             <footer id="footer">
-                <!--<div id="bottom-shadow"></div>-->
+                <div id="bottom-shadow"></div>
                 <nav class="nav navbar navbar-default" id="bottom-menu">
                     <div class="container-fluid">
                         <div id="navbar" class="navbar-collapse collapse">
@@ -150,22 +153,26 @@
             </footer>
         </div>
     </div>
+
+    <!------------------LIBRARY SCRIPTS------------------>
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/angular/angular.min.js"></script>
     <script src="lib/angular/angular-route.min.js"></script>
     <script src="lib/angular/angular-resource.min.js"></script>
     <script src="lib/bootstrap/bootstrap.min.js"></script>
     <script src="lib/toastr/toastr.min.js"></script>
+    <!------------------MY SCRIPTS-------------------->
     <script src="js/app.es5.min.js"></script>
+    <script src="js/slider/jssor.slider.mini.js"></script>
+    <script src="js/slider/loader.es5.min.js"></script>
+    <script src="js/custom.es5.min.js"></script>
+    <script src="js/common/notifier.js"></script>
+    <!------------------CONTROLLER SCRIPTS-------------------->
     <script src="js/controllers/home-controller.js"></script>
     <script src="js/controllers/blog-controller.js"></script>
     <script src="js/controllers/sidebar-directive.js"></script>
     <script src="js/controllers/add-post-controller.js"></script>
     <script src="js/controllers/comment-controller.js"></script>
-    <!--<script src="https://www.hostingreviews.website/google-maps-authorization.js?id=17859831-d186-d572-1ca0-4779d3ded10d&c=code-for-google-map&u=1453021684" defer="defer" async="async"></script>-->
-    <script type="text/javascript" src="js/slider/jssor.slider.mini.js"></script>
-    <script src="js/slider/loader.es5.min.js"></script>
-    <script src="js/custom.es5.min.js"></script>
-    <script src="js/common/notifier.js"></script>
+
 </body>
 </html>
