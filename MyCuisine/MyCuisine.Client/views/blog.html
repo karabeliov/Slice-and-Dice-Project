@@ -2,7 +2,7 @@
     <!-- Blog Posts -->
     <img id="mySpinner" src="../css/img/slider/loading.gif" ng-show="vm.loading" />
     <ul>
-        <li ng-repeat="post in vm.posts | filter:query | orderBy:vm.orderProp">
+        <li ng-repeat="post in vm.posts | orderBy:vm.orderPost | limitTo: vm.postLimit | filter:query ">
             <article class="post">
                 <header>
                     <h1>{{post.title}}</h1>

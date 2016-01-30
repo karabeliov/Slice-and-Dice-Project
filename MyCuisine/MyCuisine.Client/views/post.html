@@ -3,14 +3,6 @@
     <img id="mySpinner" src="../css/img/slider/loading.gif" ng-show="post.loading" />
     <article class="post" ng-hide="post.loading">
         <header>
-            <!-- Title -->
-            <h1>{{post.currentPost.title}}</h1>
-            <!-- Author -->
-            <p class="lead">
-                by <a href="#">{{post.currentPost.author}}</a>
-            </p>
-            <!-- Date/Time -->
-            <p><span class="glyphicon glyphicon-time"></span> Posted on {{post.currentPost.createdAt | date:"dd MMMM yyyy 'at' H:mm"}}</p>
             <!-- Preview Image -->
             <div class="post-thumbnail">
                 <img src="{{post.currentPost.img}}" class="post-thumb" alt="Post image" width="220" height="225">
@@ -27,13 +19,6 @@
                 <form ng-controller="CommentController as commentCtr">
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="inputEmail" class="col-lg-2 control-label">Name</label>
-                            <div class="col-lg-10" id="email-com">
-                                <input type="text" class="form-control" id="inputEmail" placeholder="Name" ng-model="comment.sender">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
                             <label for="textArea" class="col-lg-2 control-label">Comment</label>
                             <div class="col-lg-10">
                                 <textarea class="form-control" rows="3" id="textArea" ng-model="comment.content"></textarea>
@@ -45,20 +30,30 @@
             </div>
             <!-- Posted Comments -->
             <!-- Comment -->
+            <h3>{{currentPost.countComment || '0'}} Comments</h3>
             <div class="media" ng-repeat="comment in post.currentPost.Comments">
-                <a class="pull-left" href="#">
-                    <img class="media-object" src="{{comment.sender.img || '../css/img/comments/avatar.jpg'}}" alt="" width="56">
+                <div class="comment-sender"></div>
+                <a class="pull-left" href="#" style="width: 80px; text-align: center;">
+                    <img class="media-object" src="{{comment.sender.img || '../css/img/comments/avatar.jpg'}}" alt="" style="margin-left: 5px" width="56">
+                    <small>{{comment.date.iso | date:"dd MMM yyyy 'at' H:mm"}}</small>
                 </a>
-                <div class="media-body">
-                    <h4 class="media-heading">
-                        {{comment.sender}}
-                        <small>{{comment.date.iso | date:"dd MMMM yyyy 'at' H:mm"}}</small>
-                    </h4>
-                    {{comment.content}}
+                <div class="media-body row">
+                    <div class="comment">
+                        <div class="comment-bottom">
+                            <div class="comment-content">
+                                <h4 class="media-heading">
+                                    {{comment.sender}} says:
+                                </h4>
+                                {{comment.content}}
+
+                                <a class="reply-comment btn btn-success" href="#">Reply</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
     </article>
 </main>
-<div id="sidebar" class="col-md-3" sidebar>  
+<div id="sidebar" class="col-md-3" sidebar>
 </div>

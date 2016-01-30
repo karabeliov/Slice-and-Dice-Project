@@ -647,6 +647,37 @@ body {
                 .well {
                     background-color: $white;
                 }
+                .media {
+                    position: relative;
+                    width: 620px;
+                    .comment { 
+                         background: url(img/comments/comment-top.png) no-repeat; 
+                         padding-top: 9px; 
+                         margin-bottom: 25px; 
+                         position: relative;
+                        .comment-bottom { 
+                            background: url(img/comments/comment-bottom.png) no-repeat left bottom; 
+                            padding-bottom: 26px; 
+                        }
+                        .comment-content { 
+                            background: url(img/comments/comment-bg.png) repeat-y; 
+                            padding: 7px 8px 29px 27px; 
+                        }
+                    }
+                    .comment-sender {
+                        background: url('img/comments/comment-arrow.png') no-repeat;
+                        width: 9px;
+                        height: 20px;
+                        position: absolute;
+                        top: 23px;
+                        left: 72px;
+                    }
+                    .reply-comment {
+                        float: right;
+                        margin-top: 10px;
+                        margin-right: 20px;
+                    }
+                }
             }
             .blog-thumbnail { 
                 @extend %thumbnail_style;

@@ -107,16 +107,17 @@
 
                 <div id="menu-bg"></div>
                 <div class="category-name">
-                    <h1 class="category-title">{{title}}</h1>
-                    <p class="meta-info">Fusce nunc diam suscipit a iaculis ac tristique ac erat</p>
+                    <h1 class="category-title">{{currentPost.title || title}}</h1>
+                    <p class="meta-info" ng-show="currentPost">Posted by {{currentPost.author}} in {{currentPost.category || 'blog'}} on {{currentPost.createdAt | date:"dd MMMM yyyy 'at' H:mm"}} | {{currentPost.countComment || '0'}} Comment</p>
                 </div>
             </header>
 
             <div class="breadcrumb">
                 <div class="container clearfix">
                     <span id="breadcrumbs-text">
-                        <a href="/">Home</a>
-                        <span>»</span> {{title}}
+                        <a href="/" ng-hide="currentPost">Home</a>
+                        <a href="/blog" ng-show="currentPost">Blog</a>
+                        <span>»</span> {{currentPost.title || title}}
                     </span>
                     <div id="search-form">
                         <input type="search" class="input-sm" placeholder="Search..." id="searchinput" ng-model="query">
