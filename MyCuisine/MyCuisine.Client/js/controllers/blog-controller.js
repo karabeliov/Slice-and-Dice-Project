@@ -10,8 +10,7 @@
         vm.postLimit = 3;
         vm.sidebarPostLimit = 5;
         vm.sidebarCommentLimit = 5;
-        var limitForRequest = 10;
-
+        var limitForRequest = 10;        
         var parseQueryPost = $resource('https://api.parse.com/1/classes/Post', {}, {
             getPost: {
                 method: 'GET',
@@ -32,7 +31,6 @@
             vm.posts = data.results;
             vm.currentPost = $.grep(data.results, function (e) { return e.objectId == currentId; })[0];
             vm.currentPost.countComment = vm.currentPost.Comments.length;
-            $rootScope.currentPost = vm.currentPost;
         })
         .catch(function (error) {
             console.log(error)

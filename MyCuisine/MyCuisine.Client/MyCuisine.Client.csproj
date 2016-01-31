@@ -105,7 +105,7 @@
     <Content Include="css\img\slider\b05.png" />
     <Content Include="css\img\slider\loading.gif" />
     <Content Include="css\img\spriteCSS\for-comments\page.html" />
-    <Content Include="css\img\spriteCSS\for-comments\spritesheet.png" />
+    <Content Include="css\img\spriteCSS\for-comments\spritecomment.png" />
     <Content Include="css\img\spriteCSS\for-comments\style.css" />
     <Content Include="css\img\spriteCSS\for-img\page.html" />
     <Content Include="css\img\spriteCSS\for-img\spritesheet.png" />
@@ -159,7 +159,6 @@
     <Content Include="js\common\notifier.js" />
     <Content Include="js\controllers\sidebar-directive.js" />
     <Content Include="js\controllers\comment-controller.js" />
-    <Content Include="js\controllers\home-controller.js" />
     <Content Include="js\controllers\blog-controller.js" />
     <Content Include="js\controllers\add-post-controller.js" />
     <Content Include="js\custom.es5.js">

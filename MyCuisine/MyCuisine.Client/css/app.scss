@@ -1,5 +1,6 @@
 ﻿@import "reset.css";
 @import "media-queries.min.css";
+@import url('img/spriteCSS/for-img/style.css');
 
 //BASIC STYLE
 $bg-color: #f2f1e8;
@@ -633,7 +634,7 @@ body {
                     margin-bottom: 5%;
                 }
 
-                #mySpinner {
+                #myLoader {
                     margin-left: 60%;
                     margin-top: 10%;
                 }
@@ -650,6 +651,8 @@ body {
                 .media {
                     position: relative;
                     width: 620px;
+
+                    //COMMENT
                     .comment { 
                          background: url(img/comments/comment-top.png) no-repeat; 
                          padding-top: 9px; 
@@ -676,6 +679,29 @@ body {
                         float: right;
                         margin-top: 10px;
                         margin-right: 20px;
+                    }
+
+                    .reply { 
+                        background: url(img/comments/comment-top-d2.png) no-repeat; 
+                        padding-top: 9px; 
+                        margin-left: 82px;
+                        position: relative;
+                        .reply-bottom { 
+                            background: url(img/comments/comment-bottom-d2.png) no-repeat left bottom; 
+                            padding-bottom: 26px; 
+                        }
+                        .reply-content { 
+                            background: url(img/comments/comment-bg-d2.png) repeat-y; 
+                            padding: 7px 8px 29px 27px; 
+                        }
+                    }
+                    .reply-sender {
+                        background: url('img/comments/comment-arrow.png') no-repeat;
+                        width: 9px;
+                        height: 20px;
+                        position: absolute;
+                        top: 23px;
+                        left: -8px;
                     }
                 }
             }
@@ -764,17 +790,29 @@ body {
             position: relative;
             padding-top: 35px;
 
-            #footer-boxs {
-                width: 960px;
-                margin: auto;
+            #footer-widgets {
+                margin-left: 10%;
                 border-bottom: 1px solid $footer-line-color;
                 margin-bottom: 20px;
+
+                li {
+                    margin-right: 5%;
+                }
+
+                #footer-logo {
+                    display: inline-block;
+                    img {
+                        vertical-align: bottom;
+                    }
+                }
 
                 #logo-name {
                     display: inline-block;
                     color: black;
                     text-shadow: none;
-                    font-size: xx-large;
+                }
+                span {
+                    display: block;
                 }
             }
 

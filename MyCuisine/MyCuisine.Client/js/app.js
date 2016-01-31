@@ -11,7 +11,6 @@
                 title: 'Home',
                 style: 'home',
                 templateUrl: PARTIALS_PREFIX + 'home.html',
-                controller: 'HomeController',
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
             .when('/location', {
@@ -57,7 +56,7 @@
         .value('toastr', toastr)
         .constant('baseServiceUrl', 'http://localhost:64352/');
 
-    myApp.run(['$location', '$window', '$rootScope', '$timeout', 'notifier', function ($location, $window, $rootScope, $timeout, notifier) {
+    myApp.run(['$location', '$rootScope', '$route', 'notifier', function ($location, $rootScope, $route, notifier) {
         $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
             $rootScope.title = current.$$route.title;
             $rootScope.style = current.$$route.style || 'page';
@@ -76,8 +75,8 @@
                 }
             });
 
-            $timeout({}, 0);
-            $location.path('/post/add');
+            $location.path('/blog');
+            $route.reload();
         };
 
         $rootScope.signup = function (user) {
@@ -92,7 +91,8 @@
                 success: function (user) {
                     notifier.success('Registration successful!');
                     $rootScope.currentUser = user;
-                    $window.location.assign('/blog');
+                    $location.path('/blog');
+                    $route.reload();
                 },
                 error: function (user, error) {
                     notifier.error("Error: " + error.code + " " + error.message);
@@ -104,8 +104,8 @@
             Parse.User.logOut();
             notifier.success('Successful logout!');
             $rootScope.currentUser = null;
-            $timeout({}, 0);
             $location.path('/');
+            $route.reload();
         };
 
         $rootScope.forgot = function (userEmail) {

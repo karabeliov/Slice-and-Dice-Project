@@ -106,18 +106,18 @@
                 </div>
 
                 <div id="menu-bg"></div>
-                <div class="category-name">
-                    <h1 class="category-title">{{currentPost.title || title}}</h1>
-                    <p class="meta-info" ng-show="currentPost">Posted by {{currentPost.author}} in {{currentPost.category || 'blog'}} on {{currentPost.createdAt | date:"dd MMMM yyyy 'at' H:mm"}} | {{currentPost.countComment}} Comment</p>
+                <div class="category-name" ng-controller="BlogController as blog">
+                    <h1 class="category-title">{{blog.currentPost.title || title}}</h1>
+                    <p class="meta-info" ng-show="blog.currentPost">Posted by {{blog.currentPost.author}} in {{blog.currentPost.category || 'blog'}} on {{blog.currentPost.createdAt | date:"dd MMMM yyyy 'at' H:mm"}} | {{blog.currentPost.countComment}} Comment</p>
                 </div>
             </header>
 
-            <div class="breadcrumb">
+            <div class="breadcrumb" ng-controller="BlogController as blog">
                 <div class="container clearfix">
                     <span id="breadcrumbs-text">
-                        <a href="/" ng-hide="currentPost">Home</a>
-                        <a href="/blog" ng-show="currentPost">Blog</a>
-                        <span>»</span> {{currentPost.title || title}}
+                        <a href="/" ng-hide="blog.currentPost">Home</a>
+                        <a href="/blog" ng-show="blog.currentPost">Blog</a>
+                        <span>»</span> {{blog.currentPost.title || title}}
                     </span>
                     <div id="search-form">
                         <input type="search" class="input-sm" placeholder="Search..." id="searchinput" ng-model="query">
@@ -134,6 +134,54 @@
 
             <footer id="footer">
                 <div id="bottom-shadow"></div>
+                <ul id="footer-widgets" class="row">
+                    <li class="box col-md-3">
+                        <p id="footer-logo">
+                            <img alt="" src="img/logo-green.png">
+                            <h3 id="logo-name">Bulgarian food</h3>
+                            <span>© Bulgarian food, 2015</span>
+                        </p>
+                        <p>
+                            Donec placerat sodales aliquet. Vivamus neque nulla,
+                            fermentum id ultrices at, vulputate et risus.
+                            Aenean non lectus ipsum.
+                            Curabitur sagittis urna vel elit euismod faucibus.
+                            Aliquam sed magna id dolor cursus ullamcorper ut commodo nunc.
+                            Mauris suscipit, dolor et tristique scelerisque,
+                            leo neque congue libero, mollis accumsan nulla
+                        </p>
+                    </li>
+                    <li class="box col-md-3">
+                        <h3 class="title">Recent Comments</h3>
+                        <div class="widget" ng-controller="BlogController as blog">
+                            <div class="widget-bottom">
+                                <div class="widget-content">
+                                    <ul>
+                                        <li ng-repeat="post in blog.posts | orderBy:blog.orderComment | limitTo:blog.sidebarCommentLimit" ng-show="post.Comments[0]">
+                                            <span>
+                                                <a href="/post/{{post.objectId}}">{{post.Comments[post.Comments.length-1].sender}}</a>
+                                            </span>
+                                            on <a href="/post/{{post.objectId}}">{{post.title}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="box col-md-3">
+                        <h3 class="title">Text Widget</h3>
+                        <div class="textwidget">
+                            Aliquam sed magna id dolor cursus ullamcorper ut commodo nunc.
+                            Donec placerat sodales aliquet. Vivamus neque nulla,
+                            fermentum id ultrices at, vulputate et risus.
+                            Aenean non lectus ipsum.
+                            Curabitur sagittis urna vel elit euismod faucibus.
+                            Aliquam sed magna id dolor cursus ullamcorper ut commodo nunc.
+                            Mauris suscipit, dolor et tristique scelerisque,
+                            leo neque congue libero, mollis accumsan nulla
+                        </div>
+                    </li>
+                </ul>
                 <nav class="nav navbar navbar-default" id="bottom-menu">
                     <div class="container-fluid">
                         <div id="navbar" class="navbar-collapse collapse">
@@ -169,7 +217,6 @@
     <script src="js/custom.es5.min.js"></script>
     <script src="js/common/notifier.js"></script>
     <!------------------CONTROLLER SCRIPTS-------------------->
-    <script src="js/controllers/home-controller.js"></script>
     <script src="js/controllers/blog-controller.js"></script>
     <script src="js/controllers/sidebar-directive.js"></script>
     <script src="js/controllers/add-post-controller.js"></script>

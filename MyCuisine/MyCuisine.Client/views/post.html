@@ -1,6 +1,6 @@
 ﻿<main id="posts" class="col-md-9" ng-controller="BlogController as post">
     <!-- Blog Post -->
-    <img id="mySpinner" src="../css/img/slider/loading.gif" ng-show="post.loading" />
+    <img id="myLoader" src="../css/img/slider/loading.gif" ng-show="post.loading" />
     <article class="post" ng-hide="post.loading">
         <header>
             <!-- Preview Image -->
@@ -32,7 +32,6 @@
             <!-- Comment -->
             <h3>{{currentPost.countComment || '0'}} Comments</h3>
             <div class="media" ng-repeat="comment in post.currentPost.Comments track by $index">
-                <div class="comment-sender"></div>
                 <a class="pull-left" href="#" style="width: 80px; text-align: center;">
                     <img class="media-object" src="{{comment.sender.img || '../css/img/comments/avatar.jpg'}}" alt="" style="margin-left: 5px" width="56">
                     <small>{{comment.date.iso | date:"dd MMM yyyy 'at' H:mm"}}</small>
@@ -50,10 +49,10 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="comment" style="margin-left: 30px" ng-repeat="reply in comment.reply | limitTo: 5" ng-show="comment.reply">
-                        <div class="comment-bottom">
-                            <div class="comment-content">
+                    <div class="comment-sender"></div>
+                    <div class="reply" ng-repeat="reply in comment.reply | limitTo: 5" ng-show="comment.reply">
+                        <div class="reply-bottom">
+                            <div class="reply-content">
                                 <h4 class="media-heading">
                                     {{reply.sender}} says:
                                 </h4>
@@ -62,8 +61,9 @@
                                 <a class="reply-comment btn btn-success" href="#" ng-click="haveReply=!haveReply">Reply</a>
                             </div>
                         </div>
-                    </div>
 
+                        <div class="reply-sender"></div>
+                    </div>
 
                     <div class="well" ng-show="haveReply">
                         <h4>Reply of {{comment.sender}}'s comment:</h4>

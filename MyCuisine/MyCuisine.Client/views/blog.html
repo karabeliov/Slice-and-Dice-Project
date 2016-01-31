@@ -1,6 +1,6 @@
 ﻿<main id="posts" class="col-md-9">
     <!-- Blog Posts -->
-    <img id="mySpinner" src="../css/img/slider/loading.gif" ng-show="vm.loading" />
+    <img id="myLoader" src="../css/img/slider/loading.gif" ng-show="vm.loading" />
     <ul>
         <li ng-repeat="post in vm.posts | orderBy:vm.orderPost | limitTo: vm.postLimit | filter:query ">
             <article class="post">

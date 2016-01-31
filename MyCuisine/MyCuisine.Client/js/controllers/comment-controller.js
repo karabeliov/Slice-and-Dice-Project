@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    function CommentController($resource, $location, $window, notifier) {
+    function CommentController($resource, $location, $route, notifier) {
         var vm = this;
 
         // ADD Comment to Current POST
@@ -21,7 +21,7 @@
                         post.add('Comments', comment);
                         post.save();
                         notifier.success('Comment is add!');
-                        $window.location.assign('/post/' + postId);
+                        $route.reload();
                     },
                     error: function (error) {
                         notifier.error("Error: " + error.code + " " + error.message);
@@ -49,7 +49,7 @@
                         comments[commentId].reply.push(reply);
                         post.save();
                         notifier.success('Reply is add!');
-                        $window.location.assign('/post/' + postId);
+                        $route.reload();
                     },
                     error: function (error) {
                         notifier.error("Error: " + error.code + " " + error.message);
@@ -58,10 +58,11 @@
             } else {
                 notifier.error("You not login!");
                 $location.path('/login');
+                $route.reload();
             }
         }
     }
 
     angular.module('myApp.controllers')
-        .controller('CommentController', ['$resource', '$location', '$window', 'notifier', CommentController]);
+        .controller('CommentController', ['$resource', '$location', '$route', 'notifier', CommentController]);
 }());

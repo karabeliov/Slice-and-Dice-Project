@@ -1,5 +1,6 @@
 ﻿@import url(reset.css);
 @import url(media-queries.min.css);
+@import url("img/spriteCSS/for-img/style.css");
 body h1, body h2, body h3, body h4, body h5, body h6 {
   padding-bottom: 5px;
   letter-spacing: -1px;
@@ -435,7 +436,7 @@ body {
         display: block;
         height: 400px;
         margin-bottom: 5%; }
-      body #container #content #posts #mySpinner {
+      body #container #content #posts #myLoader {
         margin-left: 60%;
         margin-top: 10%; }
       body #container #content .post {
@@ -469,6 +470,24 @@ body {
             float: right;
             margin-top: 10px;
             margin-right: 20px; }
+          body #container #content .post .media .reply {
+            background: url(img/comments/comment-top-d2.png) no-repeat;
+            padding-top: 9px;
+            margin-left: 82px;
+            position: relative; }
+            body #container #content .post .media .reply .reply-bottom {
+              background: url(img/comments/comment-bottom-d2.png) no-repeat left bottom;
+              padding-bottom: 26px; }
+            body #container #content .post .media .reply .reply-content {
+              background: url(img/comments/comment-bg-d2.png) repeat-y;
+              padding: 7px 8px 29px 27px; }
+          body #container #content .post .media .reply-sender {
+            background: url("img/comments/comment-arrow.png") no-repeat;
+            width: 9px;
+            height: 20px;
+            position: absolute;
+            top: 23px;
+            left: -8px; }
       body #container #content .blog-thumbnail {
         border: solid #eee4ba 1px;
         background-color: #ffffff;
@@ -529,16 +548,22 @@ body {
       background: #f2f1e8 url(img/footer-bg.png) repeat-x;
       position: relative;
       padding-top: 35px; }
-      body #container #footer #footer-boxs {
-        width: 960px;
-        margin: auto;
+      body #container #footer #footer-widgets {
+        margin-left: 10%;
         border-bottom: 1px solid #dcd7b1;
         margin-bottom: 20px; }
-        body #container #footer #footer-boxs #logo-name {
+        body #container #footer #footer-widgets li {
+          margin-right: 5%; }
+        body #container #footer #footer-widgets #footer-logo {
+          display: inline-block; }
+          body #container #footer #footer-widgets #footer-logo img {
+            vertical-align: bottom; }
+        body #container #footer #footer-widgets #logo-name {
           display: inline-block;
           color: black;
-          text-shadow: none;
-          font-size: xx-large; }
+          text-shadow: none; }
+        body #container #footer #footer-widgets span {
+          display: block; }
       body #container #footer #bottom-menu {
         text-align: center;
         background: url(img/bottom-menu.png) no-repeat top center;
