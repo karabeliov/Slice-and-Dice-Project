@@ -7,7 +7,8 @@
                 <header>
                     <h1>{{post.title}}</h1>
                     <p>
-                        by <a href="#">{{post.author}}</a>
+                        by <a href="#">{{post.author}}</a> in
+                        <a href="#">{{currentPost.category || 'blog'}}</a>
                         <span class="glyphicon glyphicon-time"></span> Posted on {{post.createdAt | date:"dd MMMM yyyy 'at' H:mm"}}
                     </p>
                     <div class="blog-thumbnail">
