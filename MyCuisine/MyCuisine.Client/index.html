@@ -106,18 +106,18 @@
                 </div>
 
                 <div id="menu-bg"></div>
-                <div class="category-name" ng-controller="BlogController as blog">
-                    <h1 class="category-title">{{blog.currentPost.title || title}}</h1>
-                    <p class="meta-info" ng-show="blog.currentPost">Posted by {{blog.currentPost.author}} in {{blog.currentPost.category || 'blog'}} on {{blog.currentPost.createdAt | date:"dd MMMM yyyy 'at' H:mm"}} | {{blog.currentPost.countComment}} Comment</p>
+                <div class="category-name">
+                    <h1 class="category-title">{{currentPost.title || title}}</h1>
+                    <p class="meta-info" ng-show="currentPost">Posted by {{currentPost.author}} in {{currentPost.category || 'blog'}} on {{currentPost.createdAt | date:"dd MMMM yyyy 'at' H:mm"}} | {{currentPost.countComment}} Comment</p>
                 </div>
             </header>
 
-            <div class="breadcrumb" ng-controller="BlogController as blog">
+            <div class="breadcrumb">
                 <div class="container clearfix">
                     <span id="breadcrumbs-text">
-                        <a href="/" ng-hide="blog.currentPost">Home</a>
-                        <a href="/blog" ng-show="blog.currentPost">Blog</a>
-                        <span>»</span> {{blog.currentPost.title || title}}
+                        <a href="/" ng-hide="currentPost">Home</a>
+                        <a href="/blog" ng-show="currentPost">Blog</a>
+                        <span>»</span> {{currentPost.title || title}}
                     </span>
                     <div id="search-form">
                         <input type="search" class="input-sm" placeholder="Search..." id="searchinput" ng-model="query">

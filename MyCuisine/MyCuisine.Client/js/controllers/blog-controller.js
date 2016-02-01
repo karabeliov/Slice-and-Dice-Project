@@ -30,7 +30,12 @@
             var currentId = $routeParams.objectId;
             vm.posts = data.results;
             vm.currentPost = $.grep(data.results, function (e) { return e.objectId == currentId; })[0];
-            vm.currentPost.countComment = vm.currentPost.Comments.length;
+
+            vm.getCurrentPost = function (index) {
+                $rootScope.currentPost = vm.posts[index];
+                $rootScope.currentPost.countComment = $rootScope.currentPost.Comments.length;
+                console.log(vm.currentPost);
+            }
         })
         .catch(function (error) {
             console.log(error)
