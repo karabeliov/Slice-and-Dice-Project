@@ -26,6 +26,15 @@ $text-shadow: 1px 1px 1px $white;
     margin-right: 30px;
 }
 
+%title_style { //sidebar title, footer title
+    font-size: 22px; 
+    color: #cac6a1; 
+    text-transform: uppercase; 
+    padding: 0 10px 13px; 
+    text-shadow: $text-shadow; 
+}
+
+
 //PAGE
 $page-bg: url('img/page-top.jpg');
     //SLIDER
@@ -326,7 +335,7 @@ body {
                             }
                         }
                     }
-
+                    
                     .active {
                         margin-top: -10px;
 
@@ -341,8 +350,17 @@ body {
 
                     .dropdown-menu {
                         background: #e7e7e7 $dropdown repeat;
-                        margin-top: 5px;
                         border: none;
+                        padding-bottom: 30px;
+                        li {
+                            a {
+                                background: none;
+                                color: $white !important;
+                                font-style: italic;
+                                height: 30px;
+                                padding-top: 15px;
+                            }
+                        }
                     }
                 }
             }
@@ -745,11 +763,7 @@ body {
             float:left; 
 
             h4 { 
-                font-size: 22px; 
-                color: #cac6a1; 
-                text-transform: uppercase; 
-                padding: 0 10px 13px; 
-                text-shadow: $text-shadow; 
+                @extend %title_style;
             }
 
              .widget { 
@@ -791,12 +805,16 @@ body {
             padding-top: 35px;
 
             #footer-widgets {
-                margin-left: 10%;
+                margin-left: 15%;
                 border-bottom: 1px solid $footer-line-color;
                 margin-bottom: 20px;
 
                 li {
                     margin-right: 5%;
+
+                    h3 {
+                        @extend %title_style;
+                    }
                 }
 
                 #footer-logo {
@@ -810,18 +828,22 @@ body {
                     display: inline-block;
                     color: black;
                     text-shadow: none;
+                    font-size: x-large;
+                    margin-left: 5px;
+                    color: #442917;
                 }
                 span {
                     display: block;
                 }
             }
 
+            #bottom-logo {
+                background: $bottom-menu no-repeat top center; 
+                margin-top: 30px; 
+            }
+
             #bottom-menu {
                 text-align: center;
-                background: $bottom-menu no-repeat top center; 
-                padding-top: 30px; 
-                padding-bottom: 15px;
-
                 li {
                     display: inline-block;
                 }

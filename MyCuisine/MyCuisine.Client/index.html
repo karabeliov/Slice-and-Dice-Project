@@ -86,10 +86,10 @@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="/menu">All</a></li>
-                                        <li><a href="#">Breakfast menu</a></li>
-                                        <li><a href="#">Lunch menu</a></li>
-                                        <li><a href="#">Dinner menu</a></li>
+                                        <li><a href="/all-menu">All</a></li>
+                                        <li><a href="/breakfast-menu">Breakfast menu</a></li>
+                                        <li><a href="/lunch-menu">Lunch menu</a></li>
+                                        <li><a href="/dinner-menu">Dinner menu</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="/blog">Blog</a></li>
@@ -134,11 +134,11 @@
 
             <footer id="footer">
                 <div id="bottom-shadow"></div>
-                <ul id="footer-widgets" class="row">
+                <ul id="footer-widgets" class="row" ng-hide="style == 'home'">
                     <li class="box col-md-3">
                         <p id="footer-logo">
                             <img alt="" src="img/logo-green.png">
-                            <h3 id="logo-name">Bulgarian food</h3>
+                            <h4 id="logo-name">Bulgarian food</h4>
                             <span>© Bulgarian food, 2015</span>
                         </p>
                         <p>
@@ -158,7 +158,7 @@
                                 <div class="widget-content">
                                     <ul>
                                         <li ng-repeat="post in blog.posts | orderBy:blog.orderComment | limitTo:blog.sidebarCommentLimit" ng-show="post.Comments[0]">
-                                            <span>
+                                            <span style="display: inline-block;">
                                                 <a href="/post/{{post.objectId}}">{{post.Comments[post.Comments.length-1].sender}}</a>
                                             </span>
                                             on <a href="/post/{{post.objectId}}">{{post.title}}</a>
@@ -182,6 +182,7 @@
                         </div>
                     </li>
                 </ul>
+                <div id="bottom-logo" ng-show="style == 'home'">-</div>
                 <nav class="nav navbar navbar-default" id="bottom-menu">
                     <div class="container-fluid">
                         <div id="navbar" class="navbar-collapse collapse">

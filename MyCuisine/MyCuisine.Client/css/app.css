@@ -13,6 +13,13 @@ body #container #content .blog-thumbnail, body #container #content .post-thumbna
   position: relative;
   margin-right: 30px; }
 
+body #container #sidebar h4, body #container #footer #footer-widgets li h3 {
+  font-size: 22px;
+  color: #cac6a1;
+  text-transform: uppercase;
+  padding: 0 10px 13px;
+  text-shadow: 1px 1px 1px #ffffff; }
+
 body {
   background-color: #f2f1e8;
   line-height: 18px;
@@ -225,8 +232,14 @@ body {
               padding-top: 25px; }
           body #container #header .navbar-default .navbar-nav .dropdown-menu {
             background: #e7e7e7 url(img/menu/dropdown-bg.png) repeat;
-            margin-top: 5px;
-            border: none; }
+            border: none;
+            padding-bottom: 30px; }
+            body #container #header .navbar-default .navbar-nav .dropdown-menu li a {
+              background: none;
+              color: #ffffff !important;
+              font-style: italic;
+              height: 30px;
+              padding-top: 15px; }
       body #container #header #menu-bg {
         width: 88%;
         position: absolute;
@@ -516,12 +529,6 @@ body {
       margin-bottom: 20px; }
     body #container #sidebar {
       float: left; }
-      body #container #sidebar h4 {
-        font-size: 22px;
-        color: #cac6a1;
-        text-transform: uppercase;
-        padding: 0 10px 13px;
-        text-shadow: 1px 1px 1px #ffffff; }
       body #container #sidebar .widget {
         width: 259px;
         background: url(img/testimonials/testimonials-top.png) no-repeat;
@@ -549,7 +556,7 @@ body {
       position: relative;
       padding-top: 35px; }
       body #container #footer #footer-widgets {
-        margin-left: 10%;
+        margin-left: 15%;
         border-bottom: 1px solid #dcd7b1;
         margin-bottom: 20px; }
         body #container #footer #footer-widgets li {
@@ -561,14 +568,17 @@ body {
         body #container #footer #footer-widgets #logo-name {
           display: inline-block;
           color: black;
-          text-shadow: none; }
+          text-shadow: none;
+          font-size: x-large;
+          margin-left: 5px;
+          color: #442917; }
         body #container #footer #footer-widgets span {
           display: block; }
-      body #container #footer #bottom-menu {
-        text-align: center;
+      body #container #footer #bottom-logo {
         background: url(img/bottom-menu.png) no-repeat top center;
-        padding-top: 30px;
-        padding-bottom: 15px; }
+        margin-top: 30px; }
+      body #container #footer #bottom-menu {
+        text-align: center; }
         body #container #footer #bottom-menu li {
           display: inline-block; }
       body #container #footer #copyright {

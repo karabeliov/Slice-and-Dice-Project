@@ -6,6 +6,7 @@
         var PARTIALS_PREFIX = 'views/';
         var CONTROLLER_AS_VIEW_MODEL = 'vm';
         $locationProvider.html5Mode(true);
+
         $routeProvider
             .when('/', {
                 title: 'Home',
@@ -18,9 +19,24 @@
                 templateUrl: PARTIALS_PREFIX + 'location.html',
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
-            .when('/menu', {
-                title: 'Menu',
-                templateUrl: PARTIALS_PREFIX + 'menu.html',
+            .when('/all-menu', {
+                title: 'All Menu',
+                templateUrl: PARTIALS_PREFIX + 'menu/all-menu.html',
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
+            })
+            .when('/breakfast-menu', {
+                title: 'Breakfast Menu',
+                templateUrl: PARTIALS_PREFIX + 'menu/breakfast-menu.html',
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
+            })
+            .when('/lunch-menu', {
+                title: 'Lunch Menu',
+                templateUrl: PARTIALS_PREFIX + 'menu/lunch-menu.html',
+                controllerAs: CONTROLLER_AS_VIEW_MODEL
+            })
+            .when('/dinner-menu', {
+                title: 'Dinner Menu',
+                templateUrl: PARTIALS_PREFIX + 'menu/dinner-menu.html',
                 controllerAs: CONTROLLER_AS_VIEW_MODEL
             })
             .when('/blog', {

@@ -81,6 +81,8 @@
     <Content Include="css\img\bottom-menu.png" />
     <Content Include="css\img\bottom-shadow.png" />
     <Content Include="css\img\bottom-widget-bg.png" />
+    <Content Include="css\img\buttons\browse-menu.png" />
+    <Content Include="css\img\buttons\readmore.png" />
     <Content Include="css\img\comments\avatar.jpg" />
     <Content Include="css\img\comments\comment-arrow.png" />
     <Content Include="css\img\comments\comment-bg-d2.png" />
@@ -157,8 +159,8 @@
     </Content>
     <Content Include="js\app.js" />
     <Content Include="js\common\notifier.js" />
-    <Content Include="js\controllers\sidebar-directive.js" />
     <Content Include="js\controllers\comment-controller.js" />
+    <Content Include="js\controllers\sidebar-directive.js" />
     <Content Include="js\controllers\blog-controller.js" />
     <Content Include="js\controllers\add-post-controller.js" />
     <Content Include="js\custom.es5.js">
@@ -211,6 +213,10 @@
   <ItemGroup>
     <Content Include="css\reset.css" />
     <Content Include="index.html" />
+    <Content Include="views\menu\breakfast-menu.html" />
+    <Content Include="views\menu\lunch-menu.html" />
+    <Content Include="views\menu\dinner-menu.html" />
+    <Content Include="views\menu\all-menu.html" />
     <Content Include="views\addPost.html" />
     <Content Include="views\directives\sidebar.html" />
     <Content Include="views\post.html" />
