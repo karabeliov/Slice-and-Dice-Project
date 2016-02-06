@@ -19,7 +19,7 @@
             <div class="widget-bottom">
                 <div class="widget-content">
                     <ul>
-                        <li ng-repeat="post in blog.posts | orderBy:blog.orderComment | limitTo:blog.sidebarCommentLimit" ng-show="post.Comments[0]">
+                        <li ng-repeat="post in blog.comments | orderBy:blog.orderComment | limitTo:blog.sidebarCommentLimit" ng-show="post.Comments[0]">
                             <span>
                                 <a href="/post/{{post.objectId}}">{{post.Comments[post.Comments.length-1].sender}}</a>
                             </span>

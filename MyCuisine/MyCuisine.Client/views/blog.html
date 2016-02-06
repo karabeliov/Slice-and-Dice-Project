@@ -1,29 +1,17 @@
 ﻿<main id="posts" class="col-md-9">
-    <!-- Blog Posts -->
     <img id="myLoader" src="../css/img/slider/loading.gif" ng-show="vm.loading" />
+
     <ul>
-        <li ng-repeat="post in vm.posts track by $index | orderBy:vm.orderPost | limitTo: vm.postLimit | filter:query ">
-            <article class="post">
-                <header>
-                    <h1>{{post.title}}</h1>
-                    <p>
-                        by <a href="#">{{post.author}}</a> in
-                        <a href="#">{{currentPost.category || 'blog'}}</a>
-                        <span class="glyphicon glyphicon-time"></span> Posted on {{post.createdAt | date:"dd MMMM yyyy 'at' H:mm"}} | {{post.Comments.length}} Comment
-                    </p>
-                    <div class="blog-thumbnail">
-                        <img src="{{post.img}}" class="post-thumb" alt="Post image" width="320">
-                    </div>
-                </header>
-                <p>{{post.desc}}</p>
-                <footer>
-                    <div>
-                        <a href="/post/{{post.objectId}}" class="btn btn-success" ng-click="vm.getCurrentPost($index)">Read more</a>
-                    </div>
-                </footer>
-            </article>
+        <li class="col-md-4" ng-repeat="post in vm.posts.slice(vm.page, vm.page + vm.postLimit) track by $index | orderBy:vm.orderPost | limitTo: vm.postLimit">
+            <article class="post" post></article>
         </li>
     </ul>
+
+    <div id="page-nav" ng-if="vm.posts.length > vm.postLimit">
+        <div class="btn-group" >
+            <button ng-repeat="row in vm.range() track by $index" class="btn btn-default" ng-click="vm.currentPage(row)">{{$index + 1}}</button>
+        </div>
+    </div>
 </main>
 <div id="sidebar" class="col-md-3" sidebar>
 </div>

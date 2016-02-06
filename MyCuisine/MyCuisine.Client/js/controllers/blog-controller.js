@@ -23,18 +23,42 @@
                     limit: limitForRequest,
                     order: vm.orderPost
                 }
+            },
+            getCom: {
+                method: 'GET',
+                headers: {
+                    'X-Parse-Application-Id': 'BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS',
+                    'X-Parse-REST-API-Key': '8DbU4OmT5kuqPP6S8UlOdVur2m5KcgXcJ8sMK2Zz'
+                },
+                params: {
+                    order: '-Comments',
+                    limit: vm.sidebarCommentLimit
+                }
             }
         });
+
         parseQueryPost.getPost().$promise
         .then(function (data) {
             var currentId = $routeParams.objectId;
             vm.posts = data.results;
+
+            vm.range = function () {
+                var range = [];
+                for (var i = 0; i < vm.posts.length; i = i + vm.postLimit) {
+                    range.push(i);
+                }
+                return range;
+            }
+
+            vm.currentPage = function (index) {
+                vm.page = index;
+            }
+
             vm.currentPost = $.grep(data.results, function (e) { return e.objectId == currentId; })[0];
 
             vm.getCurrentPost = function (index) {
                 $rootScope.currentPost = vm.posts[index];
                 $rootScope.currentPost.countComment = $rootScope.currentPost.Comments.length;
-                console.log(vm.currentPost);
             }
         })
         .catch(function (error) {
@@ -42,6 +66,21 @@
         })
         .finally(function () {
             vm.loading = false;
+        });
+
+        
+
+
+        parseQueryPost.getCom().$promise
+        .then(function (data) {
+           vm.comments = data.results;
+           console.log(vm.comments);
+        })
+        .catch(function (error) {
+           console.log(error)
+        })
+        .finally(function () {
+           vm.loading = false;
         });
     }
 

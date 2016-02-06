@@ -1,0 +1,17 @@
+﻿<header>
+    <h1>{{post.title}}</h1>
+    <p>
+        by <a href="#">{{post.author}}</a> in
+        <a href="#">{{currentPost.category || 'blog'}}</a>
+        <span class="glyphicon glyphicon-time"></span> Posted on {{post.createdAt | date:"dd MMMM yyyy 'at' H:mm"}} | {{post.Comments.length || '0'}} Comment
+    </p>
+    <div class="blog-thumbnail">
+        <img src="{{post.img}}" class="post-thumb" alt="Post image" width="320">
+    </div>
+</header>
+<p>{{post.desc}}</p>
+<footer>
+    <div>
+        <a href="/post/{{post.objectId}}" class="btn btn-success" ng-click="vm.getCurrentPost($index)">Read more</a>
+    </div>
+</footer>

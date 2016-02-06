@@ -182,6 +182,8 @@ body {
       left: 40.5%;
       bottom: -18px;
       z-index: 2; }
+  body [ng\:cloak], body [ng-cloak], body .ng-cloak {
+    display: none !important; }
   body #container {
     background: url("img/page-top.jpg") repeat-x; }
     body #container #slider {
@@ -445,13 +447,17 @@ body {
             color: #fff;
             text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
             font-style: normal; }
-      body #container #content #posts li {
+      body #container #content #posts ul:first-of-type li {
         display: block;
         height: 400px;
-        margin-bottom: 5%; }
+        margin-bottom: 5%;
+        width: 100%; }
       body #container #content #posts #myLoader {
         margin-left: 60%;
         margin-top: 10%; }
+      body #container #content #posts #page-nav {
+        padding-bottom: 30px;
+        padding-left: 12%; }
       body #container #content .post {
         padding: 0 3% 3% 12%; }
         body #container #content .post p {

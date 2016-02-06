@@ -273,6 +273,10 @@ body {
     }
 
     //PAGE
+    [ng\:cloak], [ng-cloak], .ng-cloak {
+      display: none !important;
+    }
+
     #container {
         background: $page-bg repeat-x;
         #slider {
@@ -645,16 +649,25 @@ body {
                 }
             }
 
+                //BLOG
             #posts {
-                li {
-                    display: block;
-                    height: 400px;
-                    margin-bottom: 5%;
+                ul:first-of-type {
+                    li {
+                        display: block;
+                        height: 400px;
+                        margin-bottom: 5%;
+                        width: 100%;
+                    }
                 }
 
                 #myLoader {
                     margin-left: 60%;
                     margin-top: 10%;
+                }
+
+                #page-nav {
+                    padding-bottom: 30px;
+                    padding-left: 12%;
                 }
             }
 
