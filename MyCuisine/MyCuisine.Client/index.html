@@ -157,7 +157,7 @@
                             <div class="widget-bottom">
                                 <div class="widget-content">
                                     <ul>
-                                        <li ng-repeat="post in blog.posts | orderBy:blog.orderComment | limitTo:blog.sidebarCommentLimit" ng-show="post.Comments[0]">
+                                        <li ng-repeat="post in blog.comments | orderBy:blog.orderComment | limitTo:blog.sidebarCommentLimit" ng-show="post.Comments[0]">
                                             <span style="display: inline-block;">
                                                 <a href="/post/{{post.objectId}}">{{post.Comments[post.Comments.length-1].sender}}</a>
                                             </span>
@@ -203,26 +203,7 @@
             </footer>
         </div>
     </div>
-
-    <!------------------LIBRARY SCRIPTS------------------>
-    <script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/angular/angular.min.js"></script>
-    <script src="lib/angular/angular-route.min.js"></script>
-    <script src="lib/angular/angular-resource.min.js"></script>
-    <script src="lib/bootstrap/bootstrap.min.js"></script>
-    <script src="lib/toastr/toastr.min.js"></script>
-    <!------------------MY SCRIPTS-------------------->
-    <script src="js/app.es5.min.js"></script>
-    <script src="js/slider/jssor.slider.mini.js"></script>
-    <script src="js/slider/loader.es5.min.js"></script>
-    <script src="js/custom.es5.min.js"></script>
-    <script src="js/common/notifier.js"></script>
-    <!------------------CONTROLLER SCRIPTS-------------------->
-    <script src="js/controllers/blog-controller.js"></script>
-    <script src="js/controllers/add-post-controller.js"></script>
-    <script src="js/controllers/comment-controller.js"></script>
-
-    <script src="js/controllers/sidebar-directive.js"></script>
-    <script src="js/controllers/post-directive.js"></script>
+    <script src="lib/build-libs.es5.min.js"></script>
+    <script src="js/output.es5.min.js"></script>
 </body>
 </html>

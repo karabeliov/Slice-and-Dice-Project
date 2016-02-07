@@ -110,7 +110,7 @@ and (max-width : 479px) {
         top: -12% !important;
     }
     #browse-menu {
-        left: 10% !important; 
+        left: 15% !important; 
     }
     #bottom-menu {
         display: none;
@@ -137,6 +137,9 @@ and (max-width : 767px) {
             margin-top: 60px !important;
             margin-bottom: 0 !important;
             z-index: 1 !important;
+        }
+        #top-shadow {
+            margin-top: 18px !important;
         }
     }
 

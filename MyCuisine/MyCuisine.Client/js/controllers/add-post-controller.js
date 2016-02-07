@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    function AddPostController($route, notifier) {
+    function AddPostController($location, $route, notifier) {
         var vm = this;
         var currentUser = Parse.User.current();
 
@@ -33,5 +33,5 @@
     }
 
     angular.module('myApp.controllers')
-        .controller('AddPostController', ['$route', 'notifier', AddPostController]);
+        .controller('AddPostController', ['$location', '$route', 'notifier', AddPostController]);
 }());

@@ -1,0 +1,28 @@
+[
+  {
+    "outputFileName": "lib/build-libs.js",
+    "inputFiles": [
+      "lib/jquery/jquery.min.js",
+      "lib/angular/angular.min.js",
+      "lib/angular/angular-route.min.js",
+      "lib/angular/angular-resource.min.js",
+      "lib/bootstrap/bootstrap.min.js",
+      "lib/toastr/toastr.min.js"
+    ]
+  },
+  {
+    "outputFileName": "js/output.js",
+    "inputFiles": [
+      "js/common/app.js",
+      "js/common/custom.js",
+      "js/common/notifier.js",
+      "js/controllers/add-post-controller.js",
+      "js/controllers/blog-controller.js",
+      "js/controllers/comment-controller.js",
+      "js/controllers/post-directive.js",
+      "js/controllers/sidebar-directive.js",
+      "js/slider/jssor.slider.mini.js",
+      "js/slider/loader.js"
+    ]
+  }
+]

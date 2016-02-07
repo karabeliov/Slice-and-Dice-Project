@@ -151,33 +151,22 @@
     <Content Include="img\slider\slide-1.jpg" />
     <Content Include="img\slider\slide-2.jpg" />
     <Content Include="img\slider\slide-3.jpg" />
-    <Content Include="js\app.es5.js">
-      <DependentUpon>app.js</DependentUpon>
-    </Content>
-    <Content Include="js\app.es5.min.js">
-      <DependentUpon>app.es5.js</DependentUpon>
-    </Content>
-    <Content Include="js\app.js" />
+    <Content Include="js\common\app.js" />
     <Content Include="js\common\notifier.js" />
     <Content Include="js\controllers\comment-controller.js" />
     <Content Include="js\controllers\post-directive.js" />
     <Content Include="js\controllers\sidebar-directive.js" />
     <Content Include="js\controllers\blog-controller.js" />
     <Content Include="js\controllers\add-post-controller.js" />
-    <Content Include="js\custom.es5.js">
-      <DependentUpon>custom.js</DependentUpon>
+    <Content Include="js\common\custom.js" />
+    <Content Include="js\output.es5.js">
+      <DependentUpon>output.js</DependentUpon>
     </Content>
-    <Content Include="js\custom.es5.min.js">
-      <DependentUpon>custom.es5.js</DependentUpon>
+    <Content Include="js\output.es5.min.js">
+      <DependentUpon>output.es5.js</DependentUpon>
     </Content>
-    <Content Include="js\custom.js" />
+    <Content Include="js\output.js" />
     <Content Include="js\slider\jssor.slider.mini.js" />
-    <Content Include="js\slider\loader.es5.js">
-      <DependentUpon>loader.js</DependentUpon>
-    </Content>
-    <Content Include="js\slider\loader.es5.min.js">
-      <DependentUpon>loader.es5.js</DependentUpon>
-    </Content>
     <Content Include="js\slider\loader.js" />
     <Content Include="lib\angular\angular-route.min.js" />
     <Content Include="css\bootstrap\bootstrap-theme.css.map" />
@@ -191,9 +180,17 @@
     <Content Include="css\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="lib\angular\angular-resource.min.js" />
     <Content Include="JSLintNet.json" />
+    <None Include="bundleconfig.json" />
     <None Include="lib\angular\angular.intellisense.js" />
     <Content Include="lib\angular\angular.min.js" />
     <Content Include="lib\bootstrap\bootstrap.min.js" />
+    <Content Include="lib\build-libs.es5.js">
+      <DependentUpon>build-libs.js</DependentUpon>
+    </Content>
+    <Content Include="lib\build-libs.es5.min.js">
+      <DependentUpon>build-libs.es5.js</DependentUpon>
+    </Content>
+    <Content Include="lib\build-libs.js" />
     <Content Include="lib\jquery\jquery.min.js" />
     <Content Include="lib\toastr\toastr.js" />
     <Content Include="lib\toastr\toastr.min.js" />
@@ -264,7 +261,9 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\BuildBundlerMinifier.1.8.144\build\BuildBundlerMinifier.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildBundlerMinifier.1.8.144\build\BuildBundlerMinifier.targets'))" />
   </Target>
+  <Import Project="..\packages\BuildBundlerMinifier.1.8.144\build\BuildBundlerMinifier.targets" Condition="Exists('..\packages\BuildBundlerMinifier.1.8.144\build\BuildBundlerMinifier.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

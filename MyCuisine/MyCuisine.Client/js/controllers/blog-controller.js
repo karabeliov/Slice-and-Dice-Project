@@ -6,11 +6,11 @@
         vm.orderPost = '-createdAt';
         vm.orderComment = '-updatedAt';
         vm.loading = true;
-        $rootScope.query = '';
         vm.postLimit = 3;
         vm.sidebarPostLimit = 5;
         vm.sidebarCommentLimit = 5;
-        var limitForRequest = 10;        
+        var limitForRequest = 10;
+
         var parseQueryPost = $resource('https://api.parse.com/1/classes/Post', {}, {
             getPost: {
                 method: 'GET',
@@ -19,7 +19,6 @@
                     'X-Parse-REST-API-Key': '8DbU4OmT5kuqPP6S8UlOdVur2m5KcgXcJ8sMK2Zz'
                 },
                 params: {
-                    where: $rootScope.query,
                     limit: limitForRequest,
                     order: vm.orderPost
                 }
@@ -54,7 +53,9 @@
                 vm.page = index;
             }
 
-            vm.currentPost = $.grep(data.results, function (e) { return e.objectId == currentId; })[0];
+            vm.currentPost = $.grep(data.results, function (e) {
+                return e.objectId == currentId;
+            })[0];
 
             vm.getCurrentPost = function (index) {
                 $rootScope.currentPost = vm.posts[index];
@@ -67,14 +68,10 @@
         .finally(function () {
             vm.loading = false;
         });
-
-        
-
-
+       
         parseQueryPost.getCom().$promise
         .then(function (data) {
            vm.comments = data.results;
-           console.log(vm.comments);
         })
         .catch(function (error) {
            console.log(error)

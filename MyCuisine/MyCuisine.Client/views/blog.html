@@ -2,14 +2,19 @@
     <img id="myLoader" src="../css/img/slider/loading.gif" ng-show="vm.loading" />
 
     <ul>
-        <li class="col-md-4" ng-repeat="post in vm.posts.slice(vm.page, vm.page + vm.postLimit) track by $index | orderBy:vm.orderPost | limitTo: vm.postLimit">
+        <li class="col-md-4" 
+            ng-repeat="post in vm.posts.slice(vm.page, vm.page + vm.postLimit) | filter: query track by $index
+            | orderBy:vm.orderPost | limitTo: vm.postLimit">
             <article class="post" post></article>
         </li>
     </ul>
 
     <div id="page-nav" ng-if="vm.posts.length > vm.postLimit">
         <div class="btn-group" >
-            <button ng-repeat="row in vm.range() track by $index" class="btn btn-default" ng-click="vm.currentPage(row)">{{$index + 1}}</button>
+            <button ng-repeat="row in vm.range() track by $index" class="btn btn-default" 
+                ng-click="vm.currentPage(row)">
+                {{$index + 1}}
+            </button>
         </div>
     </div>
 </main>

@@ -4,19 +4,15 @@
     "inputFile": "css/app.scss"
   },
   {
-    "outputFile": "js/custom.es5.js",
-    "inputFile": "js/custom.js"
-  },
-  {
-    "outputFile": "js/app.es5.js",
-    "inputFile": "js/app.js"
-  },
-  {
-    "outputFile": "js/slider/loader.es5.js",
-    "inputFile": "js/slider/loader.js"
-  },
-  {
     "outputFile": "css/media-queries.css",
     "inputFile": "css/media-queries.scss"
+  },
+  {
+      "outputFile": "lib/build-libs.es5.js",
+      "inputFile": "lib/build-libs.js"
+  },
+  {
+  "outputFile": "js/output.es5.js",
+  "inputFile": "js/output.js"
   }
 ]
