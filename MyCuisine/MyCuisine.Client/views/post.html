@@ -30,10 +30,10 @@
             </div>
             <!-- Posted Comments -->
             <!-- Comment -->
-            <h3>{{currentPost.countComment || '0'}} Comments</h3>
+            <h3>{{post.currentPost.countComment || '0'}} Comments</h3>
             <div class="media" ng-repeat="comment in post.currentPost.Comments track by $index">
                 <a class="pull-left" href="#" style="width: 80px; text-align: center;">
-                    <img class="media-object" src="{{comment.sender.img || '../css/img/comments/avatar.jpg'}}" alt="" style="margin-left: 5px" width="56">
+                    <img class="media-object" src="{{comment.img}}" alt="" width="56">
                     <small>{{comment.date.iso | date:"dd MMM yyyy 'at' H:mm"}}</small>
                 </a>
                 <div class="media-body row">
@@ -44,27 +44,12 @@
                                     {{comment.sender}} says:
                                 </h4>
                                 {{comment.content}}
-
                                 <a class="reply-comment btn btn-success" href="#" ng-click="haveReply=!haveReply">Reply</a>
                             </div>
                         </div>
                     </div>
-                    <div class="comment-sender"></div>
-                    <div class="reply" ng-repeat="reply in comment.reply | limitTo: 5" ng-show="comment.reply">
-                        <div class="reply-bottom">
-                            <div class="reply-content">
-                                <h4 class="media-heading">
-                                    {{reply.sender}} says:
-                                </h4>
-                                {{reply.content}}
-
-                                <a class="reply-comment btn btn-success" href="#" ng-click="haveReply=!haveReply">Reply</a>
-                            </div>
-                        </div>
-
-                        <div class="reply-sender"></div>
-                    </div>
-
+                    <div class="comment-arow"></div>
+                    <!-- Send Reply -->
                     <div class="well" ng-show="haveReply">
                         <h4>Reply of {{comment.sender}}'s comment:</h4>
                         <form ng-controller="CommentController as commentCtr">
@@ -78,6 +63,23 @@
                             </div>
                             <button class="btn btn-success" ng-click="commentCtr.replyComment(reply, post.currentPost.objectId, $index)">Submit</button>
                         </form>
+                    </div>
+                    <!-- Reply -->
+                    <div class="reply" ng-repeat="reply in comment.reply | limitTo: 5" ng-show="comment.reply">
+                        <a class="pull-left" href="#" style="width: 80px; text-align: center;">
+                            <img class="media-object" src="{{reply.img}}" alt="" width="56">
+                            <small>{{reply.date.iso | date:"dd MMM yyyy 'at' H:mm"}}</small>
+                        </a>
+                        <div class="reply-bottom">
+                            <div class="reply-content">
+                                <h4 class="media-heading">
+                                    {{reply.sender}} says:
+                                </h4>
+                                {{reply.content}}
+                                <a class="reply-comment btn btn-success" href="#" ng-click="haveReply=!haveReply">Reply</a>
+                            </div>
+                        </div>
+                        <div class="reply-arow"></div>
                     </div>
                 </div>
             </div>

@@ -163,6 +163,7 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
             myPost.set('img', post.image);
             myPost.set('category', post.category);
             myPost.set('desc', post.description);
+
             myPost.save(null, {
                 success: function success() {
                     notifier.success('Post is public now!');
@@ -241,11 +242,7 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
             vm.currentPost = $.grep(data.results, function (e) {
                 return e.objectId == currentId;
             })[0];
-
-            vm.getCurrentPost = function (index) {
-                $rootScope.currentPost = vm.posts[index];
-                $rootScope.currentPost.countComment = $rootScope.currentPost.Comments.length;
-            };
+            vm.currentPost.countComment = vm.currentPost.Comments.length;
         })['catch'](function (error) {
             console.log(error);
         })['finally'](function () {
@@ -282,7 +279,9 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
                     success: function success(post) {
                         comment.date = post.updatedAt;
                         comment.reply = [];
-                        comment.sender = currentUser.get('fname') || currentUser.get('username');
+                        comment.sender = currentUser.get('fname') ? currentUser.get('fname') : currentUser.get('username');
+                        comment.img = currentUser.get('img') ? currentUser.get('img') : '../css/img/comments/avatar.jpg';
+
                         post.add('Comments', comment);
                         post.save();
                         notifier.success('Comment is add!');
@@ -304,6 +303,7 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
             var currentUser = Parse.User.current();
             if (currentUser) {
                 reply.sender = currentUser.get('fname') || currentUser.get('username');
+                reply.img = currentUser.get('img') ? currentUser.get('img') : '../css/img/comments/avatar.jpg';
 
                 var Post = Parse.Object.extend("Post");
                 var takePostQuery = new Parse.Query(Post);
@@ -311,7 +311,9 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
                 takePostQuery.first({
                     success: function success(post) {
                         var comments = post.get('Comments');
+                        reply.date = post.updatedAt;
                         comments[commentId].reply.push(reply);
+
                         post.save();
                         notifier.success('Reply is add!');
                         $route.reload();
@@ -336,7 +338,7 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
     function post() {
         return {
             restrict: 'A',
-            templateUrl: 'views/directives/post.html'
+            templateUrl: 'views/directives/post-directive.html'
         };
     }
 
@@ -348,7 +350,7 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
     function sidebar() {
         return {
             restrict: 'A',
-            templateUrl: 'views/directives/sidebar.html'
+            templateUrl: 'views/directives/sidebar-directive.html'
         };
     }
 

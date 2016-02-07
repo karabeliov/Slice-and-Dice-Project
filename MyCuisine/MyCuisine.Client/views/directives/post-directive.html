@@ -2,7 +2,7 @@
     <h1>{{post.title}}</h1>
     <p>
         by <a href="#">{{post.author}}</a> in
-        <a href="#">{{currentPost.category || 'blog'}}</a>
+        <a href="#">{{post.currentPost.category || 'blog'}}</a>
         <span class="glyphicon glyphicon-time"></span> Posted on {{post.createdAt | date:"dd MMMM yyyy 'at' H:mm"}} | {{post.Comments.length || '0'}} Comment
     </p>
     <div class="blog-thumbnail">
@@ -12,6 +12,6 @@
 <p>{{post.desc}}</p>
 <footer>
     <div>
-        <a href="/post/{{post.objectId}}" class="btn btn-success" ng-click="vm.getCurrentPost($index)">Read more</a>
+        <a href="/post/{{post.objectId}}" class="btn btn-success">Read more</a>
     </div>
 </footer>

@@ -56,11 +56,7 @@
             vm.currentPost = $.grep(data.results, function (e) {
                 return e.objectId == currentId;
             })[0];
-
-            vm.getCurrentPost = function (index) {
-                $rootScope.currentPost = vm.posts[index];
-                $rootScope.currentPost.countComment = $rootScope.currentPost.Comments.length;
-            }
+            vm.currentPost.countComment = vm.currentPost.Comments.length;
         })
         .catch(function (error) {
             console.log(error)

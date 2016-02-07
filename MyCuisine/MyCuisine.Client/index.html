@@ -106,9 +106,9 @@
                 </div>
 
                 <div id="menu-bg"></div>
-                <div class="category-name">
-                    <h1 class="category-title">{{currentPost.title || title}}</h1>
-                    <p class="meta-info" ng-show="currentPost">Posted by {{currentPost.author}} in {{currentPost.category || 'blog'}} on {{currentPost.createdAt | date:"dd MMMM yyyy 'at' H:mm"}} | {{currentPost.countComment}} Comment</p>
+                <div class="category-name" ng-controller="BlogController as blog">
+                    <h1 class="category-title">{{blog.currentPost.title || title}}</h1>
+                    <p class="meta-info" ng-show="blog.currentPost">Posted by {{blog.currentPost.author}} in {{blog.currentPost.category || 'blog'}} on {{blog.currentPost.createdAt | date:"dd MMMM yyyy 'at' H:mm"}} | {{blog.currentPost.countComment}} Comment</p>
                 </div>
             </header>
 

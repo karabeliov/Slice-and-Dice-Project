@@ -13,6 +13,7 @@
             myPost.set('img', post.image);
             myPost.set('category', post.category);
             myPost.set('desc', post.description);
+
             myPost.save(null, {
                 success: function () {
                     notifier.success('Post is public now!');

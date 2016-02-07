@@ -211,13 +211,13 @@
   <ItemGroup>
     <Content Include="css\reset.css" />
     <Content Include="index.html" />
-    <Content Include="views\directives\post.html" />
+    <Content Include="views\directives\post-directive.html" />
     <Content Include="views\menu\breakfast-menu.html" />
     <Content Include="views\menu\lunch-menu.html" />
     <Content Include="views\menu\dinner-menu.html" />
     <Content Include="views\menu\all-menu.html" />
     <Content Include="views\addPost.html" />
-    <Content Include="views\directives\sidebar.html" />
+    <Content Include="views\directives\sidebar-directive.html" />
     <Content Include="views\post.html" />
     <Content Include="views\blog.html" />
     <Content Include="views\home.html" />

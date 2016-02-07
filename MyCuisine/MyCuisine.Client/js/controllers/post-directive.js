@@ -4,7 +4,7 @@
     function post() {
         return {
             restrict: 'A',
-            templateUrl: 'views/directives/post.html'
+            templateUrl: 'views/directives/post-directive.html'
         }
     }
 

@@ -17,7 +17,9 @@
                     success: function (post) {
                         comment.date = post.updatedAt;
                         comment.reply = [];
-                        comment.sender = currentUser.get('fname') || currentUser.get('username');
+                        comment.sender = currentUser.get('fname') ? currentUser.get('fname') : currentUser.get('username');
+                        comment.img = currentUser.get('img') ? currentUser.get('img') : '../css/img/comments/avatar.jpg';
+
                         post.add('Comments', comment);
                         post.save();
                         notifier.success('Comment is add!');
@@ -39,6 +41,7 @@
             var currentUser = Parse.User.current();
             if (currentUser) {
                 reply.sender = currentUser.get('fname') || currentUser.get('username');
+                reply.img = currentUser.get('img') ? currentUser.get('img') : '../css/img/comments/avatar.jpg';
 
                 var Post = Parse.Object.extend("Post");
                 var takePostQuery = new Parse.Query(Post);
@@ -46,7 +49,9 @@
                 takePostQuery.first({
                     success: function (post) {
                         var comments = post.get('Comments');
+                        reply.date = post.updatedAt;
                         comments[commentId].reply.push(reply);
+                        
                         post.save();
                         notifier.success('Reply is add!');
                         $route.reload();

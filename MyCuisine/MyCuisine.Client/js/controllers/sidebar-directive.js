@@ -4,7 +4,7 @@
     function sidebar() {
         return {
             restrict: 'A',
-            templateUrl: 'views/directives/sidebar.html'
+            templateUrl: 'views/directives/sidebar-directive.html'
         }
     }
 

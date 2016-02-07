@@ -53,6 +53,13 @@ $stars: url(img/stars.png);
 $content-bg: url(img/content-bg.png); 
 $top-shadow: url(img/quote-shadow.png); 
 $bottom-shadow: url(img/bottom-shadow.png);
+    //COMMENTS
+    $comment-top-bigsize: url(img/comments/comment-top.png); 
+    $comment-bg-bigsize: url(img/comments/comment-bg.png); 
+    $comment-bottom-bigsize: url(img/comments/comment-bottom.png);
+    $comment-top-smallsize: url(img/comments/comment-top-d2.png); 
+    $comment-bg-smallsize: url(img/comments/comment-bg-d2.png); 
+    $comment-bottom-smallsize: url(img/comments/comment-bottom-d2.png);
 //FOOTER
 $footer-bg: url(img/footer-bg.png);
 $footer-line-color: #dcd7b1;
@@ -61,6 +68,15 @@ $frame: url('img/frame.png');
 $testimonials-top: url(img/testimonials/testimonials-top.png);
 $testimonials-content: url(img/testimonials/testimonials-content-bg.png);
 $testimonials-bottom: url(img/testimonials/testimonials-bottom.png);
+
+@mixin comment-style($background, $position, $margin, $padding) {
+    background: $background; 
+    position: $position;
+    margin: $margin;
+    padding: $padding;  
+}
+
+
 body {
     //BASIC STYLES
     background-color: $bg-color;
@@ -684,28 +700,33 @@ body {
                     width: 620px;
 
                     //COMMENT
-                    .comment { 
-                         background: url(img/comments/comment-top.png) no-repeat; 
-                         padding-top: 9px; 
-                         margin-bottom: 25px; 
-                         position: relative;
-                        .comment-bottom { 
-                            background: url(img/comments/comment-bottom.png) no-repeat left bottom; 
-                            padding-bottom: 26px; 
-                        }
-                        .comment-content { 
-                            background: url(img/comments/comment-bg.png) repeat-y; 
-                            padding: 7px 8px 29px 27px; 
+                    &>a {
+                        img {
+                            margin-left: 7px;
                         }
                     }
-                    .comment-sender {
-                        background: url('img/comments/comment-arrow.png') no-repeat;
+
+                    .comment { 
+                        @include comment-style($comment-top-bigsize no-repeat, 
+                        relative, 0 0 25px 0, 9px 0 0 0);
+                        .comment-bottom { 
+                            @include comment-style($comment-bottom-bigsize no-repeat left bottom, 
+                            relative, 0 0 0 0, 0 0 26px 0);
+                        }
+                        .comment-content { 
+                            @include comment-style($comment-bg-bigsize repeat-y, 
+                            relative, 0 0 0 0, 7px 8px 29px 27px);
+                        }
+                    }
+                    .comment-arow {
+                        @include comment-style(url('img/comments/comment-arrow.png') no-repeat, 
+                        absolute, 0 0 0 0, 0 0 0 0);
                         width: 9px;
                         height: 20px;
-                        position: absolute;
                         top: 23px;
                         left: 72px;
                     }
+
                     .reply-comment {
                         float: right;
                         margin-top: 10px;
@@ -713,26 +734,32 @@ body {
                     }
 
                     .reply { 
-                        background: url(img/comments/comment-top-d2.png) no-repeat; 
-                        padding-top: 9px; 
-                        margin-left: 82px;
-                        position: relative;
+                        @include comment-style($comment-top-smallsize no-repeat, 
+                        relative, 0 0 0 82px, 9px 0 0 0);
                         .reply-bottom { 
-                            background: url(img/comments/comment-bottom-d2.png) no-repeat left bottom; 
-                            padding-bottom: 26px; 
+                            @include comment-style($comment-bottom-smallsize no-repeat left bottom, 
+                            relative, 0 0 0 0, 0 0 26px 0);
                         }
                         .reply-content { 
-                            background: url(img/comments/comment-bg-d2.png) repeat-y; 
-                            padding: 7px 8px 29px 27px; 
+                            @include comment-style($comment-bg-smallsize repeat-y, 
+                            relative, 0 0 0 0, 7px 8px 29px 27px);
                         }
-                    }
-                    .reply-sender {
-                        background: url('img/comments/comment-arrow.png') no-repeat;
-                        width: 9px;
-                        height: 20px;
-                        position: absolute;
-                        top: 23px;
-                        left: -8px;
+
+                        .reply-arow {
+                            @include comment-style(url('img/comments/comment-arrow.png') no-repeat, 
+                            absolute, 0 0 0 0, 0 0 0 0);
+                            width: 9px;
+                            height: 20px;
+                            top: 23px;
+                            left: -8px;
+                        }
+
+                        &>a {
+                            margin-left: -80px;
+                            img {
+                                margin-left: 12px;
+                            }
+                        }
                     }
                 }
             }
@@ -839,11 +866,10 @@ body {
 
                 #logo-name {
                     display: inline-block;
-                    color: black;
+                    color: #442917;
                     text-shadow: none;
                     font-size: x-large;
                     margin-left: 5px;
-                    color: #442917;
                 }
                 span {
                     display: block;
