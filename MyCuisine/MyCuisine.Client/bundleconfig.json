@@ -16,6 +16,7 @@
       "js/common/app.js",
       "js/common/custom.js",
       "js/common/notifier.js",
+      "js/controllers/login-controller.js",
       "js/controllers/add-post-controller.js",
       "js/controllers/blog-controller.js",
       "js/controllers/comment-controller.js",

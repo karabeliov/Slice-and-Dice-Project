@@ -30,7 +30,19 @@
             </div>
         </div>
     </li>
-    <li>
+    <li ng-controller="LoginController as login" ng-show="login.currentUser">
+        <h4>Meta</h4>
+        <div class="widget">
+            <div class="widget-bottom">
+                <div class="widget-content">
+                    <ul>
+                        <li><a href="/post/add">Add post</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li ng-controller="LoginController as login" ng-hide="login.currentUser">
         <h4>Meta</h4>
         <div class="widget">
             <div class="widget-bottom">

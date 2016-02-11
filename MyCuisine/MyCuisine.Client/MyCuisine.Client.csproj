@@ -153,6 +153,7 @@
     <Content Include="img\slider\slide-3.jpg" />
     <Content Include="js\common\app.js" />
     <Content Include="js\common\notifier.js" />
+    <Content Include="js\controllers\login-controller.js" />
     <Content Include="js\controllers\comment-controller.js" />
     <Content Include="js\controllers\post-directive.js" />
     <Content Include="js\controllers\sidebar-directive.js" />
@@ -166,6 +167,9 @@
       <DependentUpon>output.es5.js</DependentUpon>
     </Content>
     <Content Include="js\output.js" />
+    <Content Include="js\output.min.js">
+      <DependentUpon>output.js</DependentUpon>
+    </Content>
     <Content Include="js\slider\jssor.slider.mini.js" />
     <Content Include="js\slider\loader.js" />
     <Content Include="lib\angular\angular-route.min.js" />

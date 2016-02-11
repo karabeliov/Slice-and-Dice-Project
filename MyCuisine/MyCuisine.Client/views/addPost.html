@@ -1,5 +1,5 @@
-﻿<div class="container" ng-controller="AddPostController">
-    <div id="addpostbox" style="margin-top:50px;" class="mainbox col-md-8 col-sm-8 col-sm-offset-2">
+﻿<div class="container row" ng-controller="AddPostController">
+    <div id="addpostbox" style="margin-top:50px;" class="mainbox col-md-8 col-sm-8 col-sm-offset-2" ng-controller="LoginController as login" ng-show="login.currentUser">
         <div class="panel panel-info">
             <div class="panel-heading">
                 <div class="panel-title">Add Post</div>
@@ -37,5 +37,10 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="col-md-offset-2" ng-controller="LoginController as login" ng-hide="login.currentUser">
+        <h2>You are not Login</h2>
+        <a href="/login">Login here</a>
     </div>
 </div>

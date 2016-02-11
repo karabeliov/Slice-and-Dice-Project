@@ -69,70 +69,12 @@
     angular.module('myApp.controllers', ['myApp.services']);
     var myApp = angular.module('myApp', ['ngRoute', 'ngResource', 'myApp.controllers', 'myApp.directives'])
         .config(['$routeProvider', '$locationProvider', config])
-        .value('toastr', toastr)
-        .constant('baseServiceUrl', 'http://localhost:64352/');
+        .value('toastr', toastr);
 
-    myApp.run(['$location', '$rootScope', '$route', 'notifier', function ($location, $rootScope, $route, notifier) {
+    myApp.run(['$rootScope', function ($rootScope) {
         $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
             $rootScope.title = current.$$route.title;
             $rootScope.style = current.$$route.style || 'page';
         });
-
-        $rootScope.currentUser = Parse.User.current();
-
-        $rootScope.login = function (user) {
-            Parse.User.logIn(user.username, user.password, {
-                success: function (user) {
-                    $rootScope.currentUser = user;
-                    notifier.success('Successful login!');
-                },
-                error: function (user, error) {
-                    notifier.error('Username/Password combination is not valid!');
-                }
-            });
-
-            $location.path('/blog');
-            $route.reload();
-        };
-
-        $rootScope.signup = function (user) {
-            var newUser = new Parse.User();
-            newUser.set("username", user.username);
-            newUser.set("password", user.password);
-            newUser.set("email", user.email);
-            newUser.set("fname", user.fname);
-            newUser.set("lname", user.lname);
-
-            newUser.signUp(null, {
-                success: function (user) {
-                    notifier.success('Registration successful!');
-                    $rootScope.currentUser = user;
-                    $location.path('/blog');
-                    $route.reload();
-                },
-                error: function (user, error) {
-                    notifier.error("Error: " + error.code + " " + error.message);
-                }
-            });
-        };
-
-        $rootScope.logOut = function (form) {
-            Parse.User.logOut();
-            notifier.success('Successful logout!');
-            $rootScope.currentUser = null;
-            $location.path('/');
-            $route.reload();
-        };
-
-        $rootScope.forgot = function (userEmail) {
-            Parse.User.requestPasswordReset(userEmail, {
-                success: function () {
-                    notifier.success('Password reset request was sent successfully!');
-                },
-                error: function (error) {
-                    notifier.error("Error: " + error.code + " " + error.message);
-                }
-            });
-        }
     }]);
 }());

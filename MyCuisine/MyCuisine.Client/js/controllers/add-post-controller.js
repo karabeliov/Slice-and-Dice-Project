@@ -2,8 +2,10 @@
     'use strict';
 
     function AddPostController($location, $route, notifier) {
-        var vm = this;
-        var currentUser = Parse.User.current();
+        var vm = this,
+        currentUser = Parse.User.current(),
+        succsessMsg = 'Post is public now!',
+        errorMsg = 'Error: Need high level access!';
 
         vm.public = function (post) {
             var Post = Parse.Object.extend('Post');
@@ -16,12 +18,12 @@
 
             myPost.save(null, {
                 success: function () {
-                    notifier.success('Post is public now!');
+                    notifier.success(succsessMsg);
                     $location.path('/blog');
                     $route.reload();
                 },
                 error: function (error) {
-                    notifier.error("Error: Need high level access!");
+                    notifier.error(errorMsg);
                 }
             });
         };
@@ -29,8 +31,6 @@
         vm.reset = function () {
             vm.post = '';
         };
-
-        vm.reset();
     }
 
     angular.module('myApp.controllers')

@@ -1,5 +1,8 @@
-﻿<div class="container">
-    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+﻿<div class="container" ng-controller="LoginController as login">
+    <div class="row" ng-show="login.currentUser">
+        <h2 class="col-md-offset-2">You are already logged in</h2>
+    </div>
+    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2" ng-hide="login.currentUser">
         <div class="panel panel-info">
             <div class="panel-heading">
                 <div class="panel-title">Sign In</div>
@@ -38,7 +41,7 @@
                         <!-- Button -->
 
                         <div class="col-sm-12 controls">
-                            <button class="btn btn-success" ng-click="login(user)">Login</button>
+                            <button class="btn btn-success" ng-click="login.login(user)">Login</button>
                             <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
                         </div>
                     </div>
@@ -108,7 +111,7 @@
                     <div class="form-group">
                         <!-- Button -->
                         <div class="col-md-offset-3 col-md-9">
-                            <button id="btn-signup" type="button" class="btn btn-info" ng-click="signup(user)"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+                            <button id="btn-signup" type="button" class="btn btn-info" ng-click="login.signup(user)"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
                             <span style="margin-left:8px;">or</span>
                         </div>
                     </div>
@@ -143,7 +146,7 @@
                     <div class="form-group">
                         <!-- Button -->
                         <div class="col-md-offset-3 col-md-9">
-                            <button id="btn-signup" type="button" class="btn btn-info" ng-click="forgot(user)"><i class="icon-hand-right"></i> Send</button>
+                            <button id="btn-signup" type="button" class="btn btn-info" ng-click="login.forgot(user)"><i class="icon-hand-right"></i> Send</button>
                         </div>
                     </div>
                 </form>

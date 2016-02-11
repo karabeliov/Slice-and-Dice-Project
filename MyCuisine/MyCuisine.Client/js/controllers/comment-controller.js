@@ -2,7 +2,10 @@
     'use strict';
 
     function CommentController($resource, $location, $route, notifier) {
-        var vm = this;
+        var vm = this,
+        succsessCommentMsg = 'Comment is add!',
+        succsessReplyMsg = 'Reply is add!',
+        errorMsg = 'You not login!';
 
         // ADD Comment to Current POST
         vm.sendComment = function (comment, postId) {
@@ -22,7 +25,7 @@
 
                         post.add('Comments', comment);
                         post.save();
-                        notifier.success('Comment is add!');
+                        notifier.success(succsessCommentMsg);
                         $route.reload();
                     },
                     error: function (error) {
@@ -30,7 +33,7 @@
                     }
                 });
             } else {
-                notifier.error("You not login!");
+                notifier.error(errorCommentMsg);
                 $location.path('/login');
             }
         }
@@ -53,7 +56,7 @@
                         comments[commentId].reply.push(reply);
                         
                         post.save();
-                        notifier.success('Reply is add!');
+                        notifier.success(succsessReplyMsg);
                         $route.reload();
                     },
                     error: function (error) {
@@ -61,7 +64,7 @@
                     }
                 });
             } else {
-                notifier.error("You not login!");
+                notifier.error(errorCommentMsg);
                 $location.path('/login');
                 $route.reload();
             }

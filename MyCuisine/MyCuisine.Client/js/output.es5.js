@@ -58,70 +58,13 @@
     angular.module('myApp.services', []);
     angular.module('myApp.directives', []);
     angular.module('myApp.controllers', ['myApp.services']);
-    var myApp = angular.module('myApp', ['ngRoute', 'ngResource', 'myApp.controllers', 'myApp.directives']).config(['$routeProvider', '$locationProvider', config]).value('toastr', toastr).constant('baseServiceUrl', 'http://localhost:64352/');
+    var myApp = angular.module('myApp', ['ngRoute', 'ngResource', 'myApp.controllers', 'myApp.directives']).config(['$routeProvider', '$locationProvider', config]).value('toastr', toastr);
 
-    myApp.run(['$location', '$rootScope', '$route', 'notifier', function ($location, $rootScope, $route, notifier) {
+    myApp.run(['$rootScope', function ($rootScope) {
         $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
             $rootScope.title = current.$$route.title;
             $rootScope.style = current.$$route.style || 'page';
         });
-
-        $rootScope.currentUser = Parse.User.current();
-
-        $rootScope.login = function (user) {
-            Parse.User.logIn(user.username, user.password, {
-                success: function success(user) {
-                    $rootScope.currentUser = user;
-                    notifier.success('Successful login!');
-                },
-                error: function error(user, _error) {
-                    notifier.error('Username/Password combination is not valid!');
-                }
-            });
-
-            $location.path('/blog');
-            $route.reload();
-        };
-
-        $rootScope.signup = function (user) {
-            var newUser = new Parse.User();
-            newUser.set("username", user.username);
-            newUser.set("password", user.password);
-            newUser.set("email", user.email);
-            newUser.set("fname", user.fname);
-            newUser.set("lname", user.lname);
-
-            newUser.signUp(null, {
-                success: function success(user) {
-                    notifier.success('Registration successful!');
-                    $rootScope.currentUser = user;
-                    $location.path('/blog');
-                    $route.reload();
-                },
-                error: function error(user, _error2) {
-                    notifier.error("Error: " + _error2.code + " " + _error2.message);
-                }
-            });
-        };
-
-        $rootScope.logOut = function (form) {
-            Parse.User.logOut();
-            notifier.success('Successful logout!');
-            $rootScope.currentUser = null;
-            $location.path('/');
-            $route.reload();
-        };
-
-        $rootScope.forgot = function (userEmail) {
-            Parse.User.requestPasswordReset(userEmail, {
-                success: function success() {
-                    notifier.success('Password reset request was sent successfully!');
-                },
-                error: function error(_error3) {
-                    notifier.error("Error: " + _error3.code + " " + _error3.message);
-                }
-            });
-        };
     }]);
 })();
 // Active class
@@ -151,9 +94,79 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
 (function () {
     'use strict';
 
+    function LoginController($window, $location, $route, notifier) {
+        var vm = this,
+            succsessLoginMsg = 'Successful login!',
+            succsessRegistrationMsg = 'Registration successful!',
+            succsessLogOutMsg = 'Successful logout!',
+            succsessForgotMsg = 'Password reset request was sent successfully!',
+            errorLoginMsg = 'Username/Password combination is not valid!';
+
+        vm.currentUser = Parse.User.current();
+
+        vm.login = function (user) {
+            Parse.User.logIn(user.username, user.password, {
+                success: function success(user) {
+                    vm.currentUser = user;
+                    notifier.success(succsessLoginMsg);
+                    $window.location.assign('/blog');
+                },
+                error: function error(user, _error) {
+                    notifier.error(errorLoginMsg);
+                }
+            });
+        };
+
+        vm.signup = function (user) {
+            var newUser = new Parse.User();
+            newUser.set("username", user.username);
+            newUser.set("password", user.password);
+            newUser.set("email", user.email);
+            newUser.set("fname", user.fname);
+            newUser.set("lname", user.lname);
+
+            newUser.signUp(null, {
+                success: function success(user) {
+                    notifier.success(succsessRegistrationMsg);
+                    vm.currentUser = user;
+                    $window.location.assign('/blog');
+                },
+                error: function error(user, _error2) {
+                    notifier.error("Error: " + _error2.code + " " + _error2.message);
+                }
+            });
+        };
+
+        vm.logOut = function (form) {
+            Parse.User.logOut();
+            notifier.success(succsessLogOutMsg);
+            vm.currentUser = null;
+            $location.path('/');
+            $route.reload();
+        };
+
+        vm.forgot = function (userEmail) {
+            Parse.User.requestPasswordReset(userEmail, {
+                success: function success() {
+                    notifier.success(succsessForgotMsg);
+                },
+                error: function error(_error3) {
+                    notifier.error("Error: " + _error3.code + " " + _error3.message);
+                }
+            });
+        };
+    }
+
+    angular.module('myApp.controllers').controller('LoginController', ['$window', '$location', '$route', 'notifier', LoginController]);
+})();
+(function () {
+    'use strict';
+
     function AddPostController($location, $route, notifier) {
-        var vm = this;
-        var currentUser = Parse.User.current();
+        var vm = this,
+            currentUser = Parse.User.current(),
+            succsessMsg = 'Post is public now!',
+            errorMsg = 'Error: Need high level access!';
 
         vm['public'] = function (post) {
             var Post = Parse.Object.extend('Post');
@@ -166,12 +179,12 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
 
             myPost.save(null, {
                 success: function success() {
-                    notifier.success('Post is public now!');
+                    notifier.success(succsessMsg);
                     $location.path('/blog');
                     $route.reload();
                 },
                 error: function error(_error4) {
-                    notifier.error("Error: Need high level access!");
+                    notifier.error(errorMsg);
                 }
             });
         };
@@ -179,8 +192,6 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
         vm.reset = function () {
             vm.post = '';
         };
-
-        vm.reset();
     }
 
     angular.module('myApp.controllers').controller('AddPostController', ['$location', '$route', 'notifier', AddPostController]);
@@ -188,22 +199,26 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
 (function () {
     'use strict';
 
-    function BlogController($resource, $routeParams, $rootScope) {
+    function BlogController($resource, $routeParams, $rootScope, notifier) {
         var vm = this;
         vm.orderPost = '-createdAt';
-        vm.orderComment = '-updatedAt';
+        vm.orderComment = '-Comments';
         vm.loading = true;
         vm.postLimit = 3;
         vm.sidebarPostLimit = 5;
         vm.sidebarCommentLimit = 5;
-        var limitForRequest = 10;
 
-        var parseQueryPost = $resource('https://api.parse.com/1/classes/Post', {}, {
+        var limitForRequest = 10,
+            requestUrl = 'https://api.parse.com/1/classes/Post',
+            appId = 'BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS',
+            apiKey = '8DbU4OmT5kuqPP6S8UlOdVur2m5KcgXcJ8sMK2Zz';
+
+        var parseQueryPost = $resource(requestUrl, {}, {
             getPost: {
                 method: 'GET',
                 headers: {
-                    'X-Parse-Application-Id': 'BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS',
-                    'X-Parse-REST-API-Key': '8DbU4OmT5kuqPP6S8UlOdVur2m5KcgXcJ8sMK2Zz'
+                    'X-Parse-Application-Id': appId,
+                    'X-Parse-REST-API-Key': apiKey
                 },
                 params: {
                     limit: limitForRequest,
@@ -213,11 +228,11 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
             getCom: {
                 method: 'GET',
                 headers: {
-                    'X-Parse-Application-Id': 'BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS',
-                    'X-Parse-REST-API-Key': '8DbU4OmT5kuqPP6S8UlOdVur2m5KcgXcJ8sMK2Zz'
+                    'X-Parse-Application-Id': appId,
+                    'X-Parse-REST-API-Key': apiKey
                 },
                 params: {
-                    order: '-Comments',
+                    order: vm.orderComment,
                     limit: vm.sidebarCommentLimit
                 }
             }
@@ -242,9 +257,12 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
             vm.currentPost = $.grep(data.results, function (e) {
                 return e.objectId == currentId;
             })[0];
-            vm.currentPost.countComment = vm.currentPost.Comments.length;
+
+            if (vm.currentPost) {
+                vm.currentPost.countComment = vm.currentPost.Comments.length;
+            }
         })['catch'](function (error) {
-            console.log(error);
+            notifier.error(error);
         })['finally'](function () {
             vm.loading = false;
         });
@@ -252,19 +270,22 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
         parseQueryPost.getCom().$promise.then(function (data) {
             vm.comments = data.results;
         })['catch'](function (error) {
-            console.log(error);
+            notifier.error(error);
         })['finally'](function () {
             vm.loading = false;
         });
     }
 
-    angular.module('myApp.controllers').controller('BlogController', ['$resource', '$routeParams', '$rootScope', BlogController]);
+    angular.module('myApp.controllers').controller('BlogController', ['$resource', '$routeParams', '$rootScope', 'notifier', BlogController]);
 })();
 (function () {
     'use strict';
 
     function CommentController($resource, $location, $route, notifier) {
-        var vm = this;
+        var vm = this,
+            succsessCommentMsg = 'Comment is add!',
+            succsessReplyMsg = 'Reply is add!',
+            errorMsg = 'You not login!';
 
         // ADD Comment to Current POST
         vm.sendComment = function (comment, postId) {
@@ -284,7 +305,7 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
 
                         post.add('Comments', comment);
                         post.save();
-                        notifier.success('Comment is add!');
+                        notifier.success(succsessCommentMsg);
                         $route.reload();
                     },
                     error: function error(_error5) {
@@ -292,7 +313,7 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
                     }
                 });
             } else {
-                notifier.error("You not login!");
+                notifier.error(errorCommentMsg);
                 $location.path('/login');
             }
         };
@@ -315,7 +336,7 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
                         comments[commentId].reply.push(reply);
 
                         post.save();
-                        notifier.success('Reply is add!');
+                        notifier.success(succsessReplyMsg);
                         $route.reload();
                     },
                     error: function error(_error6) {
@@ -323,7 +344,7 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
                     }
                 });
             } else {
-                notifier.error("You not login!");
+                notifier.error(errorCommentMsg);
                 $location.path('/login');
                 $route.reload();
             }
@@ -460,7 +481,7 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
         }function v(h) {
             if (!s) {
                 s = -1;if (vb == "Microsoft Internet Explorer" && !!i.attachEvent && !!i.ActiveXObject) {
-                    var e = o.indexOf("MSIE");s = L;t = q(o.substring(e + 5, o.indexOf(";", e))); /*@cc_on z=@_jscript_version@*/;j = g.documentMode || t;
+                    var e = o.indexOf("MSIE");s = L;t = q(o.substring(e + 5, o.indexOf(";", e)));j = g.documentMode || t;
                 } else if (vb == "Netscape" && !!i.addEventListener) {
                     var d = o.indexOf("Firefox"),
                         b = o.indexOf("Safari"),

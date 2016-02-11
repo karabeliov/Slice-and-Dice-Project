@@ -1,22 +1,26 @@
 ﻿(function () {
     'use strict';
 
-    function BlogController($resource, $routeParams, $rootScope) {
+    function BlogController($resource, $routeParams, $rootScope, notifier) {
         var vm = this;
         vm.orderPost = '-createdAt';
-        vm.orderComment = '-updatedAt';
+        vm.orderComment = '-Comments';
         vm.loading = true;
         vm.postLimit = 3;
         vm.sidebarPostLimit = 5;
         vm.sidebarCommentLimit = 5;
-        var limitForRequest = 10;
 
-        var parseQueryPost = $resource('https://api.parse.com/1/classes/Post', {}, {
+        const limitForRequest = 10,
+        requestUrl = 'https://api.parse.com/1/classes/Post',
+        appId = 'BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS',
+        apiKey = '8DbU4OmT5kuqPP6S8UlOdVur2m5KcgXcJ8sMK2Zz';
+
+        var parseQueryPost = $resource(requestUrl, {}, {
             getPost: {
                 method: 'GET',
                 headers: {
-                    'X-Parse-Application-Id': 'BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS',
-                    'X-Parse-REST-API-Key': '8DbU4OmT5kuqPP6S8UlOdVur2m5KcgXcJ8sMK2Zz'
+                    'X-Parse-Application-Id': appId,
+                    'X-Parse-REST-API-Key': apiKey
                 },
                 params: {
                     limit: limitForRequest,
@@ -26,11 +30,11 @@
             getCom: {
                 method: 'GET',
                 headers: {
-                    'X-Parse-Application-Id': 'BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS',
-                    'X-Parse-REST-API-Key': '8DbU4OmT5kuqPP6S8UlOdVur2m5KcgXcJ8sMK2Zz'
+                    'X-Parse-Application-Id': appId,
+                    'X-Parse-REST-API-Key': apiKey
                 },
                 params: {
-                    order: '-Comments',
+                    order: vm.orderComment,
                     limit: vm.sidebarCommentLimit
                 }
             }
@@ -56,10 +60,13 @@
             vm.currentPost = $.grep(data.results, function (e) {
                 return e.objectId == currentId;
             })[0];
-            vm.currentPost.countComment = vm.currentPost.Comments.length;
+
+            if (vm.currentPost) {
+                vm.currentPost.countComment = vm.currentPost.Comments.length;
+            }
         })
         .catch(function (error) {
-            console.log(error)
+            notifier.error(error);
         })
         .finally(function () {
             vm.loading = false;
@@ -70,7 +77,7 @@
            vm.comments = data.results;
         })
         .catch(function (error) {
-           console.log(error)
+            notifier.error(error);
         })
         .finally(function () {
            vm.loading = false;
@@ -78,5 +85,5 @@
     }
 
     angular.module('myApp.controllers')
-        .controller('BlogController', ['$resource', '$routeParams', '$rootScope', BlogController])
+        .controller('BlogController', ['$resource', '$routeParams', '$rootScope', 'notifier', BlogController])
 }());
