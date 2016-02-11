@@ -61,7 +61,7 @@ body {
       /* jssor slider arrow navigator skin 22 css */ }
       body .home #container #slider .slider-title {
         position: absolute;
-        top: 170px;
+        top: 130px;
         left: 165px;
         width: 360px;
         height: 60px;
@@ -71,7 +71,7 @@ body {
         text-transform: uppercase; }
       body .home #container #slider .slider-description {
         position: absolute;
-        top: 300px;
+        top: 270px;
         left: 165px;
         width: 360px;
         height: 100px;
@@ -80,6 +80,20 @@ body {
         line-height: 21px;
         font-family: Georgia, serif;
         font-weight: bold; }
+      body .home #container #slider .slider-button {
+        margin-top: 20px; }
+      body .home #container #slider .slider-caption {
+        position: absolute;
+        top: 130px;
+        left: 600px;
+        width: 445px;
+        height: 300px; }
+        body .home #container #slider .slider-caption img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 445px;
+          height: 300px; }
       body .home #container #slider .jssorb05 {
         position: absolute; }
       body .home #container #slider .jssorb05 div, body .home #container #slider .jssorb05 div:hover, body .home #container #slider .jssorb05 .av {
@@ -585,6 +599,8 @@ body {
         margin-bottom: 20px; }
         body #container #footer #footer-widgets li {
           margin-right: 5%; }
+          body #container #footer #footer-widgets li .widget {
+            margin-left: 30px; }
         body #container #footer #footer-widgets #footer-logo {
           display: inline-block; }
           body #container #footer #footer-widgets #footer-logo img {

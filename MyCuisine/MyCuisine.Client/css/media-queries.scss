@@ -277,6 +277,13 @@ and (max-width : 1024px) {
     #login-bar {
         display: none;
     }
+    .slider-title {
+        top: 170px !important; 
+    }
+
+    .slider-description {
+        top: 300px !important; 
+    }
     #bottom-shadow {
         top: -5% !important;
     }

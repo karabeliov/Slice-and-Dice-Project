@@ -137,8 +137,9 @@
     <Content Include="fav.ico" />
     <Content Include="img\foods\banica.png" />
     <Content Include="img\foods\bob_chorba.png" />
+    <Content Include="img\foods\boza.jpg" />
     <Content Include="img\foods\bulgarian-shopska-salad-2.jpg" />
-    <Content Include="img\foods\Bulgarian_Food_1.JPG" />
+    <Content Include="img\foods\bulgarian_food.jpg" />
     <Content Include="img\foods\bulgarinafood.jpg" />
     <Content Include="img\foods\meat-1.jpg" />
     <Content Include="img\foods\meat.jpg" />

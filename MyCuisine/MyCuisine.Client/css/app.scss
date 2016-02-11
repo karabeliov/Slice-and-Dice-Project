@@ -148,7 +148,7 @@ body {
                 display: block;
                 .slider-title {
                     position: absolute; 
-                    top: 170px; 
+                    top: 130px; 
                     left: 165px; 
                     width: 360px; 
                     height: 60px; 
@@ -160,7 +160,7 @@ body {
 
                 .slider-description {
                     position: absolute; 
-                    top: 300px; 
+                    top: 270px; 
                     left: 165px; 
                     width: 360px; 
                     height: 100px; 
@@ -169,6 +169,26 @@ body {
                     line-height: 21px;
                     font-family: Georgia, serif;
                     font-weight: bold;
+                }
+
+                .slider-button {
+                    margin-top: 20px;
+                }
+
+                .slider-caption {
+                    position: absolute; 
+                    top: 130px; 
+                    left: 600px; 
+                    width: 445px; 
+                    height: 300px;
+
+                    img {
+                        position: absolute; 
+                        top: 0; 
+                        left: 0; 
+                        width: 445px; 
+                        height: 300px;
+                    }
                 }
 
                 .jssorb05 {
@@ -854,6 +874,10 @@ body {
 
                     h3 {
                         @extend %title_style;
+                    }
+
+                    .widget {
+                        margin-left: 30px;
                     }
                 }
 
