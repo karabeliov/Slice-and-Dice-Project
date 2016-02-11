@@ -271,13 +271,11 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
             vm.currentPost = $.grep(data.results, function (e) {
                 return e.objectId == currentId;
             })[0];
-
-            if (vm.currentPost) {
-                vm.currentPost.countComment = vm.currentPost.Comments.length;
-            }
+            vm.currentPost.countComment = vm.currentPost.Comments.length;
+            
         })
         .catch(function (error) {
-            notifier.error(error);
+            //notifier.error(error);
         })
         .finally(function () {
             vm.loading = false;
@@ -288,7 +286,7 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
            vm.comments = data.results;
         })
         .catch(function (error) {
-            notifier.error(error);
+            //notifier.error(error);
         })
         .finally(function () {
            vm.loading = false;

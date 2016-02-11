@@ -144,6 +144,7 @@
     <Content Include="img\foods\meat.jpg" />
     <Content Include="img\foods\mekici.jpg" />
     <Content Include="img\foods\patatnik.png" />
+    <Content Include="img\foods\tarator.png" />
     <Content Include="img\logo-green.png" />
     <Content Include="img\logo.png" />
     <Content Include="img\my-photo.jpg" />
@@ -167,9 +168,6 @@
       <DependentUpon>output.es5.js</DependentUpon>
     </Content>
     <Content Include="js\output.js" />
-    <Content Include="js\output.min.js">
-      <DependentUpon>output.js</DependentUpon>
-    </Content>
     <Content Include="js\slider\jssor.slider.mini.js" />
     <Content Include="js\slider\loader.js" />
     <Content Include="lib\angular\angular-route.min.js" />

@@ -262,7 +262,7 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
                 vm.currentPost.countComment = vm.currentPost.Comments.length;
             }
         })['catch'](function (error) {
-            notifier.error(error);
+            //notifier.error(error);
         })['finally'](function () {
             vm.loading = false;
         });
@@ -270,7 +270,7 @@ Parse.initialize("BtESBJZiztQr2rsfiyrhJT0BhA26EL8CmnNWamvS", "mwzjvu8gOMfnZgw6hU
         parseQueryPost.getCom().$promise.then(function (data) {
             vm.comments = data.results;
         })['catch'](function (error) {
-            notifier.error(error);
+            //notifier.error(error);
         })['finally'](function () {
             vm.loading = false;
         });
