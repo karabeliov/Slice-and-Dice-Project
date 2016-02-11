@@ -188,13 +188,6 @@
     <None Include="lib\angular\angular.intellisense.js" />
     <Content Include="lib\angular\angular.min.js" />
     <Content Include="lib\bootstrap\bootstrap.min.js" />
-    <Content Include="lib\build-libs.es5.js">
-      <DependentUpon>build-libs.js</DependentUpon>
-    </Content>
-    <Content Include="lib\build-libs.es5.min.js">
-      <DependentUpon>build-libs.es5.js</DependentUpon>
-    </Content>
-    <Content Include="lib\build-libs.js" />
     <Content Include="lib\jquery\jquery.min.js" />
     <Content Include="lib\toastr\toastr.js" />
     <Content Include="lib\toastr\toastr.min.js" />
