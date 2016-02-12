@@ -157,20 +157,17 @@
     <Content Include="js\common\notifier.js" />
     <Content Include="js\controllers\login-controller.js" />
     <Content Include="js\controllers\comment-controller.js" />
-    <Content Include="js\controllers\post-directive.js" />
-    <Content Include="js\controllers\sidebar-directive.js" />
+    <Content Include="js\directive\post-directive.js" />
+    <Content Include="js\directive\sidebar-directive.js" />
     <Content Include="js\controllers\blog-controller.js" />
     <Content Include="js\controllers\add-post-controller.js" />
     <Content Include="js\common\custom.js" />
-    <Content Include="js\output.es5.js">
+    <Content Include="js\output.js" />
+    <Content Include="js\output.min.js">
       <DependentUpon>output.js</DependentUpon>
     </Content>
-    <Content Include="js\output.es5.min.js">
-      <DependentUpon>output.es5.js</DependentUpon>
-    </Content>
-    <Content Include="js\output.js" />
-    <Content Include="js\slider\jssor.slider.mini.js" />
-    <Content Include="js\slider\loader.js" />
+    <Content Include="lib\slider\jssor.slider.mini.js" />
+    <Content Include="lib\slider\loader.js" />
     <Content Include="lib\angular\angular-route.min.js" />
     <Content Include="css\bootstrap\bootstrap-theme.css.map" />
     <Content Include="css\bootstrap\bootstrap-theme.min.css.map" />

@@ -6,13 +6,5 @@
   {
     "outputFile": "css/media-queries.css",
     "inputFile": "css/media-queries.scss"
-  },
-  {
-      "outputFile": "lib/build-libs.es5.js",
-      "inputFile": "lib/build-libs.js"
-  },
-  {
-  "outputFile": "js/output.es5.js",
-  "inputFile": "js/output.js"
   }
 ]

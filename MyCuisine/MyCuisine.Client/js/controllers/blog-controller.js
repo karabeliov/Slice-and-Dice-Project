@@ -60,7 +60,6 @@
             vm.currentPost = $.grep(data.results, function (e) {
                 return e.objectId == currentId;
             })[0];
-            vm.currentPost.countComment = vm.currentPost.Comments.length;
             
         })
         .catch(function (error) {

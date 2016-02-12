@@ -5,14 +5,12 @@
       "js/common/app.js",
       "js/common/custom.js",
       "js/common/notifier.js",
-      "js/controllers/login-controller.js",
       "js/controllers/add-post-controller.js",
       "js/controllers/blog-controller.js",
       "js/controllers/comment-controller.js",
-      "js/controllers/post-directive.js",
-      "js/controllers/sidebar-directive.js",
-      "js/slider/jssor.slider.mini.js",
-      "js/slider/loader.js"
+      "js/controllers/login-controller.js",
+      "js/directive/post-directive.js",
+      "js/directive/sidebar-directive.js"
     ]
   }
 ]
